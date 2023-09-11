@@ -1,0 +1,32 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "game/utils/00auto-highlight.rpy", line 79, in execute_default
+    default speaking_char = None
+Exception: store.speaking_char is being given a default a second time.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 3972, in execute_default_statement
+    i.execute_default(start)
+  File "game/utils/00auto-highlight.rpy", line 79, in execute_default
+    default speaking_char = None
+Exception: store.speaking_char is being given a default a second time.
+
+macOS-10.16-x86_64-i386-64bit x86_64
+Ren'Py 8.1.1.23060707
+A_Trick_Of_Mind 1.0
+Mon Sep 11 21:27:51 2023

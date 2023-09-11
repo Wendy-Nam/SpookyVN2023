@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/lip-sync-plugin/slient_lipsync_module.rpy", line 66: unexpected indent
+        if not interrupted:
+        ^
+
+Ren'Py Version: Ren'Py 8.1.1.23060707
+Mon Sep 11 19:29:55 2023
