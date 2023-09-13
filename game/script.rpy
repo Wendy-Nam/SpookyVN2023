@@ -8,7 +8,7 @@ screen Image_Tools:
     textbutton "Image Tools" action ShowMenu("image_tools")
 
 label start:
-    # show screen Image_Tools
+    show screen Image_Tools
     # show Dad
     # show Mom
     # show Parents at right

@@ -23,7 +23,7 @@ init python:
             lipsync_data.append((float(start_time), mouth_shape))
     
     # Function to apply lipsync animation to a dialogue
-    def lipsync(character, chapter_name, audio_track, dialogue):
+    def lipsync(character, chapter_name, audio_track, dialogue, default_mouth="mouth_X"):
         global lipsync_key_released, mouse_button_released, touch_released
         load_lipsync_data(chapter_name, audio_track)  # Load lipsync data based on the audio track
         prev_start_time = 0
@@ -45,10 +45,10 @@ init python:
             keys = pygame.key.get_pressed()
             # Check for skip or user input keys (e.g., RETURN, SPACE, CTRL) to stop playback
             if renpy.is_skipping() or touched or (keys[pygame.K_LCTRL] or keys[pygame.K_RCTRL]):
-                renpy.show(str(character.name) + ' mouth_X')
+                renpy.show(str(character.name) + ' ' + default_mouth)
                 return
             if (keys[pygame.K_RETURN] or keys[pygame.K_SPACE]) and lipsync_key_released:
-                renpy.show(str(character.name) + ' mouth_X')
+                renpy.show(str(character.name) + ' ' + default_mouth)
                 lipsync_key_released = False
                 return
             if not keys[pygame.K_RETURN] and not keys[pygame.K_SPACE]:
@@ -67,6 +67,6 @@ init python:
             if interrupted:
                 break
         # Ensure that the facial expression returns to 'mouth_X' when the function ends
-        renpy.show(str(character.name) + ' mouth_X')
+        renpy.show(str(character.name) + ' ' + default_mouth)
         if not interrupted:
             renpy.say(who=character, what=dialogue+"{fast}", interact=True)   # show the dialogue

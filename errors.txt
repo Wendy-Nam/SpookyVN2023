@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lip-sync-plugin/slient_lipsync_module.rpy", line 66: unexpected indent
-        if not interrupted:
-        ^
+File "game/story/act3.rpy", line 15: expected 'simple_expression' not found.
+    show bg underwater_creature with 
+                                     ^
 
-Ren'Py Version: Ren'Py 8.1.1.23060707
-Mon Sep 11 19:29:55 2023
+Ren'Py Version: Ren'Py 8.1.2.23090503
+Wed Sep 13 23:34:06 2023
