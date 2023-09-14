@@ -25,6 +25,7 @@ label check_back:
     jump its_too_late_the_monster_swallows_you_whole
     
 label check_her_bookshelves:
+    $ searched['bookshelves'] = True
     """
     The bookshelves are littered with horror movie merchandise that you forgot purchasing.
     
@@ -38,11 +39,13 @@ label check_her_bookshelves:
             jump continue_your_search_through_carlas_room
 
 label check_the_nightstand:
+    $ searched['nightstand'] = True
     "Carla's nightstand has nothing of interest."
     
     jump continue_your_search_through_carlas_room
 
 label check_under_her_bed:
+    $ searched['bed'] = True
     """
     Under her bed are remnants of her old toys and books before she found her love for horror.
     
@@ -59,14 +62,11 @@ label continue_your_search_through_carlas_room:
     $ all_searched = all(searched.values())
     if all_searched == False:
         menu:
-            "Check under her bed.":
-                $ searched['bed'] = True
+            "Check under her bed." if searched['bed'] == False:
                 jump check_under_her_bed
-            "Check her bookshelves.":
-                $ searched['bookshelves'] = True
+            "Check her bookshelves."  if searched['bookshelves'] == False:
                 jump check_her_bookshelves
-            "Check the nightstand.":
-                $ searched['nightstand'] = True
+            "Check the nightstand." if searched['nightstand'] == False:
                 jump check_the_nightstand
     else:
         scene bg bedroom_night with dissolve
@@ -96,7 +96,9 @@ label enter_the_underwater_cave:
     
     WIth your voice raised you ask her.
     """
+    
     show Parents overlay_fear eyes_serious brow_angry
+    
     $ lipsync(Parents, "act3", 'audio_1', "Why the hell are we underwater??", 'mouth_E')
      
     "Carla tilts her head" 
@@ -352,7 +354,7 @@ label look_back:
 
 label open_the_door:
     scene bg underwater with pixellate
-    show Parents mouth_fear overlay_fear eye_default brow_surprised
+    # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
     Water rushes out of her room completely filling the room. 
     
@@ -360,7 +362,7 @@ label open_the_door:
     
     Once again, your fears about Carla have manifested again as you find yourself at the bottom of the sea floor.
     """
-    show Parents mouth_sad overlay_fear eyes_serious
+    # show Parents mouth_sad overlay_fear eyes_serious
     jump swim_to_the_surface
 
 label open_your_eyes_again:

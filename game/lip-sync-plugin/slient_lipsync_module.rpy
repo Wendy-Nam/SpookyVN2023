@@ -23,7 +23,7 @@ init python:
             lipsync_data.append((float(start_time), mouth_shape))
     
     # Function to apply lipsync animation to a dialogue
-    def lipsync(character, chapter_name, audio_track, dialogue, default_mouth="mouth_X"):
+    def lipsync(character, chapter_name, audio_track, dialogue, default_mouth="mouth_A"):
         global lipsync_key_released, mouse_button_released, touch_released
         load_lipsync_data(chapter_name, audio_track)  # Load lipsync data based on the audio track
         prev_start_time = 0

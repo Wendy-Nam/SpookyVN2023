@@ -56,11 +56,9 @@ layeredimage Dad:
         attribute brow_surprised:
             'images/charactors/dad/brows/brow_surprised.png'
     group mouth:
-        attribute mouth_sad:
-            'images/charactors/dad/mouth/mouth_sad.png'
-        attribute mouth_A default:
-            'images/charactors/dad/mouth/mouth_A.png'
         attribute mouth_X:
+            'images/charactors/dad/mouth/mouth_neutral.png'
+        attribute mouth_A default:
             'images/charactors/dad/mouth/mouth_A.png'
         attribute mouth_B:
             'images/charactors/dad/mouth/mouth_B.png'
@@ -80,6 +78,8 @@ layeredimage Dad:
             'images/charactors/dad/mouth/mouth_surprised.png'
         attribute mouth_fear:
             'images/charactors/dad/mouth/mouth_fear.png'
+        attribute mouth_sad:
+            'images/charactors/dad/mouth/mouth_sad.png'
     attribute overlay_blood:
         'images/charactors/dad/overlay_blood.png'
     attribute overlay_fear:
@@ -137,9 +137,9 @@ layeredimage Mom:
     group mouth:
         attribute mouth_sad:
             'images/charactors/mom/mouth/mouth_sad.png'
-        attribute mouth_A default:
-            'images/charactors/mom/mouth/mouth_A.png'
         attribute mouth_X:
+            'images/charactors/mom/mouth/mouth_neutral.png'
+        attribute mouth_A default:
             'images/charactors/mom/mouth/mouth_A.png'
         attribute mouth_B:
             'images/charactors/mom/mouth/mouth_B.png'
@@ -219,9 +219,9 @@ layeredimage Parents:
     group mouth:
         attribute mouth_sad:
             'images/charactors/parents/mouth/mouth_sad.png'
-        attribute mouth_A default:
-            'images/charactors/parents/mouth/mouth_A.png'
         attribute mouth_X:
+            'images/charactors/parents/mouth/mouth_neutral.png'
+        attribute mouth_A default:
             'images/charactors/parents/mouth/mouth_A.png'
         attribute mouth_B:
             'images/charactors/parents/mouth/mouth_B.png'
@@ -289,8 +289,6 @@ layeredimage Carla:
     group mouth:
         attribute mouth_A default:
             'images/charactors/kid/mouth/mouth_A.png'
-        attribute mouth_X:
-            'images/charactors/kid/mouth/mouth_A.png'
         attribute mouth_B:
             'images/charactors/kid/mouth/mouth_B.png'
         attribute mouth_C:
@@ -298,7 +296,7 @@ layeredimage Carla:
         attribute mouth_D:
             'images/charactors/kid/mouth/mouth_D.png'
         attribute mouth_E:
-            'images/charactors/kid/mouth/mouth_D.png'
+            'images/charactors/kid/mouth/mouth_neutral.png'
         attribute mouth_F:
             'images/charactors/kid/mouth/mouth_F.png'
         attribute mouth_G:
@@ -315,6 +313,8 @@ layeredimage Carla:
             'images/charactors/kid/mouth/mouth_angry.png'
         attribute mouth_angry2:
             'images/charactors/kid/mouth/mouth_angry2.png'
+        attribute mouth_X:
+            'images/charactors/kid/mouth/mouth_neutral2.png'
     attribute overlay_blood:
         'images/charactors/kid/overlay_blood.png'
     attribute overlay_fear:

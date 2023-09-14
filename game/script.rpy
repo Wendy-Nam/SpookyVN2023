@@ -12,6 +12,7 @@ label start:
     # show Dad
     # show Mom
     # show Parents at right
+    scene bg livingroom_night
     show Dad
     show Mom
     show Carla at left

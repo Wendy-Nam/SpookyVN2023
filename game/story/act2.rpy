@@ -71,7 +71,7 @@ label when_you_win:
     
     $ lipsync(Parents, 'act2', 'audio_6', "Carls?")
     
-    hide Parents with dissolve
+    hide Parents
     show Dad
     show Mom
     
@@ -122,7 +122,7 @@ label act21:
     $ lipsync(Carla, 'act2', 'audio_16', "Keep your eyes closed until I say it's ok to open them please...")
     
     show Carla mouth_angry2
-    show Dad mouth_sad
+    show Dad mouth_X
     
     "Carla insists."
     
@@ -380,8 +380,11 @@ label act24c:
     
     menu:
         "Ok missy, one game only.":
+            show Dad mouth_A
+            show Mom mouth_A
             jump act25a
         "Carls, we should be going to bed now. I think the game is over.":
+            show Mom mouth_sad
             jump act25b
 
 label act24d:
@@ -393,9 +396,10 @@ label act24d:
     
     show Dad brow_sad eye_default mouth_sad
     show Mom brow_sad eye_default mouth_sad
-    $ lipsync(Dad, 'act2', 'audio_48', "Ugh, c'mon Carls, you make all of this, but I can't have any popcorn?")
+    $ lipsync(Dad, 'act2', 'audio_48', "Ugh, c'mon Carls, you make all of this, but I can't have any popcorn?", 'mouth_X')
 
     "Annoyed, you continue your search."
+    show Dad mouth_sad
     
     jump act24c
 
@@ -449,7 +453,7 @@ label act25b:
     The decaying situation raises your heart rate again and you begin yelling back at Carla to stop.
     """
     
-    $ lipsync(Parents, 'act2', 'audio_57', "Stop!")
+    $ lipsync(Parents, 'act2', 'audio_57', "Stop!", 'mouth_fear')
 
     """
     Carla's scream continues and the targets face you again.

@@ -1,28 +1,125 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/story/act3.rpy", line 272, in script
-    scene bg underwater_creature with blinds
-  File "game/story/act3.rpy", line 272, in <module>
-    scene bg underwater_creature with blinds
-NameError: name 'blindslink' is not defined
+While loading <renpy.display.im.Image object ('images/charactors/dad/mouth/mouth_nuetral.png') at 0x10566cb20>:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+OSError: Couldn't find file 'images/charactors/dad/mouth/mouth_nuetral.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/act3.rpy", line 272, in script
-    scene bg underwater_creature with blinds
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1674, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/story/act3.rpy", line 272, in <module>
-    scene bg underwater_creature with blinds
-NameError: name 'blindslink' is not defined
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1851, in render
+    cwidth, cheight = sizeit('c', width, height, 0, 0)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1848, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+  File "render.pyx", line 318, in renpy.display.render.render_for_size
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/viewport.py", line 285, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1064, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1291, in render
+    xminimum = max(xminimum, size_groups[size_group].width(width, height, st, at))
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1228, in width
+    rend = renpy.display.render.render_for_size(i, width, height, st, at)
+  File "render.pyx", line 318, in renpy.display.render.render_for_size
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 330, in get
+    surf = image.load()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 803, in load
+    raise e
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/charactors/dad/mouth/mouth_nuetral.png'.
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Wed Sep 13 23:28:56 2023
+Thu Sep 14 21:27:30 2023

@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/story/act3.rpy", line 15: expected 'simple_expression' not found.
-    show bg underwater_creature with 
-                                     ^
+File "game/story/act2.rpy", line 386: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Wed Sep 13 23:34:06 2023
+Thu Sep 14 21:49:40 2023
