@@ -1,46 +1,597 @@
-Thu Sep 14 22:08:45 2023
+Fri Sep 15 21:33:26 2023
 macOS-13.2-arm64-arm-64bit
 Ren'Py 8.1.2.23090503
  
 
-Bootstrap to the start of init.init. took 0.03s
-Early init. took 0.01s
+Bootstrap to the start of init.init. took 0.02s
+Early init. took 0.00s
 Loader init. took 0.01s
-Loading error handling. took 0.03s
-Loading script. took 0.38s
-Loading save slot metadata. took 0.05s
+Loading error handling. took 0.02s
+Loading script. took 0.26s
+Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
-Running init code. took 0.05s
-Loading analysis data. took 0.03s
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
 Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.03s
+Reloading save slot metadata. took 0.02s
 Index archives took 0.00s
-Dump and make backups. took 0.05s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object. took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.11s
-Build styles took 0.04s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start. took 1.84s
+Interface start. took 0.26s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
 Vendor: "b'Apple'"
 Renderer: b'Apple M1'
 Version: b'2.1 Metal - 83'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(814, 458) drawable=(1628, 916)
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 46.06s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.03s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 52.71s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.03s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 72.89s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 88.29s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    """
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 108.23s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 111.22s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.07s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+Full traceback:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
+    what_text.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+
+While running game code:
+  File "game/story/act3.rpy", line 393, in script
+    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
+  File "game/wavey_tag.rpy", line 83, in wavy_tag
+    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
+NameError: name 'DispTextStyle' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 126.66s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096

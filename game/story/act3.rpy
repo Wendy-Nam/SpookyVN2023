@@ -77,6 +77,7 @@ label continue_your_search_through_carlas_room:
 
 label enter_the_underwater_cave:
     scene bg hand_drowning with fade
+    show bg hand_drowning at hand_drowning
     """
     Though the cave is incredibly small, you manage to squeeze your way through enough to reach an air pocket. 
     
@@ -86,6 +87,8 @@ label enter_the_underwater_cave:
     
     You scream in panic and Carla's head pops out of the water, unfazed by the situation.
     """
+    
+    scene bg hand_drowning with fade
     
     show Carla at left
     
@@ -211,8 +214,6 @@ label im_sorry_carls_keep_going:
     
     These questions raise your confidence and you give Carla your answer.
     """
-
-    hide Carla with moveoutleft
     
     $ lipsync(Parents, "act3", 'audio_20', "Y-yeah.")
     $ lipsync(Parents, "act3", 'audio_21', "Let's do that.")
@@ -322,7 +323,6 @@ label kick_it:
             jump check_back
 
 label knock_on_her_door:
-    "** knock knock"
     "No response."
     
     menu:
@@ -390,6 +390,7 @@ label read_the_notebook:
     jump continue_your_search_through_carlas_room
 
 label swim_to_the_surface:
+
     """
     You ascend as fast as possible to the surface but find that the water's surface never approaches. 
     

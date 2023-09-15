@@ -40,6 +40,7 @@ label when_you_lose:
 
     show Parents eye_default brow_surprised mouth_fear overlay_fear
     show Carla brow_angry eye_crying mouth_angry overlay_fear
+    
     """
     Carla screams at you and the shooting gallery begins to shudder.
     
@@ -96,7 +97,7 @@ label when_you_win:
 
 
 label act21:
-    hide Carla with dissolve
+    scene black with dissolve
     show Parents eye_closed
     """
     You can hear candy wrappers being moved and Carla shuffling around while you begin humming a tune to yourself.
@@ -309,7 +310,9 @@ label act23:
 
 label act24a:
     """
-    The aroma of churros hovers over the cart. Curiosity gets the better of you, causing you to peek into the cart.
+    The aroma of churros hovers over the cart.
+    
+    Curiosity gets the better of you, causing you to peek into the cart.
     
     Surprisingly, no churros are available for you to take.
     """

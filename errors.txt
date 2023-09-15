@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/act2.rpy", line 386: Indentation mismatch.
+File "game/minigame/hunt.rpy", line 63: expected 'simple_expression' not found.
+    linear 
+           ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Thu Sep 14 21:49:40 2023
+Fri Sep 15 20:58:17 2023
