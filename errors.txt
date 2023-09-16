@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/hunt.rpy", line 63: expected 'simple_expression' not found.
-    linear 
-           ^
+File "game/story/act2.rpy", line 496: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        """
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Fri Sep 15 20:58:17 2023
+Sat Sep 16 12:01:26 2023

@@ -329,19 +329,6 @@ label knock_on_her_door:
         "Knock again.":
             jump you_knock_again
 
-label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
-    
-    show Carla brow_sad eye_crying mouth_angry2
-    
-    $ lipsync(Carla, "act3", 'audio_26', "Hello??")
-    $ lipsync(Carla, "act3", 'audio_27', "Wake up!")
-    
-    """
-    Carla's cries bring you to reality.
-    
-    On the ground, Carla tugs at your leg. You pull away and immediately stand up.
-    """
-
 label look_back:
     """
     To be sure, you check behind you. 

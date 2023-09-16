@@ -306,11 +306,3 @@ init python:
                 if self.time_left <= 0:
                     return True
                 return False
-
-label shooting_game:
-    "Game Start"
-    window hide
-    scene bg carnival_minigame
-    $ my_game_config1 = GameConfig(target_nb=10, time_limit=30, bullet_max=15)
-    $ minigame1 = ShootingGame(my_game_config1)
-    $ minigame1.run()

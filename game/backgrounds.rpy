@@ -2,6 +2,8 @@
 # CARNIVAL
 image bg carnival = 'images/backgrounds/Carnival/carnival_wheel.png'
 image bg carnival_minigame = 'images/backgrounds/Carnival/carnival_minigame.png'
+image bg carnival_foodtent = 'images/backgrounds/Carnival/carnival_foodtent.png'
+
 # HOUSE
 ## CHILD BEDROOM
 image bg bedroom_sunset = 'images/backgrounds/House/Child Bedroom/bedroom_clean_sunset.png'
@@ -60,11 +62,12 @@ transform hand_drowning:
     linear 0.5 xalign 0.8 yalign 1.0 zoom 1.2
     zoom 1.0
     repeat
+
 image blink:
     "images/effects/mask_blink_half.png"
-    .5
-    "images/effects/mask_blink_close.png" 
     .2
+    "images/effects/mask_blink_close.png" 
+    .3
     "images/effects/mask_blink_open.png"
     .1
     alpha 0.0

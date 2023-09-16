@@ -31,8 +31,7 @@ image dad_eyes_serious:
     
 layeredimage Dad:
     at sprite_highlight('Dad') 
-    zoom 0.65
-    yoffset -275
+    zoom 0.8
     align (0.5, 1.0)
     always:
         "images/charactors/dad/base.png"
@@ -114,8 +113,7 @@ image mom_eyes_cyring:
 layeredimage Mom:
     at sprite_highlight('Mom')
     crop (0.34, 0.3, 0.66, 1.0) 
-    zoom 0.65
-    yoffset -275
+    zoom 0.8
     always:
         "images/charactors/mom/base.png"
     group eyes:
@@ -192,14 +190,12 @@ image parents_eyes_cyring:
     repeat
 
 image parents_fear_overlay_mask:
-    zoom 0.65
-    yoffset -275
+    zoom 0.8
     'images/charactors/parents/overlay_fear.png'
 
 layeredimage Parents:
     at sprite_highlight('Parents')
-    zoom 0.65
-    yoffset -275
+    zoom 0.8
     always:
         "images/charactors/parents/base.png"
     group eyes:
@@ -270,8 +266,7 @@ image kid_eyes_cyring:
     
 layeredimage Carla:
     at sprite_highlight('Carla')
-    zoom 0.65
-    yoffset -275
+    zoom 0.8
     crop (0.27, 0.35, 0.47, 0.67)
     
     always:

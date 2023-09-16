@@ -289,6 +289,9 @@ label act23:
     $ lipsync(Parents, 'act2', 'audio_42', "Carls!", 'mouth_fear')
     
     hide Parents with dissolve
+    
+    scene bg carnival_foodtent
+    
     """
     your efforts to reach out to her are futile and you step off the ferris wheel.
     
@@ -343,6 +346,8 @@ label act24c:
     show Dad brow_surprised
     show Mom brow_surprised
 
+    scene bg carnival_minigame
+    
     """
     You pass the food cart and hear Carla cheering for excitement followed by what sounds like a game with sound effects.
     
@@ -380,7 +385,7 @@ label act24c:
     show Dad eye_default brow_default mouth_X
     show Mom eye_default brow_default mouth_X
     # <!--(FIRST MAJOR CHOICE)-->
-    
+
     menu:
         "Ok missy, one game only.":
             show Dad mouth_A
@@ -408,12 +413,17 @@ label act24d:
 
 label act25a:
     "You pick up the toy pistol and play the game."
-    
-    menu:
-        "When you win":
-            jump when_you_win
-        "When you lose":
-            jump when_you_lose
+    "Game Start"
+    window hide
+    scene bg carnival_minigame
+    $ my_game_config1 = GameConfig(target_nb=10, time_limit=30, bullet_max=15)
+    $ minigame1 = ShootingGame(my_game_config1)
+    $ minigame1.run()
+    "Score : [my_game_config1.target_nb - minigame1.status.target_now] / [my_game_config1.target_nb]"
+    if minigame1.status.target_now == my_game_config1.target_nb:
+        jump when_you_win
+    else:
+        jump when_you_lose
 
 label act25b:
     $ lipsync(Carla, 'act2', 'audio_49', "I set all of this up and it's already over?")

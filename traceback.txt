@@ -1,36 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+  File "game/story/act2.rpy", line 416, in script
+    jump shooting_minigame
+ScriptError: could not find label 'shooting_minigame'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+  File "game/story/act2.rpy", line 416, in script
+    jump shooting_minigame
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1992, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'shooting_minigame'.
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Fri Sep 15 21:35:23 2023
+Sat Sep 16 11:58:02 2023

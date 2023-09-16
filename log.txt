@@ -1,4 +1,4 @@
-Fri Sep 15 21:33:26 2023
+Sat Sep 16 11:54:30 2023
 macOS-13.2-arm64-arm-64bit
 Ren'Py 8.1.2.23090503
  
@@ -7,7 +7,7 @@ Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.02s
-Loading script. took 0.26s
+Loading script. took 0.27s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.03s
@@ -33,7 +33,7 @@ Save pyanalysis. took 0.02s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.26s
+Interface start. took 0.25s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -47,7 +47,7 @@ Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/story/act3.rpy", line 393, in script
+  File "game/story/act2.rpy", line 295, in script
     """
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
     renpy.exports.say(who, what, *args, **kwargs)
@@ -57,28 +57,148 @@ Full traceback:
     self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
     display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 330, in get
+    surf = image.load()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 803, in load
+    raise e
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/backgrounds/Carnival/carnival_foodtent.png'.
 
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
+While loading <renpy.display.im.Image object ('images/backgrounds/Carnival/carnival_foodtent.png') at 0x1064470d0>:
+  File "game/story/act2.rpy", line 295, in script
     """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+OSError: Couldn't find file 'images/backgrounds/Carnival/carnival_foodtent.png'.
 Resetting cache.
-Bootstrap to the start of init.init. took 46.06s
+Bootstrap to the start of init.init. took 38.03s
 Early init. took 0.00s
 Loader init. took 0.01s
-Loading error handling. took 0.03s
-Loading script. took 0.13s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.03s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 73.82s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 86.13s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.02s
@@ -95,7 +215,7 @@ DPI scale factor: 1.000000
 Creating interface object. took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.08s
-Build styles took 0.03s
+Build styles took 0.02s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
@@ -104,7 +224,7 @@ Save pyanalysis. took 0.03s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.08s
+Interface start. took 0.09s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -116,40 +236,12 @@ Version: b'2.1 Metal - 83'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
 Resetting cache.
-Bootstrap to the start of init.init. took 52.71s
+Bootstrap to the start of init.init. took 116.71s
 Early init. took 0.00s
 Loader init. took 0.01s
-Loading error handling. took 0.01s
-Loading script. took 0.08s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.02s
@@ -164,7 +256,7 @@ Initial gc. took 0.04s
 DPI scale factor: 1.000000
 Creating interface object. took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.08s
+Init translation took 0.09s
 Build styles took 0.03s
 Load screen analysis took 0.03s
 Analyze screens took 0.00s
@@ -186,142 +278,16 @@ Version: b'2.1 Metal - 83'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
 Resetting cache.
-Bootstrap to the start of init.init. took 72.89s
+Bootstrap to the start of init.init. took 136.65s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.01s
-Loading script. took 0.10s
+Loading script. took 0.11s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.02s
-Loading analysis data. took 0.02s
-Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.02s
-Index archives took 0.00s
-Dump and make backups. took 0.03s
-Cleaning cache. took 0.00s
-Making clean stores. took 0.00s
-Initial gc. took 0.04s
-DPI scale factor: 1.000000
-Creating interface object. took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.08s
-Build styles took 0.02s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.08s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start. took 0.10s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1'
-Version: b'2.1 Metal - 83'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-Resetting cache.
-Bootstrap to the start of init.init. took 88.29s
-Early init. took 0.00s
-Loader init. took 0.01s
-Loading error handling. took 0.01s
-Loading script. took 0.12s
-Loading save slot metadata. took 0.03s
-Loading persistent. took 0.00s
-Running init code. took 0.02s
-Loading analysis data. took 0.02s
+Loading analysis data. took 0.03s
 Analyze and compile ATL. took 0.00s
 Reloading save slot metadata. took 0.02s
 Index archives took 0.00s
@@ -333,11 +299,11 @@ Initial gc. took 0.04s
 DPI scale factor: 1.000000
 Creating interface object. took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.08s
-Build styles took 0.02s
+Init translation took 0.09s
+Build styles took 0.03s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.02s
+Save screen analysis took 0.03s
 Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
@@ -355,40 +321,55 @@ Version: b'2.1 Metal - 83'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    """
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
 Resetting cache.
-Bootstrap to the start of init.init. took 108.23s
+Bootstrap to the start of init.init. took 146.01s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.02s
-Loading script. took 0.13s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.02s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 156.90s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.02s
@@ -410,11 +391,11 @@ Load screen analysis took 0.00s
 Analyze screens took 0.02s
 Save screen analysis took 0.03s
 Prepare screens took 0.08s
-Save pyanalysis. took 0.03s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.11s
+Interface start. took 0.10s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -426,36 +407,51 @@ Version: b'2.1 Metal - 83'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
 Resetting cache.
-Bootstrap to the start of init.init. took 111.22s
+Bootstrap to the start of init.init. took 190.46s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 197.03s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.01s
@@ -498,66 +494,276 @@ Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+  File "game/story/act2.rpy", line 416, in script
+    jump shooting_minigame
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1992, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'shooting_minigame'.
 
 While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-Full traceback:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 674, in display_say
-    what_text.update()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
-    tokens = self.apply_custom_tags(tokens)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
-    new_contents = func(tag, value, contents)
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
-
-While running game code:
-  File "game/story/act3.rpy", line 393, in script
-    "{wave=a20.0-s0.25-p20-db-mb}{size=50}{b}{color=ff0000}Especially text like this.{/wave}"
-  File "game/wavey_tag.rpy", line 83, in wavy_tag
-    my_style = DispTextStyle() # Defined in kinetic_text_tags.rpy. Used for style information preservation.
-NameError: name 'DispTextStyle' is not defined
+  File "game/story/act2.rpy", line 416, in script
+    jump shooting_minigame
+ScriptError: could not find label 'shooting_minigame'.
 Resetting cache.
-Bootstrap to the start of init.init. took 126.66s
+Bootstrap to the start of init.init. took 232.13s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.04s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 247.49s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.01s
-Loading script. took 0.13s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 249.22s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 302.37s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/minigame/hunt.rpy", line 317: expected statement.
+    "Score : %d" % (my_game_config1.target_nb - minigame1.status.target_now)
+                 ^
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 325.19s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/minigame/hunt.rpy", line 317: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 328.39s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/minigame/hunt.rpy", line 317: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 355.72s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.02s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 359.00s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.02s
@@ -577,13 +783,308 @@ Init translation took 0.09s
 Build styles took 0.03s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.02s
+Save screen analysis took 0.03s
 Prepare screens took 0.08s
-Save pyanalysis. took 0.02s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 378.88s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/story/act2.rpy", line 422: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 386.61s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/story/act2.rpy", line 422: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 394.32s
+Early init. took 0.01s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/story/act2.rpy", line 422: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 398.07s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.08s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+
+File "game/story/act2.rpy", line 422: expected statement.
+    "Score : %d / %d" % (minigame1.status.target_now, my_game_config1.target_nb)
+                      ^
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 416.32s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/story/act2.rpy", line 496: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        """
+DPI scale factor: 1.000000
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 418.03s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
 Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 447.12s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.02s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 482.22s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.10s
+Build styles took 0.03s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(690, 388) drawable=(690, 388)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 533.92s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.03s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
