@@ -1,7 +1,7 @@
 
 label when_you_lose:
     
-    show Carla brow_surprised eye_default mouth_C
+    show Carla brow_surprised eye_default mouth_C at left
     
     """
     With a defeated look, you put the toy pistol down.
@@ -19,7 +19,7 @@ label when_you_lose:
     
     "Carla picks up the gun and waves it at you mockingly."
     
-    show Mom brow_default eyes_serious mouth_H
+    show Mom brow_default eye_serious mouth_H
     show Dad brow_angry eye_default mouth_X
     $ lipsync(Mom, 'act2', 'audio_2', "Excuse me missy, I don't remember teaching you to be this sassy.")
     
@@ -32,23 +32,27 @@ label when_you_lose:
     
     show Dad mouth_sad eye_default brow_surprised
     show Mom mouth_sad eye_default brow_surprised
-    
+    with sshake3
     $ lipsync(Dad, 'act2', 'audio_4', "Carls, what are you doing?", default_mouth="mouth_surprised")
     
     hide Dad
     hide Mom
-
+    show bg carnival_minigame with sshake
     show Parents eye_default brow_surprised mouth_fear overlay_fear
     show Carla brow_angry eye_crying mouth_angry overlay_fear
-    
+    with sshake
     """
     Carla screams at you and the shooting gallery begins to shudder.
     
     Before you can let out your next words, the targets leap out at you.
-    
-    Their endless numbers overwhelm you as you feel teeth sinking into your flesh. 
     """
     show Parents overlay_blood
+    with vpunch
+    """
+    Their endless numbers overwhelm you as you feel teeth sinking into your flesh. 
+    """
+    with sshake2
+
     jump act26
 
 label when_you_win:
@@ -61,9 +65,9 @@ label when_you_win:
     Full of anger, Carla congratulates you.
     """
     
-    $ lipsync(Carla, 'act2', 'audio_5', "G-good job.")
+    show Carla brow_angry2 mouth_angry at left
     
-    show Carla brow_angry2 mouth_angry
+    $ lipsync(Carla, 'act2', 'audio_5', "G-good job.", 'mouth_angry')
     
     "she speaks softly, taking you aback."
 
@@ -182,7 +186,7 @@ label act21:
     $ lipsync(Parents, 'act2', 'audio_19', "C-Carla!")
     hide Parents
     show Dad brow_surprised eye_default mouth_fear overlay_fear
-    show Mom brow_surprised eyes_serious mouth_fear overlay_fear
+    show Mom brow_surprised eye_serious mouth_fear overlay_fear
     $ lipsync(Mom, 'act2', 'audio_20', "What the hell is this?")
     
     show Carla brow_surprised eye_default at left
@@ -203,7 +207,7 @@ label act21:
     
     You press Carla for answers.
     """
-    
+    $ quick_menu = False
     menu:
         "This isn't funny. What did you do?":
             jump act22a
@@ -211,7 +215,7 @@ label act21:
             jump act22b
 
 label act22a:
-    
+    $ quick_menu = True
     $ lipsync(Carla, 'act2', 'audio_22', "It's //Story Time// isn't it?")
     $ lipsync(Carla, 'act2', 'audio_23', "This is the start of our story at the carnival.")
     show Carla brow_surprised eye_default mouth_D
@@ -226,7 +230,7 @@ label act22a:
     $ lipsync(Parents, 'act2', 'audio_26', "NO.")
     hide Parents
     show Dad brow_sad mouth_sad
-    show Mom brow_surprised eyes_serious mouth_fear
+    show Mom brow_surprised eye_serious mouth_fear
     
     "You interrupt Carla out of instinct."
     
@@ -245,6 +249,7 @@ label act22a:
     jump act23
 
 label act22b:
+    $ quick_menu = True
     show Parents mouth_D eye_default brow_surprised
     $ lipsync(Carla, 'act2', 'audio_32', "You really think it's amazing?")
     
@@ -262,7 +267,7 @@ label act22b:
     show Carla eye_default mouth_B
     
     $ lipsync(Mom, 'act2', 'audio_38', "Excuse me?")
-    show Mom brow_surprised eyes_serious mouth_H
+    show Mom brow_surprised eye_serious mouth_H
     "your nerves begin to raise your heart rate while you imagine what Carla is about to put you through."
     
     $ lipsync(Carla, 'act2', 'audio_39', "Nothing!")
@@ -416,11 +421,20 @@ label act25a:
     "Game Start"
     window hide
     scene bg carnival_minigame
-    $ my_game_config1 = GameConfig(target_nb=10, time_limit=30, bullet_max=15)
+    $ my_game_config1 = GameConfig(target_nb=7, time_limit=30, bullet_max=15)
     $ minigame1 = ShootingGame(my_game_config1)
     $ minigame1.run()
-    "Score : [my_game_config1.target_nb - minigame1.status.target_now] / [my_game_config1.target_nb]"
-    if minigame1.status.target_now == my_game_config1.target_nb:
+    $ score = [(minigame1.status.target_nb - minigame1.status.target_now), minigame1.status.target_nb] 
+    $ karma = [(minigame1.status.karma)]
+    $ boss_killed = (minigame1.status.boss_killed)
+    "Score : [score[0]]/[score[1]]"
+    "Karma : [karma]"
+    if boss_killed:
+        "You killed the boss"
+    else:
+        "Kill ???? : Failed"
+    scene bg carnival_minigame
+    if score[0] == score[1]:
         jump when_you_win
     else:
         jump when_you_lose
@@ -442,7 +456,7 @@ label act25b:
     
     $ lipsync(Carla, 'act2', 'audio_52', "It's not fair.")
     
-    show Mom brow_angry eyes_serious mouth_C
+    show Mom brow_angry eye_serious mouth_C
     "You sternly answer"
     
     $ lipsync(Mom, 'act2', 'audio_53', "Excuse me?")
@@ -455,6 +469,7 @@ label act25b:
     
     Her eyes begin to water and she begins to scream.
     """
+    show bg carnival_minigame with sshake3
     show Carla brow_angry eye_crying mouth_angry overlay_fear
     """
     The environment begins to shake and you notice the targets from the minigame have morphed into disfigured versions of their previous incarnation.
@@ -462,12 +477,13 @@ label act25b:
     hide Mom
     hide Dad
     show Parents mouth_fear overlay_fear eye_default brow_surprised
+    with sshake2
     """
     The decaying situation raises your heart rate again and you begin yelling back at Carla to stop.
     """
-    
+    with sshake2
     $ lipsync(Parents, 'act2', 'audio_57', "Stop!", 'mouth_fear')
-
+    with sshake3
     """
     Carla's scream continues and the targets face you again.
     
@@ -476,6 +492,7 @@ label act25b:
     The abominations begin gnawing at your body as you cry out in agony.
     """
     show Parents overlay_blood
+    with sshake2
     jump act26
 
 label act25c:
@@ -486,7 +503,7 @@ label act25c:
 label act26:
     $ lipsync(Parents, 'act2', 'audio_58', "Carla!", default_mouth="mouth_fear")
     $ lipsync(Parents, 'act2', 'audio_59', "Please!", default_mouth="mouth_fear")
-    
+    with sshake2
     scene black with dissolve
     """
     Your vision blurrs as the blood drains from your body.

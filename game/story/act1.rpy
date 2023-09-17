@@ -49,7 +49,7 @@ label act11:
     
     "Amused with her request, you stop taking off your costume and begin the negotiation."
     
-    show Mom brow_angry eyes_serious
+    show Mom brow_angry eye_serious
     
     $ lipsync(Mom, 'act1', "audio_9", "Definitely not missy.")
     $ lipsync(Mom, 'act1', "audio_10", "Besides, you ate a lot of your candy on the way home //after// I told you not to.")
@@ -118,7 +118,7 @@ label act13b:
     
     "Carla excitedly jumps up and down after your initial agreement."
     
-    show Mom brow_default eyes_serious
+    show Mom brow_default eye_serious
     
     $ lipsync(Mom, 'act1', "audio_24", "You do the set up //and// the clean up.")
     
@@ -153,7 +153,7 @@ label act13a:
     $ lipsync(Carla, 'act1', "audio_31", "Just one story.")
     $ lipsync(Carla, 'act1', "audio_32", "I promise?")
     
-    show Mom brow_surprised eyes_serious mouth_H
+    show Mom brow_surprised eye_serious mouth_H
     show Dad brow_surprised eye_default mouth_surprised 
     $ lipsync(Carla, 'act1', "audio_33", "I won't sneak any of my candy to my room?")
     

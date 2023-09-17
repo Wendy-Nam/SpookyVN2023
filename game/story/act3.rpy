@@ -6,7 +6,7 @@ label bash_the_door:
     
     You feel the monster swiftly approaching, but before you can do anything more to the door.
     """
-    scene black
+    scene black with hpunch
     jump its_too_late_the_monster_swallows_you_whole
 
 label check_back:
@@ -21,7 +21,7 @@ label check_back:
     
     With no energy to carry on, you make one push for the door.
     """
-    scene black
+    scene black with hpunch
     jump its_too_late_the_monster_swallows_you_whole
     
 label check_her_bookshelves:
@@ -100,7 +100,7 @@ label enter_the_underwater_cave:
     WIth your voice raised you ask her.
     """
     
-    show Parents overlay_fear eyes_serious brow_angry
+    show Parents overlay_fear eye_serious brow_angry
     
     $ lipsync(Parents, "act3", 'audio_1', "Why the hell are we underwater??", 'mouth_E')
      
@@ -122,7 +122,8 @@ label enter_the_underwater_cave:
     
     A powerful force pulls you back underwater as you fight to stay afloat.
     """
-    scene bg underwater with moveoutbottom
+    scene black
+    scene bg underwater with dissolve
     menu:
         "Kick at whatever is grabbing your leg.":
             jump kick_at_whatever_is_grabbing_your_leg
@@ -177,7 +178,7 @@ label huh:
     $ lipsync(Parents, "act3", 'audio_15', "Wait, Carls.", 'mouth_fear')
         
     hide Carla with moveoutleft
-    show Parents mouth_sad  eyes_serious brow_sad
+    show Parents mouth_sad  eye_serious brow_sad
     """
     Your apology falls on deaf ears, and Carla swiftly retreats to her room.
     
@@ -240,6 +241,7 @@ label im_sorry_carls_keep_going:
             jump knock_on_her_door
 
 label ignore_it_and_keep_going:
+    scene bg underwater_door_closeup with dissolve
     """
     With one hand in front of you, the doorknob reaches your grasp.
     
@@ -349,7 +351,7 @@ label open_the_door:
     
     Once again, your fears about Carla have manifested again as you find yourself at the bottom of the sea floor.
     """
-    # show Parents mouth_sad overlay_fear eyes_serious
+    # show Parents mouth_sad overlay_fear eye_serious
     jump swim_to_the_surface
 
 label open_your_eyes_again:
@@ -504,13 +506,14 @@ label act31:
     
     """
     Carla nods and goes back to her room.
-    
-    When you take a step to your own room to remove the costume, a sharp pain shoots up your leg.
     """
-    
+    show Carla at carla_walk
     hide Dad
     hide Mom
-    
+    show Parents at walking
+    """
+    When you take a step to your own room to remove the costume, a sharp pain shoots up your leg.
+    """
     show Parents mouth_fear overlay_fear eye_default brow_surprised with vpunch
     
     """
@@ -520,14 +523,15 @@ label act31:
     scene black
     
     # <!--Go to bed.-->
-    scene bg livingroom_sunset with dissolve
     """
     Months have passed since the incident on Halloween.
     
     Although Carla has completely forgotten about it, the events have haunted you to this day.
     
     Thankfully, Carla hasn't had another "episode" since, but the fear has continued to eat at you.
-    
+    """
+    scene bg livingroom_sunset with dissolve
+    """
     The summer heat beats into your apartment while you finish up some chores.
     
     Carla has been with some family friends at the pool and you decide to seize the moment to catch up on some of the research notes you've gathered in the past month.

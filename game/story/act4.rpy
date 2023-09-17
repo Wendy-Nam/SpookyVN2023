@@ -1,21 +1,27 @@
 
 label carls_of_course_i_want_to_spend_time_with_you:
+    hide Parents
+    show Dad brow_sad eye_crying mouth_sad
+    show Mom brow_sad eye_crying mouth_sad
     
-    $ lipsync(Parents, "act4", 'audio_0', "I'm sorry, I don't know why I passed out earlier.")
-    $ lipsync(Parents, "act4", 'audio_1', "I'm not feeling too great.")
+    $ lipsync(Mom, "act4", 'audio_0', "I'm sorry, I don't know why I passed out earlier.")
+    $ lipsync(Dad, "act4", 'audio_1', "I'm not feeling too great.")
     
-    $ lipsync(Carla, "act4", 'audio_2', "That's what I was saying...")
-    $ lipsync(Carla, "act4", 'audio_3', "You need to take your mind off of whatever it is.")
+    hide Carla
+    show Carla brow_sad eye_crying mouth_sad at left
+    $ lipsync(Carla, "act4", 'audio_2', "That's what I was saying...", 'mouth_sad')
+    $ lipsync(Carla, "act4", 'audio_3', "You need to take your mind off of whatever it is.", 'mouth_fear')
     
     "You look at Carla, whose concern for your wellbeing forces your emotions to swell through you."
+        
+    $ lipsync(Mom, "act4", 'audio_4', "You're right missy.")
+    $ lipsync(Dad, "act4", 'audio_5', "Not with playtime though...")
+    $ lipsync(Dad, "act4", 'audio_6', "I'm just exhausted.")
     
-    $ lipsync(Parents, "act4", 'audio_4', "You're right missy.")
-    $ lipsync(Parents, "act4", 'audio_5', "Not with playtime though...")
-    $ lipsync(Parents, "act4", 'audio_6', "I'm just exhausted.")
+    show Carla brow_sad eye_default mouth_G
+    $ lipsync(Carla, "act4", 'audio_7', "Oh... ok...", 'mouth_sad')
     
-    $ lipsync(Carla, "act4", 'audio_7', "Oh... ok...")
-    
-    $ lipsync(Parents, "act4", 'audio_8', "Just stay here and play for a bit alright?")
+    $ lipsync(Mom, "act4", 'audio_8', "Just stay here and play for a bit alright?")
     
     "Cautiously, you get up to leave the room."
     
@@ -23,9 +29,20 @@ label carls_of_course_i_want_to_spend_time_with_you:
     
     "Ashamed, you turn towards her tell her the same."
     
+    hide Mom
+    hide Dad
+    show Parents brow_sad eye_crying mouth_sad
+    
     $ lipsync(Parents, "act4", 'audio_10', "I love you too Carls.")
     
+    show Parents eye_default at parents_walk
+    
+    show Carla brow_sad mouth_H overlay_fear
     "Carla's kind smile slowly transforms into a sinister smile as you walk out."
+    
+    scene black with dissolve
+    
+    "you exit the room unable to cope with what you're about to do."
     
     jump you_exit_the_room_unable_to_cope_with_what_youre_about_to_do
 
@@ -99,9 +116,11 @@ label attack_the_monster:
     # -Player does the bat and monster minigame-
     
     menu:
-        "After defeating the monster. (Adult's Ending)":
+        "After defeating the monster.":
+            # (Adult's Ending)
             jump after_defeating_the_monster_adults_ending
-        "After defeating the monster. (Child's Ending)":
+        "After defeating the monster.":
+            # (Child's Ending)
             jump after_defeating_the_monster_childs_ending
 
 label begin_unlocking_her_door:
@@ -261,7 +280,7 @@ label get_closer:
     
     $ lipsync(Parents, "act4", 'audio_23', "C-Carla?")
     
-    Carlas face remains fixed to the floor.
+    "Carlas face remains fixed to the floor."
     
     $ lipsync(Carla, "act4", 'audio_24', "You came to play?")
         
@@ -280,18 +299,23 @@ label grab_carlas_food:
     Through great effort and care, you still prepare Carla a meal with love.
     
     A plate of body part shaped-chicken nuggets you made yourself along with a slice of cherry pie with a blood red sauce oozing out of the filling.
-    
+    """
+    show Parents mouth_B eye_serious brow_sad at laugh
+    """
     You chuckle to yourself knowing you did this hoping that Carla, wherever she is, will appreciate this meal.
-    
+    """
+    show Parents mouth_sad overlay_fear eye_serious brow_angry
+    """
     After grabbing the plate, you move towards her door eyeing the bat you prepared for any monsters in anticipation.
     
     Before interacting with the door, you take a moment to look at the numerous runes, religious symbols, and wards that you had placed on it.
     
     Your conflicting emotions swirl through you as you grab the knob on the foot of the door you use to pass Carla her food.
-    
+    """
+    with vpunch
+    """
     The knob is jammed.
     """
-    
     menu:
         "Pull the knob harder.":
             jump pull_the_knob_harder
@@ -400,11 +424,12 @@ label keep_fighting:
     return
 
 label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
+    scene bg bedroom_sunset
+    show blink
+    show Carla brow_sad eye_crying mouth_angry2 overlay_fear at left
     
-    show Carla brow_sad eye_crying mouth_angry2
-    
-    $ lipsync(Carla, "act4", 'audio_37', "Hello??")
-    $ lipsync(Carla, "act4", 'audio_38', "Wake up!")
+    $ lipsync(Carla, "act4", 'audio_37', "Hello??", 'mouth_angry2')
+    $ lipsync(Carla, "act4", 'audio_38', "Wake up!", 'mouth_angry2')
     
     """
     Carla's cries bring you to reality.
@@ -412,36 +437,53 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     On the ground, Carla tugs at your leg. You pull away and immediately stand up.
     """
     
-    $ lipsync(Parents, "act4", 'audio_39', "Carla!")
-    $ lipsync(Parents, "act4", 'audio_40', "I'm sick of these games.")
-    $ lipsync(Parents, "act4", 'audio_41', "Whatever you're doing you need to STOP.")
+    show Parents mouth_E overlay_fear eye_serious brow_angry
     
-    $ lipsync(Carla, "act4", 'audio_42', "I haven't done anything!")
+    $ lipsync(Parents, "act4", 'audio_39', "Carla!", 'mouth_fear')
+    
+    hide Parents
+    show Dad overlay_fear eye_serious brow_angry mouth_fear
+    show Mom overlay_fear eye_serious brow_angry mouth_fear
+    
+    $ lipsync(Dad, "act4", 'audio_40', "I'm sick of these games.", 'mouth_fear')
+    $ lipsync(Mom, "act4", 'audio_41', "Whatever you're doing you need to STOP.", 'mouth_X')
+    
+    show Carla brow_sad eye_default mouth_angry2 overlay_fear
+    $ lipsync(Carla, "act4", 'audio_42', "I haven't done anything!", 'mouth_angry2')
+    
+    show Mom mouth_D
     
     "Carla's face shows an innocent desperation."
     
-    $ lipsync(Parents, "act4", 'audio_43', "Don't lie to me.")
-    $ lipsync(Parents, "act4", 'audio_44', "First the carnival and then this?")
-    $ lipsync(Parents, "act4", 'audio_45', "It might be fun for you, but it's not for me!")
+    $ lipsync(Mom, "act4", 'audio_43', "Don't lie to me.", 'mouth_H')
+    $ lipsync(Dad, "act4", 'audio_44', "First the carnival and then this?")
+    $ lipsync(Mom, "act4", 'audio_45', "It might be fun for you, but it's not for me!", 'mouth_sad')
     
-    $ lipsync(Carla, "act4", 'audio_46', "That again?")
-    $ lipsync(Carla, "act4", 'audio_47', "I told you I didn't have anything to do with that.")
-    $ lipsync(Carla, "act4", 'audio_48', "You did the same thing again today!")
-    $ lipsync(Carla, "act4", 'audio_49', "The second we started playing, you /passed/ out //again//. ")
+    show Carla brow_surprised eye_default overlay_fear
+    $ lipsync(Carla, "act4", 'audio_46', "That again?", 'mouth_angry2')
+    show Carla brow_angry eye_crying
+    $ lipsync(Carla, "act4", 'audio_47', "I told you I didn't have anything to do with that.", 'mouth_G')
+    $ lipsync(Carla, "act4", 'audio_48', "You did the same thing again today!", 'mouth_angry2')
+    show Carla eye_default
+    $ lipsync(Carla, "act4", 'audio_49', "The second we started playing, you /passed/ out //again//. ", 'mouth_sad')
     
     "Carla purses her lips and she speaks again."
-    
-    $ lipsync(Carla, "act4", 'audio_50', "If you don't want to spend time with me then just tell me.")
-    $ lipsync(Carla, "act4", 'audio_51', "You don't have to fake it.")
+    show Carla eye_crying
+    $ lipsync(Carla, "act4", 'audio_50', "If you don't want to spend time with me then just tell me.", 'mouth_angry')
+    $ lipsync(Carla, "act4", 'audio_51', "You don't have to fake it.", 'mouth_angry')
     
     # <!--(THIRD MAJOR CHOICE)-->
     
+    hide Dad
+    hide Mom
+    show Parents mouth_fear eye_default brow_surprised
+    show parents_fear_overlay_mask
     """
     Carla's words cut deeply, but there is more at play here. Your account of the past events conflicts with Carla's retelling.
     
     That's to be expected if a demon is possibly taking her over...
     """
-    
+    hide parents_fear_overlay_mask with dissolve
     menu:
         "Carls, of course I want to spend time with you.":
             jump carls_of_course_i_want_to_spend_time_with_you
@@ -449,29 +491,43 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
             jump leave_the_room
 
 label leave_the_room:
+    show Parents mouth_sad eye_serious brow_angry
+    
     "You urgently move for the door but Carla tries to talk to you."
     
-    $ lipsync(Carla, "act4", 'audio_52', "Wait where are you going?")
+    show Carla brow_surprised eye_default mouth_angry2 with hpunch
+    $ lipsync(Carla, "act4", 'audio_52', "Wait where are you going?", 'mouth_angry2')
     
     """
     For a brief moment you hesitate, compelled to tell Carla what's happening.
     
     The demon might act if you give it away. You can't afford to be in another nightmare.
     """
+    show Parents mouth_sad eye_serious brow_sad
+    $ lipsync(Parents, "act4", 'audio_53', "I'll be back.", 'mouth_sad')
     
-    $ lipsync(Parents, "act4", 'audio_53', "I'll be back.")
+    show Carla brow_sad eye_default mouth_angry overlay_fear
+    $ lipsync(Carla, "act4", 'audio_54', "So you don't want to spend time with me?", 'mouth_fear')
+
+    hide Parents
+    show Dad mouth_sad brow_angry
+    show Mom mouth_sad eye_serious brow_angry
     
-    $ lipsync(Carla, "act4", 'audio_54', "So you don't want to spend time with me?")
-    
-    $ lipsync(Parents, "act4", 'audio_55', "That's not what I said, I just remembered I need to take care of something.")
+    $ lipsync(Mom, "act4", 'audio_55', "That's not what I said, I just remembered I need to take care of something.")
+    show Mom at mom_walk
     
     """
     Your mind is focused and Carla's voice fades out as you leave. 
-    
+
     You can't allow yourself to be honeyed by Carla's words since she can't be fully trusted.
     
     You feel shame and guilt for your actions but you press on.
     """
+    show Dad eye_serious brow_sad at dad_walk
+    """
+    You exit the room unable to cope with what you're about to do.
+    """
+    scene black with dissolve
     
     jump you_exit_the_room_unable_to_cope_with_what_youre_about_to_do
 
@@ -505,7 +561,8 @@ label open_the_doors:
     jump get_closer
 
 label pass_the_food_directly_to_carla:
-    $ lipsync(Parents, "act4", 'audio_57', "Carla, I have to open your door to pass your food.")
+    show Dad brow_sad eye_default mouth_sad
+    $ lipsync(Dad, "act4", 'audio_57', "Carla, I have to open your door to pass your food.", 'mouth_sad')
     
     $ lipsync(Carla, "act4", 'audio_58', "So I get to see you finally?")
     
@@ -563,56 +620,88 @@ label pull_the_knob_harder:
     You tightly grip the knob and take a deep breath.
     
     With a strong and quick tug you pull on the knob, hoping to make enough space to pass Carla her food.
-    
+    """
+    with sshake3
+    """
     You feel the door starting to give which signals you that you're almost there.
     
     One more pull and...
-    
+    """
+    with sshake2
+    """
     The knob snaps off of the door, causing you to fly backwards into the floor.
-    
+    """
+    hide Parents with dissolve
+    show Carla brow_angry2 eye_default mouth_C at left:
+        matrixcolor TintMatrix("#380e0e")*SaturationMatrix(1.0000)*ContrastMatrix(1.6574)
+    """
     Carla belts out in laughter as you pick yourself up.
     """
-    
-    $ lipsync(Parents, "act4", 'audio_75', "Ugh, shut up.")
-    
+    show Carla at laugh    
+    show Parents mouth_sad  eye_serious brow_angry
+    $ lipsync(Parents, "act4", 'audio_75', "Ugh, shut up.", 'mouth_sad')
+    show Carla at laugh
     "Carla continues to laugh."
+    hide Parents
+    show Dad mouth_sad eye_serious brow_angry
+    show Mom mouth_sad  eye_serious brow_angry
+    $ lipsync(Mom, "act4", 'audio_76', "I guess you're not eating today then.")
     
-    $ lipsync(Parents, "act4", 'audio_76', "I guess you're not eating today then.")
-    
+    show Carla brow_sad eye_default mouth_stingy overlay_fear
     "The laughter immediately ceases and Carla begs."
     
-    $ lipsync(Carla, "act4", 'audio_77', "Wait please, I'm starving.")
-    $ lipsync(Carla, "act4", 'audio_78', "I won't laugh any more I promise.")
+    $ lipsync(Carla, "act4", 'audio_77', "Wait please, I'm starving.", 'mouth_stingy')
+    $ lipsync(Carla, "act4", 'audio_78', "I won't laugh any more I promise.", 'mouth_E')
     
     "Unwilling to let your daughter starve, you decide to pass the food another way."
     
     jump pass_the_food_directly_to_carla
 
 label respond:
+    scene bg livingroom_night
+    show Dad brow_angry eye_default mouth_X
+    show Mom brow_sad eye_default mouth_C
+    $ lipsync(Mom, "act4", "audio_79", "I'll get to you when I can.")
+    $ lipsync(Dad, "act4", "audio_80", "just hang in there alright?", 'mouth_sad')
     
-    $ lipsync(Parents, "act4", "audio_79", "I'll get to you when I can.")
-    $ lipsync(Parents, "act4", "audio_80", "just hang in there alright?")
-    
+    show Carla at left:
+        matrixcolor TintMatrix("#380e0e")*SaturationMatrix(1.0000)*ContrastMatrix(1.6574)
     $ lipsync(Carla, "act4", "audio_81", "Sure.")
     $ lipsync(Carla, "act4", "audio_82", "I'll just wait here, it's not like I can go anywhere else.")
     
-    $ lipsync(Parents, "act4", "audio_83", "Excuse me missy.")
-    $ lipsync(Parents, "act4", "audio_84", "I'm trying to save you.")
-    $ lipsync(Parents, "act4", "audio_85", "Well, I'm not even sure if you're //Carla// right now.")
+    hide Mom
+    hide Dad
+    show Parents mouth_fear eye_serious brow_angry
+    $ lipsync(Parents, "act4", "audio_83", "Excuse me missy.", 'mouth_sad')
+    
+    hide Parents
+    show Dad mouth_sad eye_serious brow_angry
+    show Mom mouth_sad eye_serious brow_angry
+    
+    $ lipsync(Mom, "act4", "audio_84", "I'm trying to save you.", 'mouth_sad')
+    $ lipsync(Dad, "act4", "audio_85", "Well, I'm not even sure if you're //Carla// right now.", 'mouth_sad')
+
+    show Carla brow_default eye_default mouth_C overlay_fear at laugh
+    # matrixcolor TintMatrix("#211619")*Saturatio   nMatrix(1.0000)*ContrastMatrix(1.6574)
 
     "Carla laughs, making you uneasy as you start to put your papers down."
-        
-    $ lipsync(Carla, "act4", "audio_86", "Even after all those stupid tests we did you still don't believe me?")
     
-    $ lipsync(Parents, "act4", "audio_87", "There was something wrong with them.")
+    $ lipsync(Carla, "act4", "audio_86", "Even after all those stupid tests we did you still don't believe me?", 'mouth_C')
+    $ lipsync(Mom, "act4", "audio_87", "There was something wrong with them.")
+    
+    show Carla brow_angry2 eye_default mouth_stingy
     
     "Exasperated, Carla lets out a sigh."
     
-    $ lipsync(Carla, "act4", "audio_88", "What's wrong with yo-")
+    $ lipsync(Carla, "act4", "audio_88", "What's wrong with yo-", 'mouth_stingy')
     
-    $ lipsync(Parents, "act4", "audio_89", "You'll get fed, and that'll be that.")
-    $ lipsync(Parents, "act4", "audio_90", "Wait here.")
+    $ lipsync(Dad, "act4", "audio_89", "You'll get fed, and that'll be that.")
     
+    hide Dad
+    hide Mom
+    show Parents mouth_sad eye_serious brow_sad
+    $ lipsync(Parents, "act4", "audio_90", "Wait here.", 'mouth_sad')
+    hide Carla with dissolve
     jump grab_carlas_food
 
 label shut_the_door_and_lock_it:
@@ -734,6 +823,7 @@ label wait:
     jump attack_the_monster
 
 label you_exit_the_room_unable_to_cope_with_what_youre_about_to_do:
+    scene bg livingroom_night with fade
     """
     Halloween approaches and your anxiety mounts.
     
@@ -743,24 +833,28 @@ label you_exit_the_room_unable_to_cope_with_what_youre_about_to_do:
     
     Despite all of your effort, no one has given you a satisfactory solution or answer.
     """
-    
-    $ lipsync(Parents, "act4", "audio_112", "Don't bullshit me.")
-    $ lipsync(Parents, "act4", "audio_113", "I've seen it and you've seen these kinds of things too.")
-    $ lipsync(Parents, "act4", "audio_114", "It's TEXTBOOK possession.")
-    $ lipsync(Parents, "act4", "audio_115", "My girl is still in there somewhere.")
+    show Dad brow_angry eye_serious mouth_sad
+    show Mom eye_serious mouth_fear brow_angry
+    $ lipsync(Dad, "act4", "audio_112", "Don't bullshit me.", 'mouth_sad')
+    $ lipsync(Dad, "act4", "audio_113", "I've seen it and you've seen these kinds of things too.", 'mouth_X')
+    $ lipsync(Mom, "act4", "audio_114", "It's TEXTBOOK possession.", 'mouth_sad')
+    $ lipsync(Mom, "act4", "audio_115", "My girl is still in there somewhere.")
     
     "A wave of anger takes over. This expert is fake like the others."
-    
-    $ lipsync(Parents, "act4", "audio_116", "I'm telling you.")
-    $ lipsync(Parents, "act4", "audio_117", "There //is// something here!")
-    
+    hide Dad
+    hide Mom
+    show Parents mouth_angry eye_serious brow_angry overlay_fear
+    $ lipsync(Parents, "act4", "audio_116", "I'm telling you.", 'mouth_fear')
+    $ lipsync(Parents, "act4", "audio_117", "There //is// something here!", 'mouth_fear')
+    hide Parents
     """
     To avoid the converstation from dragging on any longer you hang up.
     
     Carla speaks from behind her bedroom door.
     """
-    
-    $ lipsync(Carla, "act4", "audio_118", "Is everything ok?")
+    scene bg bedroom_dark with fade
+    show Carla brow_sad at left
+    $ lipsync(Carla, "act4", "audio_118", "Is everything ok?", 'mouth_E')
     
     """
     You continue sifting through your notes ignoring Carla.
@@ -768,7 +862,7 @@ label you_exit_the_room_unable_to_cope_with_what_youre_about_to_do:
     Carla ruffles around in her room, before she speaks again.
     """
     
-    $ lipsync(Carla, "act4", "audio_119", "I'm hungry.")
+    $ lipsync(Carla, "act4", "audio_119", "I'm hungry.", 'mouth_sad')
     
     menu:
         "Respond.":

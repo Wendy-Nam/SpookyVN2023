@@ -28,7 +28,7 @@ init python:
             self.IMG_WEAPON = 'images/shooting_minigame/rifle.png'
             # Determine size of the weapon image
             self.IMG_SIZE_WEAPON = renpy.image_size(self.IMG_WEAPON)
-            
+
 # Initialize the game
 init:
     image normal_target:
@@ -44,14 +44,27 @@ init:
 
     image avoid_target:
         'images/shooting_minigame/targets/carla1.png'
-        pause 5.0
+        pause 1.0
         'images/shooting_minigame/targets/carla2.png'
-        pause 5.0
+        pause 1.0
         repeat
     
-    image target_hitted:
-        'images/shooting_minigame/targets/duck4.png'
-        linear 0.5 yzoom 0.2 yoffset 50
+    image boss_target:
+        'images/shooting_minigame/targets/duck_boss.png'
+
+    transform target_hitted(xpos, ypos):
+        pos (xpos, ypos)
+        parallel:
+            linear 0.8 yzoom 0.1 yoffset 100
+        parallel:
+            linear 1.5 alpha 0.0
+            
+    transform boss_target_hitted(xpos, ypos):
+        pos (xpos, ypos)
+        parallel:
+            linear 1.0 zoom 1.0
+        parallel:
+            linear 1.5 alpha 0.0
     
     # Define transforms for animations
     # Moving aim transform to follow the cursor
@@ -72,7 +85,27 @@ init:
             linear target_speed xpos 1500
             xpos 300
             repeat
-
+    
+    transform moving_boss_target(target_speed=1.0, target_ypos=275, target_scale=1.0):
+        parallel:
+            zoom 1.0
+            linear 0.5 zoom 2.5
+            linear 0.5 zoom 1.0
+            repeat
+        parallel:
+            ypos target_ypos
+            linear 0.2 yoffset -50
+            yoffset 50
+            repeat
+        parallel:
+            linear target_speed ypos 275
+            ypos renpy.random.choice([180, 420, 650])
+            repeat
+        parallel:
+            linear 0.8 xpos 1500
+            xpos 300
+            repeat
+    
     # Moving weapon transform for weapon animation
     transform moving_weapon:    
         function moveWeapon
@@ -119,6 +152,40 @@ init:
                     else:
                         image minigame1.config.IMG_BULLET:
                             xalign 0.5 yalign 0.5 zoom 2.0
+                            
+    screen boss_round_board():
+        # Frame to display round and score information
+        frame align(0, 0, 1.0):
+            margin (30, 30)
+            padding (15, 15)
+            background "#ffffff00"
+            vbox:
+                # Display remaining targets and total targets
+                text "{b}{i}HP: {color=#ffff00}%d{/color} / %d{/i}{/b}  " % (minigame1.boss_target.life_now, minigame1.boss_target.life_max) size 35 color "#ffffff" yalign 0.5 line_spacing 5
+                # Display time left with red color if running out
+                timer 1 repeat True action If(minigame1.status.time_left > 0 and minigame1.is_round_running == True, true=[SetVariable('minigame1.status.time_left', minigame1.status.time_left - 1)])
+                text "{b}{i}Time Left : %d{/i}{/b}  " % (minigame1.status.time_left) size 35 line_spacing 5 at alpha_dissolve:
+                    if minigame1.status.time_left <= 2:
+                        color "#ff0000"
+                    else:
+                        color "#ffffff"
+        # Frame to display bullet and life information
+        frame align (1.0, 0.0):
+            margin (30, 30)
+            padding (10, 10)
+            background "#4f5a6680"
+            hbox:
+                # Display remaining bullets
+                text "{b}{i} Bullets: %d{/i}{/b}  " % minigame1.status.bullet_now size 35 color "#ffffff" yalign 0.5
+                # Display bullet images based on remaining bullets
+                for i in range(minigame1.status.bullet_max):
+                    if minigame1.status.bullet_max > minigame1.status.bullet_now + i:
+                        image minigame1.config.IMG_BULLET_EMPTY:
+                            xalign 0.5 yalign 0.5 alpha 0.25 zoom 2.0
+                    else:
+                        image minigame1.config.IMG_BULLET:
+                            xalign 0.5 yalign 0.5 zoom 2.0
+
     image aim_idle:
         zoom 0.5
         minigame1.config.IMG_AIM_IDLE
@@ -173,17 +240,27 @@ init python:
             # Initialize game elements based on provided configuration
             self.config = config
             self.player = self.Player(self.config)
-            self.targets = [self.Target(self.config, i) for i in range(self.config.target_nb)]
+            self.targets = []
+            self.boss_target = None
             self.status = self.Status(self.config.target_nb, self.config.time_limit, self.config.bullet_max)
             self.is_round_running = True
             self.is_game_running = True
 
         def run(self):
+            boss_round_started = False
             # Run through rounds of the game
             self.round_init()
             while self.is_round_running and self.is_game_running:
                 self.player.attack(self.status, self.targets)
                 self.handle_events()
+            if self.is_game_running:
+                self.boss_round_init()
+                boss_round_started = True
+            while self.is_game_running:
+                self.player.attack_boss(self.status, self.boss_target)
+                self.handle_events()
+            if boss_round_started:
+                self.boss_round_end()
             return None
             
         def round_init(self):
@@ -191,14 +268,34 @@ init python:
             renpy.scene('black')
             # renpy.say(who=None, what="ROUND " + str(self.status.round_now), interact=True)
             renpy.show_screen("board")
-            for i in range(self.config.target_nb):
+            normal_target_nb = self.config.target_nb
+            avoid_target_nb = int(self.config.target_nb / 2)
+            total_target_nb = normal_target_nb + avoid_target_nb
+            for i in range(normal_target_nb):
                 self.targets.append(self.Target(self.config, i))
                 self.targets[i].display()
+            for i in range(avoid_target_nb):
+                self.targets.append(self.AvoidTarget(self.config, normal_target_nb+i))
+                self.targets[normal_target_nb+i].display()
             self.is_round_running = True
-            
+        
+        def boss_round_init(self):
+            # Initialize boss round elements
+            renpy.say(who=None, what="BOSS ROUND", interact=True)
+            renpy.show_screen("boss_round_board")
+            self.boss_target = self.BossTarget(self.config, 1)
+            self.boss_target.display()
+        
+        def boss_round_end(self):
+            # Initialize boss round elements
+            renpy.hide("boss_round_board")
+            self.status.boss_killed = True
+        
         def round_end(self, result, is_game_over=False):
             # End the current round
             renpy.hide_screen("board")
+            renpy.scene()
+            renpy.show("bg carnival_minigame")
             self.targets.clear()
             self.is_round_running = False
             renpy.say(who=None, what=result, interact=True)
@@ -208,10 +305,15 @@ init python:
         
         def handle_events(self):
             # Handle various game events
+            if self.boss_target:
+                if self.boss_target.killed:
+                    self.round_end("clear")
+                    self.is_game_running = False
+                    return
             if self.status.is_game_over():
                 self.round_end("GAME OVER", True)
                 return
-            if self.status.is_clear():
+            if (self.boss_target is None) and self.status.is_clear():
                 self.round_end("clear")
                 return
             if self.status.is_time_up():
@@ -230,13 +332,34 @@ init python:
                 # Perform player attack and hit detection
                 renpy.call_screen("gun")
                 self.hit_pos = [renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]]
-                for i in range(self.config.target_nb):
+                targets_nb = int(self.config.target_nb * 3/2)
+                for i in range(targets_nb):
                     if not targets[i].killed:
                         pos = targets[i].get_pos()
                         if self.is_hit(pos, targets[i].image_size):
                             targets[i].hide()
                             targets[i].killed = True
-                            status.target_now -= 1
+                            if targets[i].image == 'normal_target':
+                                status.target_now -= 1
+                            elif targets[i].image == 'avoid_target':
+                                status.bullet_now -= 1
+                                status.karma += 1
+                renpy.with_statement(vpunch)
+                if self.fired:
+                    status.bullet_now -= 1
+                    self.fired = False
+                return None
+            
+            def attack_boss(self, status, boss):
+                renpy.call_screen("gun")
+                self.hit_pos = [renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]]
+                if not boss.killed:
+                    pos = boss.get_pos()
+                    if self.is_hit(pos, boss.image_size):
+                        boss.life_now -= 1
+                        if boss.life_now <= 0:
+                            boss.hide()
+                            boss.killed = True
                 renpy.with_statement(vpunch)
                 if self.fired:
                     status.bullet_now -= 1
@@ -269,15 +392,46 @@ init python:
                 # Display the target on screen
                 self.position = At(ImageReference(self.image), moving_target(self.target_speed, self.target_ypos, self.target_scale))
                 renpy.show(name=self.id, what=self.position)
-                
+
             def get_pos(self):
                 # Get the current position of the target
                 return self.position.xpos, self.position.ypos
             
             def hide(self):
                 # Hide the target
+                hitted_position = At(ImageReference(self.image), target_hitted(xpos=self.position.xpos, ypos=self.position.ypos))
+                renpy.show(name=str(-int(self.id)), what=hitted_position)
                 renpy.hide(self.id)
-    
+                
+        class AvoidTarget(Target):
+            def __init__(self, config, id):
+                # Initialize target attributes
+                super().__init__(config, id)
+                self.image = 'avoid_target'
+                self.image_path = 'images/shooting_minigame/targets/carla1.png'
+                self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
+                
+        class BossTarget(Target):
+            def __init__(self, config, id):
+                # Initialize target attributes
+                super().__init__(config, id)
+                self.image = 'boss_target'
+                self.image_path = 'images/shooting_minigame/targets/duck_boss.png'
+                self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
+                self.life_max = 5
+                self.life_now = self.life_max
+                self.killed = False
+            
+            def display(self):
+                # Display the target on screen
+                self.position = At(ImageReference(self.image), moving_boss_target(self.target_speed, self.target_ypos, self.target_scale))
+                renpy.show(name=self.id, what=self.position)
+
+            def hide(self):        
+                # Hide the target
+                hitted_position = At(ImageReference(self.image), boss_target_hitted(xpos=self.position.xpos, ypos=self.position.ypos))
+                renpy.show(name=str(-int(self.id)), what=hitted_position)
+                renpy.hide(self.id)
         # Define the Status class
         class Status:
             def __init__(self, target_nb, time_limit, bullet_max):
@@ -288,7 +442,9 @@ init python:
                 self.target_now = target_nb
                 self.time_left = time_limit
                 self.bullet_now = bullet_max
-
+                self.boss_killed = False
+                self.karma = 0 # how many "don't hit" targets were hit
+            
             def is_game_over(self):
                 # Check if the game is over
                 if self.bullet_now <= 0:

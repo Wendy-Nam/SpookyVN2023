@@ -121,7 +121,7 @@ layeredimage Mom:
             'mom_eyes_default'
         attribute eye_crying:
             'mom_eyes_cyring'
-        attribute eyes_serious:
+        attribute eye_serious:
             'mom_eyes_serious'
         attribute eye_closed:
             'images/charactors/mom/eyes/eyes_closed.png'
@@ -203,7 +203,7 @@ layeredimage Parents:
             'parents_eyes_default'
         attribute eye_crying:
             'parents_eyes_cyring'
-        attribute eyes_serious:
+        attribute eye_serious:
             'parents_eyes_serious'
         attribute eye_closed:
             'images/charactors/parents/eyes/eyes_closed.png'
@@ -267,8 +267,8 @@ image kid_eyes_cyring:
 layeredimage Carla:
     at sprite_highlight('Carla')
     zoom 0.8
-    crop (0.27, 0.35, 0.47, 0.67)
-    
+    crop (0.35, 0.2, 1.0, 1.0) 
+
     always:
         "images/charactors/kid/base.png" pos (-40, -140)
     group eyes:

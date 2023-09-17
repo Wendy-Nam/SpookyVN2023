@@ -240,24 +240,21 @@ screen quick_menu():
 
     ## Ensure this appears on top of other screens.
     zorder 100
-
-    if quick_menu:
-
+    if quick_menu and not renpy.get_screen('choice'):
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-
+            xalign 0.84
+            yalign 0.91
+            spacing 20
+            imagebutton idle "gui/quickmenu/icon_history.png" action ShowMenu('history') yalign 0.6
+            imagebutton idle "gui/quickmenu/icon_preference.png" action ShowMenu('preferences') yalign 0.6
+            imagebutton idle "gui/quickmenu/icon_save.png" action ShowMenu('save') yalign 0.6
+            imagebutton idle "gui/quickmenu/icon_back.png" action Rollback() 
+            imagebutton idle "gui/quickmenu/icon_next.png" action Rollback() 
+            imagebutton idle "gui/quickmenu/icon_skip.png" action Skip() alternate Skip(fast=True, confirm=True)
+            
+            
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -1247,7 +1244,7 @@ style skip_text:
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
-    font "Molengo-Regular.ttf"
+    font "madspixel2.ttf"
 
 
 ## Notify screen ###############################################################
