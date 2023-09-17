@@ -19,7 +19,7 @@ def generate_lipsync_data(chapter_dir, audio_file):
 # Iterate through chapters and voice files
 chapters = [d for d in os.listdir(os.path.join(script_dir, os.pardir, "audio/voice")) if os.path.isdir(os.path.join(script_dir, os.pardir, "audio/voice", d))]
 for chap in chapters:
-    voice_dir = os.path.join(os.path.join(script_dir, os.pardir, "audio/voice"), chap)
+    voice_dir = os.path.join(os.path.join(script_dir, os.pardir, "audio", "voice"), chap)
     voice_files = [f for f in os.listdir(voice_dir) if f.endswith(".wav") or f.endswith(".ogg")]
     for voice_file in voice_files:
         generate_lipsync_data(chap, voice_file)

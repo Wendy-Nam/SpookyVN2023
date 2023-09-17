@@ -288,7 +288,7 @@ init python:
         
         def boss_round_end(self):
             # Initialize boss round elements
-            renpy.hide("boss_round_board")
+            renpy.hide_screen("boss_round_board")
             self.status.boss_killed = True
         
         def round_end(self, result, is_game_over=False):
