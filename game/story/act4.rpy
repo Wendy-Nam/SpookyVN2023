@@ -38,8 +38,23 @@ label carls_of_course_i_want_to_spend_time_with_you:
     show Parents eye_default at parents_walk
     
     show Carla brow_sad mouth_H overlay_fear
+    
+    window auto hide
+    camera:
+        subpixel True crop_relative True 
+        zoom 1.0 crop (0.0, 0.0, 1.0, 1.0) 
+        linear 0.19 zoom 1.22 crop (0.0, 0.05, 1.0, 1.0) 
+        linear 0.19 zoom 1.32 crop (0.00, 0.21, 1.0, 1.0) 
+        linear 0.17 zoom 1.6 crop (0.00, 0.33, 1.0, 1.0) 
+    with Pause(0.65)
+    camera:
+        zoom 1.6 crop (0.00, 0.33, 1.0, 1.0) 
+    window auto show
+
     "Carla's kind smile slowly transforms into a sinister smile as you walk out."
     
+    camera
+        
     scene black with dissolve
     
     "you exit the room unable to cope with what you're about to do."
@@ -1014,9 +1029,21 @@ label you_exit_the_room_unable_to_cope_with_what_youre_about_to_do:
     "A wave of anger takes over. This expert is fake like the others."
     hide Dad
     hide Mom
-    show Parents mouth_angry eye_serious brow_angry overlay_fear
+    show Parents eye_serious brow_angry overlay_fear
+    
+    camera:
+        subpixel True crop_relative True xzoom 1.0 crop (0.0, 0.0, 1.0, 1.0) 
+        anchor (0, 0) zoom 1.0 
+        linear 0.15 anchor (351, 315) zoom 1.5 
+    with Pause(0.2)
+    camera:
+        anchor (351, 315) zoom 1.5 
+
     $ lipsync(Parents, "act4", "audio_116", "I'm telling you.", 'mouth_fear')
     $ lipsync(Parents, "act4", "audio_117", "There //is// something here!", 'mouth_fear')
+    
+    camera
+    
     hide Parents
     """
     To avoid the converstation from dragging on any longer you hang up.

@@ -1,17 +1,30 @@
 label act11:
-    
+    scene black
+    scene bg livingroom_night
+    camera:
+        zoom 2.5 anchor (18, 72)
+        linear 2.5 zoom 1.0 anchor (0, 0) 
     """
     You and your child, Carla, walk into your home on Halloween night after a successful Trick or Treat adventure.
-    
+    """
+    camera:
+        linear 0.5 zoom 1.85 anchor (0, 800)
+    """
     She excitedly sets her full bucket of candy down and begins taking out empty candy wrappers.
     
     After a few moments, she stops to ask you a question.
     """
-    
+    show Carla at left
+
     $ lipsync(Carla, 'act1', "audio_0", "Why do people leave 'Take One Only' signs in front of their door?")
     $ lipsync(Carla, 'act1', "audio_1", "It makes me want to take more than that?")
+    
+    camera:
+        linear 1.0 zoom 1.0 anchor (0, 0)
 
     "Carla finishes taking out the wrappers and holds them up towards you."
+    show Dad
+    show Mom
     
     $ lipsync(Mom, 'act1', "audio_2", "Good thing I was there so you wouldn't take more than one.")
     

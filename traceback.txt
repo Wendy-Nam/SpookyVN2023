@@ -1,40 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/story/act4.rpy:513
-  File "game/story/act4.rpy", line 512, in script
-    show Carla:
-Exception: Not a displayable: <store._MultiplyMatrix object at 0x1277793a0>
+While running game code:
+  File "game/story/act4.rpy", line 41, in script
+    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
+  File "game/story/act4.rpy", line 41, in <module>
+    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
+NameError: name 'camera_moves' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/act4.rpy", line 512, in script
-    show Carla:
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1428, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1391, in show_imspec
-    renpy.config.show(name,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 759, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 1280, in add
-    thing.visit_all(lambda d : None)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 674, in visit_all
-    for d in self.visit():
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 636, in visit
-    block = self.compile()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 543, in compile
-    block = self.atl.compile(self.context)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 745, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 745, in <listcomp>
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 1051, in compile
-    child = renpy.easy.displayable(child)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/easy.py", line 145, in displayable
-    raise Exception("Not a displayable: %r" % (d,))
-Exception: Not a displayable: <store._MultiplyMatrix object at 0x1277793a0>
+  File "game/story/act4.rpy", line 41, in script
+    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/story/act4.rpy", line 41, in <module>
+    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
+NameError: name 'camera_moves' is not defined
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Mon Sep 18 14:54:38 2023
+Mon Sep 18 16:51:49 2023

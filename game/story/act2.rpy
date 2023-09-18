@@ -49,7 +49,7 @@ label when_you_lose:
     with vpunch
     show debris2
     show monster_ducklings at monster_ducklings_attack
-    show Parents overRRlay_blood
+    show Parents overlay_blood
     with vpunch
     """
     Their endless numbers overwhelm you as you feel teeth sinking into your flesh. 
@@ -465,14 +465,18 @@ label act25b:
     $ lipsync(Mom, 'act2', 'audio_54', "That's enough.")
     $ lipsync(Mom, 'act2', 'audio_55', "We're going to put all of...")
     $ lipsync(Mom, 'act2', 'audio_56', "Whatever this is away and it'll be bed time.")
+    camera:
+        linear 0.5 offset (0.0, -1053.0) matrixanchor (0.5, 0.55) zoom 2.16 
     show Carla brow_angry eye_default mouth_angry
     """
     Carla angrily looks at you.
-    
+    """
+    show Carla brow_angry eye_crying mouth_angry overlay_fear
+    """
     Her eyes begin to water and she begins to scream.
     """
+    camera
     show bg carnival_minigame with sshake3
-    show Carla brow_angry eye_crying mouth_angry overlay_fear
     """
     The environment begins to shake and you notice the targets from the minigame have morphed into disfigured versions of their previous incarnation.
     """
