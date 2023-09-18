@@ -46,7 +46,10 @@ label when_you_lose:
     
     Before you can let out your next words, the targets leap out at you.
     """
-    show Parents overlay_blood
+    with vpunch
+    show debris2
+    show monster_ducklings at monster_ducklings_attack
+    show Parents overRRlay_blood
     with vpunch
     """
     Their endless numbers overwhelm you as you feel teeth sinking into your flesh. 
@@ -236,7 +239,6 @@ label act22a:
     
     $ lipsync(Mom, 'act2', 'audio_27', "Carls, please no monsters.")
     $ lipsync(Mom, 'act2', 'audio_28', "I had plenty of those to deal with tonight.")
-    
     
     $ lipsync(Carla, 'act2', 'audio_29', "They were fake though!")
     $ lipsync(Carla, 'act2', 'audio_30', "It won't be violent, I promise.")
@@ -478,6 +480,7 @@ label act25b:
     hide Dad
     show Parents mouth_fear overlay_fear eye_default brow_surprised
     with sshake2
+    show debris2
     """
     The decaying situation raises your heart rate again and you begin yelling back at Carla to stop.
     """
@@ -486,12 +489,14 @@ label act25b:
     with sshake3
     """
     Carla's scream continues and the targets face you again.
-    
+    """
+    show monster_ducklings at monster_ducklings_attack
+    show Parents overlay_blood
+    """
     Before you can act, they begin jumping at you until you're overwhelmed.
     
     The abominations begin gnawing at your body as you cry out in agony.
     """
-    show Parents overlay_blood
     with sshake2
     jump act26
 
@@ -501,6 +506,7 @@ label act25c:
     jump when_you_lose
 
 label act26:
+    show debris1
     $ lipsync(Parents, 'act2', 'audio_58', "Carla!", default_mouth="mouth_fear")
     $ lipsync(Parents, 'act2', 'audio_59', "Please!", default_mouth="mouth_fear")
     with sshake2
@@ -510,5 +516,4 @@ label act26:
     
     With every ounce of strength you have, you try to fight off the monsters but to no avail.
     """
-    
     jump act31

@@ -33,11 +33,11 @@ init python:
 init:
     image normal_target:
         'images/shooting_minigame/targets/duck1.png'
-        pause 3.0
-        'images/shooting_minigame/targets/duck2.png'
-        pause 5.0
-        'images/shooting_minigame/targets/duck3.png'
         pause 2.0
+        'images/shooting_minigame/targets/duck2.png'
+        pause 1.0
+        'images/shooting_minigame/targets/duck3.png'
+        pause 1.0
         'images/shooting_minigame/targets/duck4.png'
         pause 2.0
         repeat
@@ -46,7 +46,7 @@ init:
         'images/shooting_minigame/targets/carla1.png'
         pause 1.0
         'images/shooting_minigame/targets/carla2.png'
-        pause 1.0
+        pause 0.5
         repeat
     
     image boss_target:
@@ -60,11 +60,12 @@ init:
             linear 1.5 alpha 0.0
             
     transform boss_target_hitted(xpos, ypos):
+        zoom 2.5
         pos (xpos, ypos)
         parallel:
-            linear 1.0 zoom 1.0
-        parallel:
             linear 1.5 alpha 0.0
+        parallel:
+            linear 1.5 zoom 3.5
     
     # Define transforms for animations
     # Moving aim transform to follow the cursor
@@ -87,10 +88,10 @@ init:
             repeat
     
     transform moving_boss_target(target_speed=1.0, target_ypos=275, target_scale=1.0):
+        zoom target_scale
         parallel:
-            zoom 1.0
+            linear 0.5 zoom 2.0
             linear 0.5 zoom 2.5
-            linear 0.5 zoom 1.0
             repeat
         parallel:
             ypos target_ypos
@@ -98,12 +99,12 @@ init:
             yoffset 50
             repeat
         parallel:
-            linear target_speed ypos 275
+            linear target_speed ypos -50
             ypos renpy.random.choice([180, 420, 650])
             repeat
         parallel:
-            linear 0.8 xpos 1500
-            xpos 300
+            linear 1.5 xpos 1500
+            xpos -300
             repeat
     
     # Moving weapon transform for weapon animation
@@ -417,6 +418,7 @@ init python:
                 super().__init__(config, id)
                 self.image = 'boss_target'
                 self.image_path = 'images/shooting_minigame/targets/duck_boss.png'
+                self.target_scale = 2.5
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
                 self.life_max = 5
                 self.life_now = self.life_max
