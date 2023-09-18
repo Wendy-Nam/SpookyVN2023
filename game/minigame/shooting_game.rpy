@@ -317,7 +317,7 @@ init python:
                 self.round_end("clear")
                 return
             if self.status.is_time_up():
-                self.round_end("time up")
+                self.round_end("time up", True)
                 return
     
         # Define the Player class
@@ -360,7 +360,6 @@ init python:
                         if boss.life_now <= 0:
                             boss.hide()
                             boss.killed = True
-                            status.boss.killed = True
                 renpy.with_statement(vpunch)
                 if self.fired:
                     status.bullet_now -= 1

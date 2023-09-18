@@ -449,8 +449,28 @@ label act31:
     You open your eyes.
     """
     scene bg livingroom_night
-    show blink
     show Carla eye_crying brow_angry2 mouth_angry2 overlay_fear at left
+    show blink
+
+    camera:
+        subpixel True alpha 1.0 
+        parallel:
+            yoffset -900
+            linear 2.22 yoffset -600 
+        parallel:
+            zoom 1.85 blur 0.0 
+            linear 2.07 zoom 2.0 blur 0.2 
+            linear 2.15 zoom 1.5 blur 0.0 
+        parallel:
+            matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 2.07 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.2)*HueMatrix(0.0) 
+            linear 2.08 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.2)*HueMatrix(0.0) 
+            linear 2.07 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    with Pause(2.5)
+    camera:
+        yoffset -300 zoom 1.5 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    
+    camera
     """
     Carla continues to scream, but you find yourself back in the living room.
     
@@ -536,7 +556,7 @@ label act31:
     
     Carla has been with some family friends at the pool and you decide to seize the moment to catch up on some of the research notes you've gathered in the past month.
     """
-    
+    window auto hide
     menu:
         "Go to the office.":
             jump act32a

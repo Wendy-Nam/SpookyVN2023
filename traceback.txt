@@ -1,26 +1,58 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/act4.rpy", line 41, in script
-    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
-  File "game/story/act4.rpy", line 41, in <module>
-    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
-NameError: name 'camera_moves' is not defined
+  File "game/minigame/underwater_game.rpy", line 46, in script call
+    call outline_example
+  File "game/utils/outline_shader.rpy", line 43, in script
+    pause
+  File "renpy/common/000statements.rpy", line 461, in execute_pause
+    renpy.pause()
+ShaderError: ERROR: 0:74: '' : syntax error: #line
+ERROR: 0:140: '' : syntax error: #line
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/act4.rpy", line 41, in script
-    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/story/act4.rpy", line 41, in <module>
-    $ camera_moves( ( (0, 0, 0, 180, 1, 'linear'), (-1800, 0, 500, 0, 1.5, 'linear') ) )
-NameError: name 'camera_moves' is not defined
+  File "game/minigame/underwater_game.rpy", line 46, in script call
+    call outline_example
+  File "game/utils/outline_shader.rpy", line 43, in script
+    pause
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 2259, in execute
+    self.call("execute")
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 461, in execute_pause
+    renpy.pause()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2792, in draw_screen
+    renpy.display.draw.draw_screen(surftree)
+  File "gl2draw.pyx", line 927, in renpy.gl2.gl2draw.GL2Draw.draw_screen
+  File "gl2draw.pyx", line 1429, in renpy.gl2.gl2draw.GL2DrawingContext.draw
+  File "gl2draw.pyx", line 1410, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1410, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1410, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  [Previous line repeated 3 more times]
+  File "gl2draw.pyx", line 1321, in renpy.gl2.gl2draw.GL2DrawingContext.draw_one
+  File "gl2draw.pyx", line 1276, in renpy.gl2.gl2draw.GL2DrawingContext.draw_model
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/gl2/gl2shadercache.py", line 278, in get
+    rv.load()
+  File "gl2shader.pyx", line 230, in renpy.gl2.gl2shader.Program.load
+  File "gl2shader.pyx", line 213, in renpy.gl2.gl2shader.Program.load_shader
+ShaderError: ERROR: 0:74: '' : syntax error: #line
+ERROR: 0:140: '' : syntax error: #line
+
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Mon Sep 18 16:51:49 2023
+Mon Sep 18 21:59:36 2023

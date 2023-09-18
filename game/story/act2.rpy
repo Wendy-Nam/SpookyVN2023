@@ -41,12 +41,15 @@ label when_you_lose:
     show Parents eye_default brow_surprised mouth_fear overlay_fear
     show Carla brow_angry eye_crying mouth_angry overlay_fear
     with sshake
+    camera:
+        linear 0.5 offset (0.0, -1053.0) matrixanchor (0.5, 0.55) zoom 2.16 
     """
     Carla screams at you and the shooting gallery begins to shudder.
     
     Before you can let out your next words, the targets leap out at you.
     """
     with vpunch
+    camera
     show debris2
     show monster_ducklings at monster_ducklings_attack
     show Parents overlay_blood
@@ -428,7 +431,9 @@ label act25a:
     $ minigame1.run()
     $ score = [(minigame1.status.target_nb - minigame1.status.target_now), minigame1.status.target_nb] 
     $ karma = [(minigame1.status.karma)]
-    $ boss_killed = (minigame1.status.boss_killed)
+    $ boss_killed = False
+    if (minigame1.boss_target is not None):
+        $ boss_killed = True
     "Score : [score[0]]/[score[1]]"
     "Karma : [karma]"
     if boss_killed:
@@ -513,7 +518,9 @@ label act26:
     show debris1
     $ lipsync(Parents, 'act2', 'audio_58', "Carla!", default_mouth="mouth_fear")
     $ lipsync(Parents, 'act2', 'audio_59', "Please!", default_mouth="mouth_fear")
+    hide Parents
     with sshake2
+    
     scene black with dissolve
     """
     Your vision blurrs as the blood drains from your body.

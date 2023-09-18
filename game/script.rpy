@@ -4,9 +4,7 @@ define Mom = Character("Mom", color="#ffffff", callback= name_callback, cb_name=
 define Dad = Character("Dad", color="#ffffff", callback= name_callback, cb_name="Dad")
 define narrator = Character(callback= name_callback, cb_name="None")
 
-screen Image_Tools:
-    textbutton "Image Tools" action ShowMenu("image_tools")
-
 label start:
-    jump act11
+    jump underwater_game
+    # jump act11
     

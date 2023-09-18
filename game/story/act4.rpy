@@ -39,7 +39,6 @@ label carls_of_course_i_want_to_spend_time_with_you:
     
     show Carla brow_sad mouth_H overlay_fear
     
-    window auto hide
     camera:
         subpixel True crop_relative True 
         zoom 1.0 crop (0.0, 0.0, 1.0, 1.0) 
@@ -49,7 +48,6 @@ label carls_of_course_i_want_to_spend_time_with_you:
     with Pause(0.65)
     camera:
         zoom 1.6 crop (0.00, 0.33, 1.0, 1.0) 
-    window auto show
 
     "Carla's kind smile slowly transforms into a sinister smile as you walk out."
     
