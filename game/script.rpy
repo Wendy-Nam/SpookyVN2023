@@ -5,6 +5,7 @@ define Dad = Character("Dad", color="#ffffff", callback= name_callback, cb_name=
 define narrator = Character(callback= name_callback, cb_name="None")
 
 label start:
+    # show screen extra_animated_value_screen
     jump underwater_game
     # jump act11
     

@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/namseoa/Desktop/renpy_games/A_Trick_Of_Mind/game/saves/persistent.1695131718.tmp'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/main.py", line 684, in main
+    renpy.persistent.update(True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/persistent.py", line 401, in update
+    save()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/persistent.py", line 419, in save
+    renpy.loadsave.location.save_persistent(compressed)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/savelocation.py", line 545, in save_persistent
+    l.save_persistent(data)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/savelocation.py", line 374, in save_persistent
+    with open(fn_tmp, "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/namseoa/Desktop/renpy_games/A_Trick_Of_Mind/game/saves/persistent.1695131718.tmp'
+
+macOS-13.2-arm64-arm-64bit arm64
+Ren'Py 8.1.2.23090503
+A_Trick_Of_Mind 1.0
+Tue Sep 19 23:04:50 2023

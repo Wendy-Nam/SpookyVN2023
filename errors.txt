@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/minigame/underwater_game.rpy", line 28: the right_bar keyword argument was not given a value.
+    right_bar 
+              ^
+
+Ren'Py Version: Ren'Py 8.1.2.23090503
+Tue Sep 19 22:41:34 2023
