@@ -33,6 +33,7 @@ init:
                     style "fixed_bar"
 
     image nose:
+        zoom 2.0
         "images/underwater_minigame/nose.png"
 
     image bubble:
@@ -59,7 +60,16 @@ init:
             ypos -30
             linear target_speed ypos 1000
             repeat
-            
+    
+    transform bubble_popped(xpos, ypos):
+        pos (xpos, ypos)
+        parallel:
+            zoom 1.0
+            linear 0.3 zoom 2.0
+            linear 0.2 zoom 2.5
+        parallel:
+            linear 0.5 alpha 0.0
+        
     transform moving_nose:
         function moveNose
         yalign 0.9
@@ -79,12 +89,14 @@ init python:
             self.status = self.Status()
             self.nose = "images/underwater_minigame/nose.png"
             self.status.is_game_over = False
+            self.bubble_spawn_timer = 0
+            self.bubble_spawn_interval = 1.0  # Adjust this interval as needed
         
         def round_init(self):
             renpy.show('nose',at_list=[moving_nose])
-            for i in range(25):
-                self.bubbles.append(self.Bubble(i+1))
-                self.bubbles[i].display()
+            # for i in range(25):
+            #     self.bubbles.append(self.Bubble(i+1))
+            #     self.bubbles[i].display()
             self.status.display()
         
         def round_end(self):
@@ -101,26 +113,39 @@ init python:
             self.round_end()
         
         def update(self):
+            self.bubble_spawn_timer += 0.1  # Increase the timer
             if self.status.is_clear() or self.status.is_fail():
                 return
+            # Check if it's time to spawn a new bubble
+            if self.bubble_spawn_timer >= self.bubble_spawn_interval:
+                self.spawn_bubble()
+                self.bubble_spawn_timer = 0
+
             for bubble in self.bubbles:
+                if bubble.popped:
+                    continue
                 if self.is_hit(bubble):
                     self.status.air_hp += 1
                     bubble.hide()
         # Define a class for the bubble object
         def is_hit(self, bubble):
-            if bubble.popped == False:
-                mouse_x, mouse_y = renpy.get_mouse_pos()[0], 800
-                bubble_pos = bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
-                bubble_size = bubble.image_size
-                print(mouse_x, mouse_y, bubble_pos, bubble_size)
-                if bubble_pos[0] is None:
-                    return False
-                if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
-                    if bubble_pos[1] <= mouse_y <= bubble_pos[1] + bubble_size[1]:
-                        bubble.popped = True
-                        return True
-                    return False
+            mouse_x, mouse_y = renpy.get_mouse_pos()[0], 800
+            bubble_pos = bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
+            bubble_size = bubble.image_size
+            print(mouse_x, mouse_y, bubble_pos, bubble_size)
+            if bubble_pos[0] is None:
+                return False
+            if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
+                if bubble_pos[1] <= mouse_y <= bubble_pos[1] + bubble_size[1]:
+                    bubble.popped = True
+                    return True
+                return False
+        
+        def spawn_bubble(self):
+            # Create a new bubble with random properties
+            bubble = self.Bubble(len(self.bubbles) + 1)
+            self.bubbles.append(bubble)
+            bubble.display()
 
         class Bubble:
             def __init__(self, id):
@@ -129,10 +154,11 @@ init python:
                 self.image_size = renpy.image_size(self.image_path)
                 self.id = str(id)
                 self.pause_duration = 0.5
-                self.target_speed = renpy.random.choice([1.0, 1.5, 2.0, 2.5, 3.0])
-                self.target_xpos = renpy.random.choice([275, 300, 325, 350, 375, 400, 425, 450, 475, 500])
+                self.target_speed = renpy.random.choice([1.0, 1.5, 2.0, 2.5])
+                self.target_xpos = renpy.random.choice([50, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800])
                 self.position = At(ImageReference(self.image), falling_bubble(self.target_speed, self.target_xpos))
                 self.popped = False
+
             def display(self):
                 # self.position = At(ImageReference(self.image), falling_bubble(self.target_speed, self.target_xpos))
                 renpy.show(name=self.id, what=self.position)
@@ -143,8 +169,8 @@ init python:
             
             def hide(self):
                 # Hide the target
-                hitted_position = At(ImageReference(self.image), target_hitted(xpos=self.position.xpos, ypos=self.position.ypos))
-                renpy.show(name=str(-int(self.id)), what=hitted_position)
+                popped_position = At(ImageReference(self.image), bubble_popped(xpos=self.position.xpos, ypos=self.position.ypos))
+                renpy.show(name=str(-int(self.id)), what=popped_position)
                 renpy.hide(self.id)
 
         # Define a class for the HP bar
