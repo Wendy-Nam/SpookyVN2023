@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/underwater_game.rpy", line 43: expected 'comma or end of line' not found.
-    at animated_outline()
-    ^
+File "game/minigame/underwater_game.rpy", line 129: expected an indented block
+        class HpBar:
+        ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Mon Sep 18 21:30:08 2023
+Tue Sep 19 13:43:06 2023

@@ -49,7 +49,7 @@ init:
         pause 0.5
         repeat
     
-    image boss_target:
+    image boss_duck:
         'images/shooting_minigame/targets/duck_boss.png'
 
     transform target_hitted(xpos, ypos):
@@ -58,14 +58,6 @@ init:
             linear 0.8 yzoom 0.1 yoffset 100
         parallel:
             linear 1.5 alpha 0.0
-            
-    transform boss_target_hitted(xpos, ypos):
-        zoom 2.5
-        pos (xpos, ypos)
-        parallel:
-            linear 1.5 alpha 0.0
-        parallel:
-            linear 1.5 zoom 3.5
     
     # Define transforms for animations
     # Moving aim transform to follow the cursor
@@ -87,7 +79,7 @@ init:
             xpos 300
             repeat
     
-    transform moving_boss_target(target_speed=1.0, target_ypos=275, target_scale=1.0):
+    transform moving_boss_duck(target_speed=1.0, target_ypos=275, target_scale=1.0):
         zoom target_scale
         parallel:
             linear 0.5 zoom 2.0
@@ -131,7 +123,7 @@ init:
                 # Display remaining targets and total targets
                 text "{b}{i}Scores: {color=#ffff00}%d{/color} / %d{/i}{/b}  " % (minigame1.status.target_nb - minigame1.status.target_now, minigame1.status.target_nb) size 35 color "#ffffff" yalign 0.5 line_spacing 5
                 # Display time left with red color if running out
-                timer 1 repeat True action If(minigame1.status.time_left > 0 and minigame1.is_round_running == True, true=[SetVariable('minigame1.status.time_left', minigame1.status.time_left - 1)])
+                timer 1 repeat True action If(minigame1.status.time_left > 0 and minigame1.is_game_running == True, true=[SetVariable('minigame1.status.time_left', minigame1.status.time_left - 1)])
                 text "{b}{i}Time Left : %d{/i}{/b}  " % (minigame1.status.time_left) size 35 line_spacing 5 at alpha_dissolve:
                     if minigame1.status.time_left <= 2:
                         color "#ff0000"
@@ -164,7 +156,7 @@ init:
                 # Display remaining targets and total targets
                 text "{b}{i}HP: {color=#ffff00}%d{/color} / %d{/i}{/b}  " % (minigame1.boss_target.life_now, minigame1.boss_target.life_max) size 35 color "#ffffff" yalign 0.5 line_spacing 5
                 # Display time left with red color if running out
-                timer 1 repeat True action If(minigame1.status.time_left > 0 and minigame1.is_round_running == True, true=[SetVariable('minigame1.status.time_left', minigame1.status.time_left - 1)])
+                timer 1 repeat True action If(minigame1.status.time_left > 0 and minigame1.is_game_running == True, true=[SetVariable('minigame1.status.time_left', minigame1.status.time_left - 1)])
                 text "{b}{i}Time Left : %d{/i}{/b}  " % (minigame1.status.time_left) size 35 line_spacing 5 at alpha_dissolve:
                     if minigame1.status.time_left <= 2:
                         color "#ff0000"
@@ -242,26 +234,14 @@ init python:
             self.config = config
             self.player = self.Player(self.config)
             self.targets = []
-            self.boss_target = None
             self.status = self.Status(self.config.target_nb, self.config.time_limit, self.config.bullet_max)
-            self.is_round_running = True
             self.is_game_running = True
-
         def run(self):
-            boss_round_started = False
             # Run through rounds of the game
             self.round_init()
-            while self.is_round_running and self.is_game_running:
+            while self.is_game_running:
                 self.player.attack(self.status, self.targets)
                 self.handle_events()
-            if self.is_game_running:
-                self.boss_round_init()
-                boss_round_started = True
-            while self.is_game_running:
-                self.player.attack_boss(self.status, self.boss_target)
-                self.handle_events()
-            if boss_round_started:
-                self.boss_round_end()
             return None
             
         def round_init(self):
@@ -273,51 +253,33 @@ init python:
             avoid_target_nb = int(self.config.target_nb / 2)
             total_target_nb = normal_target_nb + avoid_target_nb
             for i in range(normal_target_nb):
-                self.targets.append(self.Target(self.config, i))
+                self.targets.append(self.Target(self.config, i+1))
                 self.targets[i].display()
             for i in range(avoid_target_nb):
-                self.targets.append(self.AvoidTarget(self.config, normal_target_nb+i))
+                self.targets.append(self.AvoidTarget(self.config, normal_target_nb+i+1))
                 self.targets[normal_target_nb+i].display()
-            self.is_round_running = True
+            self.is_game_runnning = True
         
-        def boss_round_init(self):
-            # Initialize boss round elements
-            renpy.say(who=None, what="BOSS ROUND", interact=True)
-            renpy.show_screen("boss_round_board")
-            self.boss_target = self.BossTarget(self.config, 1)
-            self.boss_target.display()
-        
-        def boss_round_end(self):
-            # Initialize boss round elements
-            renpy.hide_screen("boss_round_board")
-        
-        def round_end(self, result, is_game_over=False):
+        def round_end(self, result):
             # End the current round
             renpy.hide_screen("board")
             renpy.scene()
             renpy.show("bg carnival_minigame")
             self.targets.clear()
-            self.is_round_running = False
+            self.is_game_running = False
             renpy.say(who=None, what=result, interact=True)
-            if is_game_over:
-                self.is_game_running = False
             return
         
         def handle_events(self):
             # Handle various game events
-            if self.boss_target:
-                if self.boss_target.killed:
-                    self.round_end("clear")
-                    self.is_game_running = False
-                    return
-            if self.status.is_game_over():
-                self.round_end("GAME OVER", True)
-                return
-            if (self.boss_target is None) and self.status.is_clear():
-                self.round_end("clear")
+            if self.status.is_clear():
+                self.round_end("CLEAR")
                 return
             if self.status.is_time_up():
-                self.round_end("time up", True)
+                self.round_end("TIME UP")
+                return
+            if self.status.is_no_bullets():
+                self.round_end("GAME OVER : No Bullets Left")
                 return
     
         # Define the Player class
@@ -344,22 +306,6 @@ init python:
                             elif targets[i].image == 'avoid_target':
                                 status.bullet_now -= 1
                                 status.karma += 1
-                renpy.with_statement(vpunch)
-                if self.fired:
-                    status.bullet_now -= 1
-                    self.fired = False
-                return None
-            
-            def attack_boss(self, status, boss):
-                renpy.call_screen("gun")
-                self.hit_pos = [renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]]
-                if not boss.killed:
-                    pos = boss.get_pos()
-                    if self.is_hit(pos, boss.image_size):
-                        boss.life_now -= 1
-                        if boss.life_now <= 0:
-                            boss.hide()
-                            boss.killed = True
                 renpy.with_statement(vpunch)
                 if self.fired:
                     status.bullet_now -= 1
@@ -410,29 +356,7 @@ init python:
                 self.image = 'avoid_target'
                 self.image_path = 'images/shooting_minigame/targets/carla1.png'
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
-                
-        class BossTarget(Target):
-            def __init__(self, config, id):
-                # Initialize target attributes
-                super().__init__(config, id)
-                self.image = 'boss_target'
-                self.image_path = 'images/shooting_minigame/targets/duck_boss.png'
-                self.target_scale = 2.5
-                self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
-                self.life_max = 5
-                self.life_now = self.life_max
-                self.killed = False
-            
-            def display(self):
-                # Display the target on screen
-                self.position = At(ImageReference(self.image), moving_boss_target(self.target_speed, self.target_ypos, self.target_scale))
-                renpy.show(name=self.id, what=self.position)
 
-            def hide(self):        
-                # Hide the target
-                hitted_position = At(ImageReference(self.image), boss_target_hitted(xpos=self.position.xpos, ypos=self.position.ypos))
-                renpy.show(name=str(-int(self.id)), what=hitted_position)
-                renpy.hide(self.id)
         # Define the Status class
         class Status:
             def __init__(self, target_nb, time_limit, bullet_max):
@@ -443,10 +367,9 @@ init python:
                 self.target_now = target_nb
                 self.time_left = time_limit
                 self.bullet_now = bullet_max
-                self.boss_killed = False
                 self.karma = 0 # how many "don't hit" targets were hit
             
-            def is_game_over(self):
+            def is_no_bullets(self):
                 # Check if the game is over
                 if self.bullet_now <= 0:
                     return True

@@ -431,15 +431,8 @@ label act25a:
     $ minigame1.run()
     $ score = [(minigame1.status.target_nb - minigame1.status.target_now), minigame1.status.target_nb] 
     $ karma = [(minigame1.status.karma)]
-    $ boss_killed = False
-    if (minigame1.boss_target is not None):
-        $ boss_killed = True
     "Score : [score[0]]/[score[1]]"
     "Karma : [karma]"
-    if boss_killed:
-        "You killed the boss"
-    else:
-        "Kill ???? : Failed"
     scene bg carnival_minigame
     if score[0] == score[1]:
         jump when_you_win
