@@ -23,7 +23,7 @@ init:
             align (1.0, 0.0)
             xmaximum 800
             ymaximum 100
-            timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('minigame2.status.air_hp', minigame2.status.air_hp - 1)])
+            timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.status.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('minigame2.status.air_hp', minigame2.status.air_hp - 1)])
             vbox:
                 text "Time Left: [minigame2.status.time_left]"
                 bar:
@@ -67,53 +67,67 @@ init:
         repeat
 
 init python:
+
     def moveNose(trans, at, st):
         trans.xpos = renpy.get_mouse_pos()[0]
         return None
+
     # Define the main game class
     class UnderwaterGame:
         def __init__(self):
-            self.bubble = self.Bubble()
+            self.bubbles = []
             self.status = self.Status()
             self.nose = "images/underwater_minigame/nose.png"
-            self.is_game_over = False
+            self.status.is_game_over = False
         
         def round_init(self):
             renpy.show('nose',at_list=[moving_nose])
-            self.bubble.display()
+            for i in range(25):
+                self.bubbles.append(self.Bubble(i+1))
+                self.bubbles[i].display()
             self.status.display()
+        
+        def round_end(self):
+            if self.status.survived:
+                narrator("You nearly survived")
+            else:
+                narrator("Drowned...")
         
         def run(self):
             self.round_init()
-            while not self.is_game_over:
+            while not self.status.is_game_over:
                 renpy.pause(0.1)
-                if self.status.air_hp <= 0:
-                    self.is_game_over = True
-                if self.is_hit():
-                    self.status.air_hp += 30
-                    self.bubble.hide()
-    
+                self.update()
+            self.round_end()
+        
+        def update(self):
+            if self.status.is_clear() or self.status.is_fail():
+                return
+            for bubble in self.bubbles:
+                if self.is_hit(bubble):
+                    self.status.air_hp += 1
+                    bubble.hide()
         # Define a class for the bubble object
-        def is_hit(self):
-            if self.bubble.popped == False:
+        def is_hit(self, bubble):
+            if bubble.popped == False:
                 mouse_x, mouse_y = renpy.get_mouse_pos()[0], 800
-                bubble_pos = self.bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
-                bubble_size = self.bubble.image_size
+                bubble_pos = bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
+                bubble_size = bubble.image_size
                 print(mouse_x, mouse_y, bubble_pos, bubble_size)
                 if bubble_pos[0] is None:
                     return False
                 if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
                     if bubble_pos[1] <= mouse_y <= bubble_pos[1] + bubble_size[1]:
-                        self.bubble.popped = True
+                        bubble.popped = True
                         return True
                     return False
 
         class Bubble:
-            def __init__(self):
+            def __init__(self, id):
                 self.image = 'bubble'
                 self.image_path = 'images/underwater_minigame/bubble.png'
                 self.image_size = renpy.image_size(self.image_path)
-                self.id = str(1)
+                self.id = str(id)
                 self.pause_duration = 0.5
                 self.target_speed = renpy.random.choice([1.0, 1.5, 2.0, 2.5, 3.0])
                 self.target_xpos = renpy.random.choice([275, 300, 325, 350, 375, 400, 425, 450, 475, 500])
@@ -140,19 +154,25 @@ init python:
                 self.max_hp = 50  # Max HP
                 self.time_max = 30 # Time Max
                 self.time_left = 30 # Time left in seconds
-                
+                self.is_game_over = False
+                self.survived = False
+
             def display(self):
                 renpy.show_screen('hp_bar')
                 pass
         
-            def is_game_over(self):
+            def is_fail(self):
                 if self.air_hp <= 0:
+                    self.is_game_over = True
                     return True
-            
+                return False
+        
             def is_clear(self):
                 if self.time_left <= 0 and self.air_hp > 0:
+                    self.survived = True
+                    self.is_game_over = True
                     return True
-                return True
+                return False
     # Create an instance of the game
     
 
