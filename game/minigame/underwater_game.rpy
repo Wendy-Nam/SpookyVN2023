@@ -16,7 +16,6 @@ init -5 python:
     style.fixed_bar.right_bar = Frame("images/underwater_minigame/bar_empty.png", 0, 0)
 
 init:
-    default air_hp = 10
     screen hp_bar:
         frame:
             padding (15, 15)
@@ -24,10 +23,11 @@ init:
             align (1.0, 0.0)
             xmaximum 800
             ymaximum 100
-            timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+            timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('minigame2.status.air_hp', minigame2.status.air_hp - 1)])
             vbox:
+                text "Time Left: [minigame2.status.time_left]"
                 bar:
-                    value air_hp
+                    value minigame2.status.air_hp
                     range 100
                     xalign 0.5
                     style "fixed_bar"
@@ -56,8 +56,8 @@ init:
             linear 0.5 rotate 30
             repeat
         parallel:
-            yalign 0.0
-            linear target_speed yalign 1.0
+            ypos -30
+            linear target_speed ypos 1000
             repeat
             
     transform moving_nose:
@@ -86,21 +86,27 @@ init python:
         def run(self):
             self.round_init()
             while not self.is_game_over:
+                renpy.pause(0.1)
                 if self.status.air_hp <= 0:
                     self.is_game_over = True
-                renpy.pause(1.5)
                 if self.is_hit():
+                    self.status.air_hp += 30
                     self.bubble.hide()
+    
         # Define a class for the bubble object
         def is_hit(self):
-            mouse_x, mouse_y = renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]
-            bubble_pos = self.bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
-            bubble_size = self.bubble.image_size
-            print(mouse_x, mouse_y, bubble_pos, bubble_size)
-            if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
-                if bubble_pos[1] <= mouse_y <= bubble_pos[1] + bubble_size[1]:
-                    return True
-                return False
+            if self.bubble.popped == False:
+                mouse_x, mouse_y = renpy.get_mouse_pos()[0], 800
+                bubble_pos = self.bubble.get_pos() # NOTE : 왜 NONE이 나오는가?
+                bubble_size = self.bubble.image_size
+                print(mouse_x, mouse_y, bubble_pos, bubble_size)
+                if bubble_pos[0] is None:
+                    return False
+                if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
+                    if bubble_pos[1] <= mouse_y <= bubble_pos[1] + bubble_size[1]:
+                        self.bubble.popped = True
+                        return True
+                    return False
 
         class Bubble:
             def __init__(self):
@@ -112,9 +118,9 @@ init python:
                 self.target_speed = renpy.random.choice([1.0, 1.5, 2.0, 2.5, 3.0])
                 self.target_xpos = renpy.random.choice([275, 300, 325, 350, 375, 400, 425, 450, 475, 500])
                 self.position = At(ImageReference(self.image), falling_bubble(self.target_speed, self.target_xpos))
-
+                self.popped = False
             def display(self):
-                self.position = At(ImageReference(self.image), falling_bubble(self.target_speed, self.target_xpos))
+                # self.position = At(ImageReference(self.image), falling_bubble(self.target_speed, self.target_xpos))
                 renpy.show(name=self.id, what=self.position)
             
             def get_pos(self):
@@ -138,7 +144,15 @@ init python:
             def display(self):
                 renpy.show_screen('hp_bar')
                 pass
-
+        
+            def is_game_over(self):
+                if self.air_hp <= 0:
+                    return True
+            
+            def is_clear(self):
+                if self.time_left <= 0 and self.air_hp > 0:
+                    return True
+                return True
     # Create an instance of the game
     
 

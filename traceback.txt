@@ -1,34 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/minigame/underwater_game.rpy", line 148, in script
+  File "game/minigame/underwater_game.rpy", line 160, in script
     $ minigame2.run()
-  File "game/minigame/underwater_game.rpy", line 148, in <module>
+  File "game/minigame/underwater_game.rpy", line 160, in <module>
     $ minigame2.run()
-  File "game/minigame/underwater_game.rpy", line 92, in run
-    if self.is_hit():
-  File "game/minigame/underwater_game.rpy", line 100, in is_hit
-    if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
-TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+  File "game/minigame/underwater_game.rpy", line 89, in run
+    renpy.pause(0.1)
+  File "game/minigame/underwater_game.rpy", line 19, in execute
+    screen hp_bar:
+  File "game/minigame/underwater_game.rpy", line 19, in execute
+    screen hp_bar:
+  File "game/minigame/underwater_game.rpy", line 20, in execute
+    frame:
+  File "game/minigame/underwater_game.rpy", line 26, in execute
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+  File "game/minigame/underwater_game.rpy", line 26, in keywords
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+  File "game/minigame/underwater_game.rpy", line 26, in <module>
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+NameError: name 'air_hp' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigame/underwater_game.rpy", line 148, in script
+  File "game/minigame/underwater_game.rpy", line 160, in script
     $ minigame2.run()
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/minigame/underwater_game.rpy", line 148, in <module>
+  File "game/minigame/underwater_game.rpy", line 160, in <module>
     $ minigame2.run()
-  File "game/minigame/underwater_game.rpy", line 92, in run
-    if self.is_hit():
-  File "game/minigame/underwater_game.rpy", line 100, in is_hit
-    if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
-TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+  File "game/minigame/underwater_game.rpy", line 89, in run
+    renpy.pause(0.1)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 476, in visit_all
+    callback(self)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 487, in per_interact
+    self.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 680, in update
+    self.screen.function(**self.scope)
+  File "game/minigame/underwater_game.rpy", line 19, in execute
+    screen hp_bar:
+  File "game/minigame/underwater_game.rpy", line 19, in execute
+    screen hp_bar:
+  File "game/minigame/underwater_game.rpy", line 20, in execute
+    frame:
+  File "game/minigame/underwater_game.rpy", line 26, in execute
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+  File "game/minigame/underwater_game.rpy", line 26, in keywords
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+  File "game/minigame/underwater_game.rpy", line 26, in <module>
+    timer 1 repeat True action If(minigame2.status.time_left > 0 and minigame2.is_game_over == False, true=[SetVariable('minigame2.status.time_left', minigame2.status.time_left - 1), SetVariable('air_hp', air_hp - 1)])
+NameError: name 'air_hp' is not defined
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Tue Sep 19 14:27:54 2023
+Tue Sep 19 14:50:53 2023
