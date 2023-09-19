@@ -5,6 +5,6 @@ define Dad = Character("Dad", color="#ffffff", callback= name_callback, cb_name=
 define narrator = Character(callback= name_callback, cb_name="None")
 
 label start:
-    # jump underwater_game
-    jump act11
+    jump underwater_game
+    # jump act11
     

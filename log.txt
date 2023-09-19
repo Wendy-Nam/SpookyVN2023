@@ -1,4 +1,4 @@
-Tue Sep 19 13:44:28 2023
+Tue Sep 19 14:26:20 2023
 macOS-13.2-arm64-arm-64bit
 Ren'Py 8.1.2.23090503
  
@@ -7,10 +7,79 @@ Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.02s
-Loading script. took 0.23s
-Loading save slot metadata. took 0.05s
+Loading script. took 0.19s
+Loading save slot metadata. took 0.04s
 Loading persistent. took 0.00s
 Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start. took 1.76s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
+Maximum texture size: 4096x4096
+74 401 None None (127, 127)
+
+Full traceback:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 91, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+
+While running game code:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 91, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+Resetting cache.
+Bootstrap to the start of init.init. took 16.60s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
 Loading analysis data. took 0.01s
 Analyze and compile ATL. took 0.00s
 Reloading save slot metadata. took 0.03s
@@ -33,7 +102,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.26s
+Interface start. took 0.07s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -43,5 +112,284 @@ Vendor: "b'Apple'"
 Renderer: b'Apple M1'
 Version: b'2.1 Metal - 83'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(969, 545) drawable=(1938, 1090)
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
+Maximum texture size: 4096x4096
+612 738 None None (127, 127)
+
+Full traceback:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 91, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+
+While running game code:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 91, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+Resetting cache.
+Bootstrap to the start of init.init. took 54.32s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
+Maximum texture size: 4096x4096
+583 804 None None (127, 127)
+
+Full traceback:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+
+While running game code:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_x <= mouse_x <= bubble_x + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+Resetting cache.
+Bootstrap to the start of init.init. took 82.45s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 99, in is_hit
+    print(mouse_x, mouse_y, bubble_x, bubble_y, bubble_size)
+NameError: name 'bubble_x' is not defined
+
+While running game code:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 99, in is_hit
+    print(mouse_x, mouse_y, bubble_x, bubble_y, bubble_size)
+NameError: name 'bubble_x' is not defined
+Resetting cache.
+Bootstrap to the start of init.init. took 93.61s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
+Maximum texture size: 4096x4096
+609 894 (None, None) (127, 127)
+
+Full traceback:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+
+While running game code:
+  File "game/minigame/underwater_game.rpy", line 148, in script
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 148, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 92, in run
+    if self.is_hit():
+  File "game/minigame/underwater_game.rpy", line 100, in is_hit
+    if bubble_pos[0] <= mouse_x <= bubble_pos[0] + bubble_size[0]:
+TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+Resetting cache.
+Bootstrap to the start of init.init. took 145.02s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(668, 376) drawable=(1336, 752)
 Maximum texture size: 4096x4096
