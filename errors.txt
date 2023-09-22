@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/underwater_game.rpy", line 28: the right_bar keyword argument was not given a value.
-    right_bar 
-              ^
+File "game/story/act3.rpy", line 482: expected simple expression
+    stop music fadeout
+                      ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Tue Sep 19 22:41:34 2023
+Sat Sep 23 05:26:26 2023

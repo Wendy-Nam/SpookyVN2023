@@ -2,6 +2,22 @@
 # CARNIVAL
 image bg carnival:
     'images/backgrounds/Carnival/carnival_wheel.png'
+    parallel:
+        linear 2.0 zoom 1.04
+        .1
+        linear 1.5 zoom 1.02
+        .1
+        repeat
+    parallel:
+        linear 2.0 xoffset 8
+        .1
+        linear 1.5 xoffset 0
+        repeat
+    parallel:
+        linear 3.5 yoffset 4
+        .1
+        linear 1.5 yoffset 0
+        repeat
 image bg carnival_minigame:
     'images/backgrounds/Carnival/carnival_minigame.png'
 image bg carnival_foodtent:

@@ -9,7 +9,58 @@ image blink:
     alpha 0.0
 
 transform carnival_wheel_tint:
-    matrixcolor TintMatrix("#e0ddb6")*SaturationMatrix(1.0000)*ContrastMatrix(1.0000)
+    matrixcolor TintMatrix("#fff7af")*SaturationMatrix(1.0000)*ContrastMatrix(1.4074)
+    center
+transform closed_eye_tint:
+    matrixcolor TintMatrix("#221b2b")*SaturationMatrix(1.0000)*ContrastMatrix(2.8426)
+    center
+
+image bloody_view1:
+    alpha 0.0  # Start with zero transparency
+    zoom 5.0
+    yalign -0.1
+    blend 'multiply'
+    .5
+    blend 'normal'
+    .9
+    parallel:
+        linear 0.1 alpha 1.0  # Gradually make it visible
+        'images/effects/blood1.png'  # Display the blood image
+        pause 0.1  # Pause to display the blood
+        repeat
+    parallel:
+        linear 0.5
+        zoom 3.5 xalign 0.2 yalign 0.1
+        linear 0.4
+        zoom 3.8 xalign 0.15 yalign 0.05  # Slightly adjust position and zoom
+        linear 0.1
+        zoom 4.0 xalign 0.2 yalign 0.1  # Return to the original position and zoom
+        repeat
+    parallel:
+        linear 0.2 alpha 0.0  # Fade out the blood
+        repeat
+    repeat
+
+image bloody_view2:
+    zoom 5.0
+    blur 5.0
+    alpha 0.5
+    'images/effects/blood2.png'
+    parallel:
+        blur 0.0
+        linear 0.5 blur 8.0
+        linear 0.2 blur 0.5
+        linear 0.2 blur 8.0
+        repeat
+    parallel:
+        linear 0.5
+        zoom 3.5 xalign 0.2 yalign 0.1
+        repeat
+    parallel:
+        linear 5.0 alpha 0.0
+    repeat
+
+
 
 transform jumpAttack:
     linear 0.5 zoom 3.0

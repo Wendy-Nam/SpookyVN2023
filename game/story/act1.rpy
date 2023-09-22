@@ -1,31 +1,39 @@
 label act11:
     scene black
     scene bg livingroom_night
-    camera:
-        zoom 2.5 anchor (18, 72)
-        linear 2.5 zoom 1.0 anchor (0, 0) 
+    play sound "audio/Sound/House Scene Sounds/Lock and Unlock Door.wav" volume 0.2
+    # camera:
+    #     zoom 2.5 anchor (18, 72)
+    #     linear 2.5 zoom 1.0 anchor (0, 0) 
+        
+    play music "audio/Music/A_Trick_of_Mind_House.ogg" fadein 2.0 volume 0.3
+    
     """
     You and your child, Carla, walk into your home on Halloween night after a successful Trick or Treat adventure.
     """
+    show Carla at left
     camera:
         linear 0.5 zoom 1.85 anchor (0, 800)
+
     """
     She excitedly sets her full bucket of candy down and begins taking out empty candy wrappers.
     
     After a few moments, she stops to ask you a question.
     """
-    show Carla at left
+    # show Carla at left
 
     $ lipsync(Carla, 'act1', "audio_0", "Why do people leave 'Take One Only' signs in front of their door?")
     $ lipsync(Carla, 'act1', "audio_1", "It makes me want to take more than that?")
     
-    camera:
-        linear 1.0 zoom 1.0 anchor (0, 0)
-
-    "Carla finishes taking out the wrappers and holds them up towards you."
+    play sound "<from 2 to 5>audio/Sound/House Scene Sounds/Plastic Wrapping.mp3" volume 0.2 
+    
     show Dad
     show Mom
+    camera:
+        linear 1.5 zoom 1.0 anchor (0, 0)
     
+    "Carla finishes taking out the wrappers and holds them up towards you."
+
     $ lipsync(Mom, 'act1', "audio_2", "Good thing I was there so you wouldn't take more than one.")
     
     "you chuckle to yourself as you take the empty candy wrappers Carla has collected."
@@ -119,7 +127,6 @@ label act12:
     Carla refrains from using her puppy face.
     She sincerely looks at you.
     """
-    
     menu:
         "You have school tomorrow, we can't.":
             jump act13a
@@ -152,7 +159,7 @@ label act13b:
     hide Mom
     hide Dad
     show Parents eye_closed
-    
+    stop music fadeout 2.0
     jump act21
 
 label act13a:

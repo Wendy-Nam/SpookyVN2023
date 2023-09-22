@@ -162,7 +162,6 @@ label attack_the_monster:
     $ lipsync(Parents, "act4", 'audio_20', "Leave her alone!", 'mouth_fear')
     
     # -Player does the bat and monster minigame-
-    
     menu:
         "After defeating the monster.":
             # (Adult's Ending)
@@ -224,7 +223,6 @@ label check_her_shelves:
     
     One page from her notebook has been torn out.
     """
-    
     menu:
         "Check the page.":
             jump check_the_page
@@ -336,7 +334,6 @@ label finish_checking_the_cell:
     """
     
     # <!--(FOURTH MAJOR CHOICE)-->
-    
     menu:
         "Head back to the bedroom door.":
             jump head_back_to_the_bedroom_door
@@ -955,7 +952,6 @@ label the_monster_shifts_closer_to_you:
     """
     hide Parents
     # <!--(FIFTH MAJOR CHOICE)-->
-    
     menu:
         "Attack the monster.":
             jump attack_the_monster

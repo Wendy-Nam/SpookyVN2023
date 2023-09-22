@@ -1,26 +1,65 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/namseoa/Desktop/renpy_games/A_Trick_Of_Mind/game/saves/persistent.1695131718.tmp'
+  File "game/story/act2.rpy", line 534, in script
+    """
+KeyError: 'None'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/bootstrap.py", line 275, in bootstrap
-    renpy.main.main()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/main.py", line 684, in main
-    renpy.persistent.update(True)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/persistent.py", line 401, in update
-    save()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/persistent.py", line 419, in save
-    renpy.loadsave.location.save_persistent(compressed)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/savelocation.py", line 545, in save_persistent
-    l.save_persistent(data)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/savelocation.py", line 374, in save_persistent
-    with open(fn_tmp, "wb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/namseoa/Desktop/renpy_games/A_Trick_Of_Mind/game/saves/persistent.1695131718.tmp'
+  File "game/story/act2.rpy", line 534, in script
+    """
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 1041, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 905, in renpy.display.accelerator.RenderTransform.final_render
+KeyError: 'None'
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A_Trick_Of_Mind 1.0
-Tue Sep 19 23:04:50 2023
+Sat Sep 23 04:27:33 2023

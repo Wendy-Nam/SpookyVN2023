@@ -3,9 +3,8 @@ define Parents = Character("Parents", color="#ffffff", callback= name_callback, 
 define Mom = Character("Mom", color="#ffffff", callback= name_callback, cb_name="Mom")
 define Dad = Character("Dad", color="#ffffff", callback= name_callback, cb_name="Dad")
 define narrator = Character(callback= name_callback, cb_name="None")
+default ending_condition = 0 # > 30 for adult ending, < 30 for child ending
 
 label start:
-    # show screen extra_animated_value_screen
-    jump underwater_game
-    # jump act11
+    jump act11
     

@@ -28,6 +28,7 @@ init python:
             self.IMG_WEAPON = 'images/shooting_minigame/rifle.png'
             # Determine size of the weapon image
             self.IMG_SIZE_WEAPON = renpy.image_size(self.IMG_WEAPON)
+    # renpy.config.choice_sound = renpy.audio.music.play("audio/Sound/Choice Click Sound.wav", channel="choice", relative_volume=0.5, loop=False)
 
 # Initialize the game
 init:
@@ -42,12 +43,12 @@ init:
         pause 2.0
         repeat
 
-    image avoid_target:
-        'images/shooting_minigame/targets/carla1.png'
-        pause 1.0
-        'images/shooting_minigame/targets/carla2.png'
-        pause 0.5
-        repeat
+    # image avoid_target:
+    #     'images/shooting_minigame/targets/carla1.png'
+    #     pause 1.0
+    #     'images/shooting_minigame/targets/carla2.png'
+    #     pause 0.5
+    #     repeat
     
     image boss_duck:
         'images/shooting_minigame/targets/duck_boss.png'
@@ -250,14 +251,14 @@ init python:
             # renpy.say(who=None, what="ROUND " + str(self.status.round_now), interact=True)
             renpy.show_screen("board")
             normal_target_nb = self.config.target_nb
-            avoid_target_nb = int(self.config.target_nb / 2)
-            total_target_nb = normal_target_nb + avoid_target_nb
+            # avoid_target_nb = int(self.config.target_nb / 2)
+            # total_target_nb = normal_target_nb + avoid_target_nb
             for i in range(normal_target_nb):
                 self.targets.append(self.Target(self.config, i+1))
                 self.targets[i].display()
-            for i in range(avoid_target_nb):
-                self.targets.append(self.AvoidTarget(self.config, normal_target_nb+i+1))
-                self.targets[normal_target_nb+i].display()
+            # for i in range(avoid_target_nb):
+            #     self.targets.append(self.AvoidTarget(self.config, normal_target_nb+i+1))
+            #     self.targets[normal_target_nb+i].display()
             self.is_game_runnning = True
         
         def round_end(self, result):
@@ -293,8 +294,9 @@ init python:
             def attack(self, status, targets):
                 # Perform player attack and hit detection
                 renpy.call_screen("gun")
+                renpy.music.play('audio/Sound/Carnival Scene Sounds/Rifle Shot.WAV', channel='weapon', loop=False, relative_volume=0.01)
                 self.hit_pos = [renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]]
-                targets_nb = int(self.config.target_nb * 3/2)
+                targets_nb = int(self.config.target_nb)
                 for i in range(targets_nb):
                     if not targets[i].killed:
                         pos = targets[i].get_pos()
@@ -303,9 +305,12 @@ init python:
                             targets[i].killed = True
                             if targets[i].image == 'normal_target':
                                 status.target_now -= 1
-                            elif targets[i].image == 'avoid_target':
-                                status.bullet_now -= 1
-                                status.karma += 1
+                                renpy.music.play('audio/Sound/Carnival Scene Sounds/Target Hit.mp3', channel='target', loop=False, relative_volume=0.)
+                                renpy.music.play('<from 0 to 0.8>audio/Sound/Carnival Scene Sounds/Ducks Quacking.wav', channel='sound', loop=False, relative_volume=0.1)
+                                
+                            # elif targets[i].image == 'avoid_target':
+                            #     status.bullet_now -= 1
+                            #     status.karma += 1
                 renpy.with_statement(vpunch)
                 if self.fired:
                     status.bullet_now -= 1
@@ -349,13 +354,13 @@ init python:
                 renpy.show(name=str(-int(self.id)), what=hitted_position)
                 renpy.hide(self.id)
                 
-        class AvoidTarget(Target):
-            def __init__(self, config, id):
-                # Initialize target attributes
-                super().__init__(config, id)
-                self.image = 'avoid_target'
-                self.image_path = 'images/shooting_minigame/targets/carla1.png'
-                self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
+        # class AvoidTarget(Target):
+        #     def __init__(self, config, id):
+        #         # Initialize target attributes
+        #         super().__init__(config, id)
+        #         self.image = 'avoid_target'
+        #         self.image_path = 'images/shooting_minigame/targets/carla1.png'
+        #         self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
 
         # Define the Status class
         class Status:

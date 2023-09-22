@@ -26,12 +26,22 @@ label check_back:
     
 label check_her_bookshelves:
     $ searched['bookshelves'] = True
+    
+    window auto hide
+    camera:
+        subpixel True additive 0.0 
+        offset (0, 0) zoom 1.0 blur 1.99 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 1.17 offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
+    with Pause(1.27)
+    camera:
+        offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
+    window auto show
+
     """
     The bookshelves are littered with horror movie merchandise that you forgot purchasing.
     
     A suspicious notebook catches your eye.
     """
-    
     menu:
         "Read the notebook.":
             jump read_the_notebook
@@ -40,12 +50,34 @@ label check_her_bookshelves:
 
 label check_the_nightstand:
     $ searched['nightstand'] = True
+    
+    window auto hide
+    camera:
+        subpixel True 
+        offset (0, 0) zoom 1.0 blur 3.55 
+        linear 0.77 offset (-828, 0) zoom 2.13 blur 0.0 
+    with Pause(0.87)
+    camera:
+        offset (-828, 0) zoom 2.13 blur 0.0 
+    window auto show
+    
     "Carla's nightstand has nothing of interest."
     
     jump continue_your_search_through_carlas_room
 
 label check_under_her_bed:
     $ searched['bed'] = True
+    
+    window auto hide
+    camera:
+        subpixel True matrixanchor (0.5, 0.5) 
+        offset (0, 0) zoom 1.0 additive 0.0 blur 4.44 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.91 offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
+    with Pause(1.01)
+    camera:
+        offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
+    window auto show
+
     """
     Under her bed are remnants of her old toys and books before she found her love for horror.
     
@@ -59,6 +91,7 @@ label check_under_her_bed:
 default searched = {'bed':False, 'bookshelves':False, 'nightstand':False}
 
 label continue_your_search_through_carlas_room:
+    camera
     $ all_searched = all(searched.values())
     if all_searched == False:
         menu:
@@ -184,7 +217,6 @@ label huh:
     
     After a few minutes, you decide what to say and head to Carla's room to apologize.
     """
-
     menu:
         "Knock on her door.":
             jump knock_on_her_door
@@ -224,6 +256,8 @@ label im_sorry_carls_keep_going:
     $ lipsync(Carla, "act3", 'audio_24', "I'll get everything ready.")
      
     hide Carla with moveoutleft
+    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
+    
     "Carla runs for her room and closes the door."
     
     hide parents_fear_overlay_mask with dissolve
@@ -235,7 +269,6 @@ label im_sorry_carls_keep_going:
     
     The idea is troubling and you head for her room to check on her.
     """
-    
     menu:
         "Knock on her door.":
             jump knock_on_her_door
@@ -271,7 +304,6 @@ label keep_swimming:
     
     Feeling the monster getting closer, you're tempted to check again.
     """
-    
     menu:
         "Check back.":
             jump check_back
@@ -295,6 +327,15 @@ label kick_at_whatever_is_grabbing_your_leg:
     """
     
     # (Escape gameplay?)
+    scene bg underwater_game
+    "Game Start"
+    window hide
+    $ minigame2 = UnderwaterGame()
+    $ minigame2.run()
+    scene black
+    if minigame2.status.survived == False:
+        return # Ending : Drowned...
+
     scene bg underwater_door
     """
     With the air in your body wearing thin, your salvation is within your grasp.
@@ -303,7 +344,6 @@ label kick_at_whatever_is_grabbing_your_leg:
     
     You swim faster and faster, not knowing if the nightmare is following behind you.
     """
-    
     menu:
         "Look back.":
             jump look_back
@@ -317,7 +357,6 @@ label kick_it:
     
     You move ahead, but you can't shake the feeling that something is wrong.
     """
-    
     menu:
         "Keep swimming.":
             jump keep_swimming
@@ -326,7 +365,6 @@ label kick_it:
 
 label knock_on_her_door:
     "No response."
-    
     menu:
         "Knock again.":
             jump you_knock_again
@@ -342,6 +380,8 @@ label look_back:
             jump kick_it
 
 label open_the_door:
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0 fadein 1.0
+    play sound '<from 6>audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.1 fadein 2.0
     scene bg underwater with pixellate
     # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
@@ -366,6 +406,8 @@ label open_your_eyes_again:
     jump enter_the_underwater_cave
 
 label read_the_notebook:
+    play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 0.7 fadein 1.0
+    
     """
     The notebook doesn't have any notes, but drawings.
     
@@ -389,11 +431,15 @@ label swim_to_the_surface:
     
     Your eyesight dims and you accept your fate in darkness, choking on the water as you pass out.
     """
-    
-    jump open_your_eyes_again
+    menu:
+        'Open your eyes again.':
+            jump open_your_eyes_again
 
 label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     "The urge to act on this conclusion is stopped when Carla enters the room."
+    
+    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
+    
     "With a shortened breath, Carla exclaims,"
     
     show Carla at left
@@ -420,7 +466,6 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     $ lipsync(Carla, "act3", 'audio_35', "Are you ok?")
     
     #<!--(SECOND MAJOR CHOICE)-->
-      
     menu:
         "Huh?":
             jump huh
@@ -435,6 +480,7 @@ label you_knock_again:
     
     With a wave of worry, you fear the worst for Carla.
     """
+    stop music fadeout 1.0
     show Parents mouth_fear  eye_default brow_surprised
     menu:
         "Open the door":
@@ -551,6 +597,7 @@ label act31:
     Thankfully, Carla hasn't had another "episode" since, but the fear has continued to eat at you.
     """
     scene bg livingroom_sunset with dissolve
+    play music 'audio/Music/A_Trick_of_Mind_House.ogg' volume 0.05
     """
     The summer heat beats into your apartment while you finish up some chores.
     
@@ -564,13 +611,24 @@ label act31:
             jump act32b
 
 label act32a:
-    scene bg office_sunset
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.5
+    scene bg office_sunset with pushleft
+    
+    window auto hide
+    camera:
+        subpixel True 
+        offset (-567, -756) zoom 1.81 
+        linear 0.63 offset (-1404, -1134) zoom 2.09 
+    with Pause(0.73)
+    camera:
+        offset (-1404, -1134) zoom 2.09 
+    window auto show
+
     """
     Your desk is littered with papers concerning all manners of paranormal activity, mythical beings, and supernatural occurrences.
     
     A few old news clippings and articles catch your eye.
     """
-
     menu:
         "HELP WANTED: Paranormal Investigator Required":
             jump act32c
@@ -578,13 +636,13 @@ label act32a:
             jump act32d
 
 label act32b:
-    scene bg bedroom_day with dissolve
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.5
+    scene bg bedroom_day with pushright
     """
     Carla's room always terrifies you, her sweet personality never made sense with her favorite movie genre to you, but you love her regardless.
     
     Your trip here isn't for nostalgia's sake, you're searching for any out of the ordinary clues, so you start looking.
     """
-    
     menu:
         "Check under her bed.":
             jump check_under_her_bed
@@ -594,6 +652,8 @@ label act32b:
             jump check_the_nightstand
 
 label act32c:
+    camera
+    play sound 'audio/Sound/House Scene Sounds/Paper Rustling.wav' volume 0.5 fadein 2.0
     "HELP WANTED: Paranormal Investigator Required"
     
     "Family in need of experienced investigators to look into changing surroundings in the house. Protection needed."
@@ -610,6 +670,7 @@ label act32c:
     jump act32d
 
 label act32d:
+    camera
     scene bg office_day with dissolve
     "The faded news clipping is barely legible, even with the copy made on the computer."
     

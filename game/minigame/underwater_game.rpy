@@ -79,7 +79,7 @@ init:
             linear 0.5 rotate 30
             repeat
         parallel:
-            zoom 2.5
+            zoom 2.2
             linear 0.5 zoom 3.0
             repeat
         parallel:
@@ -116,7 +116,7 @@ init python:
             self.status.is_game_over = False
             self.object_spawn_timer = 0
             self.object_spawn_interval = 0.5  # Adjust this interval as needed
-
+            
         def round_init(self):
             renpy.show('nose', at_list=[moving_nose])
             self.status.display()
@@ -200,7 +200,7 @@ init python:
                 super().__init__(id)
                 self.image = 'bubble'
                 self.image_path = 'images/underwater_minigame/bubble1.png'
-                self.target_scale = 3.0
+                self.target_scale = 2.2
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
                 self.position = At(ImageReference(self.image), falling_object(self.target_speed, self.target_xpos))
                 self.hp_change = 1  # Increase HP when the bubble is hit
@@ -210,7 +210,7 @@ init python:
                 super().__init__(id)
                 self.image = 'fish'
                 self.image_path = 'images/underwater_minigame/fish.png'
-                self.target_scale = 2.0
+                self.target_scale = 2.2
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
                 self.position = At(ImageReference(self.image), falling_object(self.target_speed, self.target_xpos))
                 self.hp_change = -2 # Decrease HP when the fish is hit
@@ -239,11 +239,3 @@ init python:
                     self.is_game_over = True
                     return True
                 return False
-
-# Create an instance of the game
-label underwater_game:
-    scene bg underwater_game
-    $ minigame2 = UnderwaterGame()
-    $ minigame2.run()
-    scene black
-    "Game End"
