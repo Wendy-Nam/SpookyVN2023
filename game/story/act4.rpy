@@ -5,23 +5,25 @@ label carls_of_course_i_want_to_spend_time_with_you:
     show Mom brow_sad eye_crying mouth_sad
     
     $ lipsync(Mom, "act4", 'audio_0', "I'm sorry, I don't know why I passed out earlier.")
-    $ lipsync(Dad, "act4", 'audio_1', "I'm not feeling too great.")
     
     hide Carla
     show Carla brow_sad eye_crying mouth_sad at left
     $ lipsync(Carla, "act4", 'audio_2', "That's what I was saying...", 'mouth_sad')
-    $ lipsync(Carla, "act4", 'audio_3', "You need to take your mind off of whatever it is.", 'mouth_fear')
+    # TODO : add expressions
+    $ lipsync(Carla, "act4", 'audio_3', "You need to take your mind off of whatever's bothering you.", 'mouth_fear')
+    $ lipsync(Carla, "act4", 'audio_1', "I thought playing would be the thing...", 'mouth_sad')
     
     "You look at Carla, whose concern for your wellbeing forces your emotions to swell through you."
         
     $ lipsync(Mom, "act4", 'audio_4', "You're right missy.")
-    $ lipsync(Dad, "act4", 'audio_5', "Not with playtime though...")
-    $ lipsync(Dad, "act4", 'audio_6', "I'm just exhausted.")
+    $ lipsync(Dad, "act4", 'audio_5', "But I can't play right now, I'm just exhausted.")
     
     show Carla brow_sad eye_default mouth_G
     $ lipsync(Carla, "act4", 'audio_7', "Oh... ok...", 'mouth_sad')
     
     $ lipsync(Mom, "act4", 'audio_8', "Just stay here and play for a bit alright?")
+    
+    $ lipsync(Carla, "act4", 'audio_6', "That's it?", 'mouth_E')
     
     "Cautiously, you get up to leave the room."
     
@@ -336,8 +338,10 @@ label finish_checking_the_cell:
     # <!--(FOURTH MAJOR CHOICE)-->
     menu:
         "Head back to the bedroom door.":
+            $ ending_condition -= 10
             jump head_back_to_the_bedroom_door
         "Explore the rest of the prison.":
+            $ ending_condition += 10
             jump explore_the_rest_of_the_prison
 
 label get_closer:
@@ -584,15 +588,19 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     show Parents mouth_fear eye_default brow_surprised
     show parents_fear_overlay_mask
     """
-    Carla's words cut deeply, but there is more at play here. Your account of the past events conflicts with Carla's retelling.
+    Carla's words cut deeply, but there is more at play here.
+    
+    Your account of the past events conflicts with Carla's retelling.
     
     That's to be expected if a demon is possibly taking her over...
     """
     hide parents_fear_overlay_mask with dissolve
     menu:
         "Carls, of course I want to spend time with you.":
+            $ ending_condition += 10
             jump carls_of_course_i_want_to_spend_time_with_you
         "Leave the room.":
+            $ ending_condition -= 10
             jump leave_the_room
 
 label leave_the_room:
@@ -605,7 +613,7 @@ label leave_the_room:
     
     """
     For a brief moment you hesitate, compelled to tell Carla what's happening.
-    
+
     The demon might act if you give it away. You can't afford to be in another nightmare.
     """
     show Parents mouth_sad eye_serious brow_sad
@@ -688,7 +696,7 @@ label pass_the_food_directly_to_carla:
     
     show Mom brow_sad eye_default mouth_sad
     
-    $ lipsync(Mom, "act4", 'audio_59', "Yes, on one condition ok?", 'mouth_sad')
+    $ lipsync(Mom, "act4", 'audio_59', "Yes, on one condition.", 'mouth_sad')
     
     "Carlas snappily responds."
     
@@ -722,7 +730,7 @@ label pass_the_food_directly_to_carla:
     $ lipsync(Carla, "act4", 'audio_70', "What's your condition then?", 'mouth_sad')
     
     show Parents eye_serious brow_angry
-    $ lipsync(Parents, "act4", 'audio_71', "No //Story Time//.", 'mouth_sad')
+    $ lipsync(Parents, "act4", 'audio_71', "No games.", 'mouth_sad')
     $ lipsync(Parents, "act4", 'audio_72', "That's it.", 'mouth_sad')
     show Carla brow_surprised eye_default mouth_G
     "Carla hesitates for a moment before answering calmly, her demeanor has changed."
@@ -730,7 +738,9 @@ label pass_the_food_directly_to_carla:
     
     $ lipsync(Carla, "act4", 'audio_73', "Ok.", 'mouth_X')
     
-    jump begin_unlocking_her_door
+    menu:
+        "Begin unlocking her door.":
+            jump begin_unlocking_her_door
 
 label pick_it_up:
     """
@@ -833,6 +843,7 @@ label respond:
 
 label shut_the_door_and_lock_it:
     show Parents mouth_C eye_serious brow_angry
+    
     "After moments of waiting for any response, you decide to make one last effort to get Carla's attention."
     
     $ lipsync(Parents, "act4", "audio_91", "Ok Carla!", 'mouth_C')
@@ -843,7 +854,7 @@ label shut_the_door_and_lock_it:
     """
     show Parents mouth_sad
     """
-    You decide that you waited long enough, but before you can act you see several hands reach out from the the blackness.
+    You decide that you waited long enough, but before you can act you see a monster reach out from the the blackness.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
@@ -874,13 +885,15 @@ label shut_the_door_and_lock_it:
     show Parents mouth_sad overlay_fear eye_serious brow_angry
     """
     Backing away from the door, you grab the bat by the door, ready to strike.
+    
+    Silence.
     """
     with sshake
     show Parents mouth_fear eye_default brow_surprised
     """
     The door bursts open and the hands successfully grab at you and pull you in. The door slams behind you as you get further and further away.
     
-    You do your best to swing at the hands but become suffocated by the darkness, until you finally get a hold of your location.
+    You do your best to swing at the hands but become suffocated by the darkness.
     """
     
     jump inside_the_hallway
@@ -954,8 +967,10 @@ label the_monster_shifts_closer_to_you:
     # <!--(FIFTH MAJOR CHOICE)-->
     menu:
         "Attack the monster.":
+            $ ending_condition += 10
             jump attack_the_monster
         "Wait.":
+            $ ending_condition -= 10
             jump wait
 
 label wait:

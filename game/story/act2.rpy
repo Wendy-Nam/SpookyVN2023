@@ -37,6 +37,7 @@ label when_you_lose:
     stop music fadeout 2.0
     hide Dad
     hide Mom
+    "She open's her mouth to speak, but it opens unnatrually wide."
     show bg carnival_minigame with sshake
     show Parents eye_default brow_surprised mouth_fear overlay_fear
     show Carla brow_angry eye_crying mouth_angry overlay_fear
@@ -72,7 +73,7 @@ label when_you_win:
     show Dad brow_default eye_default mouth_D
     
     """
-    With a smug grin you rest the pistol on the game stand and look at Carla.
+    With a smug grin you rest the rifle on the game stand and look at Carla.
     
     Full of anger, Carla congratulates you.
     """
@@ -102,7 +103,7 @@ label when_you_win:
     $ lipsync(Carla, 'act2', 'audio_12', "You weren't supposed to beat it.", 'mouth_stingy')
 
     "Carla's eyes shift towards the floor for a few seconds and she looks back at you with a sinister smile."
-    
+    # TODO : ADD A SINISTER SMILE
     $ lipsync(Carla, 'act2', 'audio_13', "You want to play again?")
     menu:
         "Play the game again.":
@@ -117,12 +118,14 @@ label act21:
     play sound "<from 6 to 15>audio/Sound/House Scene Sounds/Plastic Wrapping.mp3" volume 0.2 
     
     """
-    You can hear candy wrappers being moved and Carla shuffling around while you begin humming a tune to yourself.
+    Candy wrappers rustle while Carla shuffles around.
     """
     
     play sound "<from 0 to 3>audio/Sound/Carnival Scene Sounds/Abandoned Carnival.mp3" volume 0.02 fadein 1.0
     
     """
+    You begin humming a tune to yourself.
+    
     After a brief moment you realize you don't hear Carla moving, but feel a breeze of the wind against your face.
     
     Unsure of what's happening, you ask.
@@ -159,38 +162,32 @@ label act21:
     
     Specifially popcorn and churros.
     
-    The smell catches you off guard, but since nothing is burning, you trust Carla with the set up.
-    
+    The scent catches you off guard, but since nothing is burning, you trust Carla with the set up.
+
     You continue to hum your tune, patiently waiting for Carla to finish.
     
-    You notice that there is music similar to your hum.
+    Your attention is further grabbed hearing music similar to your hum.
     
-    To double check, you stop and realize that there //is// music playing in the background. 
-    
-    Troubled, you start to speak up.
+    To double check, you stop and realize that there //is// music playing in the background.  
     """
     
     show Dad mouth_C
     
     """
-    Before saying anything, Carla finally breaks her silence.
+    Before you can voice your concerns, Carla finally breaks her silence from your left.
     """
     
     show Dad mouth_sad
     show Carla at left
     
     $ lipsync(Carla, 'act2', 'audio_17', "Ok.")
-    $ lipsync(Carla, 'act2', 'audio_18', "You can open your eyes now.")
+    $ lipsync(Carla, 'act2', 'audio_18', "You can open your eyes now!")
     
     play sound "audio/Sound/Carnival Scene Sounds/Abandoned Carnival.mp3" volume 0.01 fadein 1.0
     
     scene bg carnival
     show blink
     with hpunch
-    
-    """
-    from your left, Carla's voice breaks through the tune you've been listening to.
-    """
         
     window auto hide
     camera:
@@ -210,8 +207,8 @@ label act21:
     """
     show Parents overlay_fear
     """
-    The height frightens you, causing you to hold on to Carla.
-    
+    The sudden change in height frightens you, causing you to hold on to Carla.
+
     In a panicked voice, you question her.
     """
     
@@ -234,9 +231,9 @@ label act21:
     """
     Carla seems oblivious to your distress as you try to comprehend what's going on.
     
-    The ferris wheel makes its descent and you take a moment to take in the sight.
+    The ferris wheel makes its descent and you have a moment to take in the sight.
     
-    You press Carla for answers.
+    Conflicted, you press Carla for answers.
     """
     $ quick_menu = False
     play music 'audio/Music/A_Trick_of_Mind_Carnival.ogg' fadein 3.5 volume 0.005
@@ -248,7 +245,7 @@ label act21:
 
 label act22a:
     $ quick_menu = True
-    $ lipsync(Carla, 'act2', 'audio_22', "It's //Story Time// isn't it?")
+    $ lipsync(Carla, 'act2', 'audio_22', "It's a part of the game isn't it?")
     $ lipsync(Carla, 'act2', 'audio_23', "This is the start of our story at the carnival.")
     show Carla brow_surprised eye_default mouth_D
     
@@ -275,7 +272,7 @@ label act22a:
     "You give Carla a stern look and she concedes."
     
     show Dad brow_default
-    $ lipsync(Dad, 'act2', 'audio_31', "Fine, but just wait till you see what at the bottom.")
+    $ lipsync(Carla, 'act2', 'audio_31', "Fine, but just wait till you see the rest.")
     
     jump act23
 
@@ -294,7 +291,7 @@ label act22b:
     $ lipsync(Dad, 'act2', 'audio_35', "But from what I see, it's impressive Carls.")
     
     $ lipsync(Carla, 'act2', 'audio_36', "Wait until you see whats at the bottom.")
-    $ lipsync(Carla, 'act2', 'audio_37', "//Story Time// is gonna be amazing.")
+    $ lipsync(Carla, 'act2', 'audio_37', "This is gonna be amazing.")
     show Carla eye_default mouth_B
     
     $ lipsync(Mom, 'act2', 'audio_38', "Excuse me?")
@@ -328,7 +325,11 @@ label act23:
     $ lipsync(Parents, 'act2', 'audio_42', "Carls!", 'mouth_fear')
     
     hide Parents with dissolve
-    
+    """
+    You reach out to grab her in a futile attempt.
+
+    It's too late. You take off the harness and step off the ferris wheel to find Carla.
+    """
     scene bg carnival_foodtent
     
     window auto hide
@@ -342,15 +343,11 @@ label act23:
     play sound 'audio/Sound/Carnival Scene Sounds/Carnival Ambience with Rides and People.mp3' fadein 1.0 volume 0.01
     
     """
-    your efforts to reach out to her are futile and you step off the ferris wheel.
-    
-    You begin to look for Carla.
-    
     Your first instinct takes you to some food carts parked in front of a tent.
-    
+
     Oddly enough, there is no one available to serve you.
-    
-    Knowing you have to focus on finding Carla, you only have time to look at one cart.
+
+    Knowing you have to focus on finding Carla, you only have time to look at one cart
     """
     menu:
         "Look at the first food cart.":
@@ -405,6 +402,8 @@ label act24c:
     Carla skillfully shoots at the targets and finishes the game as you approach.
     
     As you get closer, the targets appear to be looking at you for a brief moment.
+    
+    Pretending to ignore what you saw, you express excitement.
     """
     
     show Mom brow_surprised eye_default mouth_C
@@ -417,7 +416,7 @@ label act24c:
     """
     your smile beams while you observe the targets and the gun.
     
-    Carla puts the gun down and cheerfully tells you her accomplishments.
+    Carla puts the rifle down and cheerfully tells you her accomplishments.
     """
     
     show Carla brow_default eye_default mouth_E at left
@@ -429,17 +428,19 @@ label act24c:
     
     You look at Carla's smile and back at the game.
     
-    The excitement of what Carla has created during this //Story Time// has worn off, but you don't want to disappoint her.
+    The excitement of what Carla has created during the game has worn off, but you don't want to disappoint her.
     """
     show Dad eye_default brow_default mouth_X
     show Mom eye_default brow_default mouth_X
     # <!--(FIRST MAJOR CHOICE)-->
     menu:
         "Ok missy, one game only.":
+            $ ending_condition += 10
             show Dad mouth_A
             show Mom mouth_A
             jump act25a
         "Carls, we should be going to bed now. I think the game is over.":
+            $ ending_condition -= 10
             show Mom mouth_sad
             jump act25b
 
@@ -485,15 +486,17 @@ label act25b:
     $ lipsync(Dad, 'act2', 'audio_50', "What you did here is amazing, but it's late Carls.")
     show Dad brow_sad eye_serious mouth_sad
     
-    "you try to appease Carla, but fail."
+    "Your attempt to appease Carla fails."
     
     $ lipsync(Carla, 'act2', 'audio_51', "We barely even started!")
     show Carla brow_angry2 eye_default mouth_angry2    
+    
     "Carla's voice cracks"
     
     $ lipsync(Carla, 'act2', 'audio_52', "It's not fair.")
     
     show Mom brow_angry eye_serious mouth_C
+    
     "You sternly answer"
     
     $ lipsync(Mom, 'act2', 'audio_53', "Excuse me?")
@@ -533,6 +536,8 @@ label act25b:
     play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.05
     """
     Carla's scream continues and the targets face you again.
+    
+    They've completely transformed.
     """
     show monster_ducklings at monster_ducklings_attack
     show boss_duck at moving_boss_duck

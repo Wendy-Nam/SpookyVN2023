@@ -38,8 +38,8 @@ label check_her_bookshelves:
     window auto show
 
     """
-    The bookshelves are littered with horror movie merchandise that you forgot purchasing.
-    
+    The bookshelves are littered with horror movie merchandise that you forgot purchasing for her.
+
     A suspicious notebook catches your eye.
     """
     menu:
@@ -80,9 +80,9 @@ label check_under_her_bed:
 
     """
     Under her bed are remnants of her old toys and books before she found her love for horror.
-    
-    Colorful books and soft plushies that remind you of the carnival incident and compels you to pull away from the bed.
-    
+
+    Colorful books and soft duck plushies remind you of the carnival incident, compelling you to pull away from the bed.
+
     Oddly enough, you're happy that Carla is in the phase she's in now.
     """
     
@@ -163,11 +163,15 @@ label enter_the_underwater_cave:
 
 label go_back_to_the_living_room:
     scene bg livingroom_night with dissolve
-    """Once in the living room, the clues you've gathered repeat the same idea you've been scared of admitting for the past few weeks.
-    
-    Carla is starting to get possessed by something.
-    
-    Whether it's a demon or a monster, you're not sure."""
+    """
+    Once in the living room, the clues you've gathered repeat the same idea you've been scared of admitting for the past few weeks.
+
+    Carla is getting possessed by something.
+
+    Whether it's a demon or a monster, you're not sure.
+
+    Yet.
+    """
     
     jump the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room
 
@@ -175,6 +179,7 @@ label huh:
     "Carla's worried look catches your attention but it's too late."
 
     $ lipsync(Carla, "act3", 'audio_7', "Why do you look sick?")
+    
     $ lipsync(Parents, "act3", 'audio_8', "Nothing.")
     
     hide Parents
@@ -203,19 +208,32 @@ label huh:
     show Parents mouth_fear overlay_fear eye_default brow_surprised    
     $ lipsync(Parents, "act3", 'audio_14', "NO", 'mouth_fear')
     
-    "Carla pouts at your response as you snap back to reality," 
+    # TODO : Add expression
+    """
+    Carla is startled by your anguished look.
+
+    You snap back to reality finding that your face is nearly two inches from hers.
+
+    She steps back from you with fear in her eyes.
+    """
+    
+    # TODO : add some visual effects and expressions
+    
+    $ lipsync(Carla, "act3", "audio_001", "Ok...")
+    
+    "With her head down, Carla quickly retreats to her room."
     
     hide Parents
     show Parents eye_default brow_surprised
     
-    $ lipsync(Parents, "act3", 'audio_15', "Wait, Carls.", 'mouth_fear')
-        
+    $ lipsync(Parents, "act3", 'audio_002', "Wait, Carls.", 'mouth_fear')
+    $ lipsync(Parents, "act3", 'audio_003', "I'm really sorry!", 'mouth_fear')
     hide Carla with moveoutleft
     show Parents mouth_sad  eye_serious brow_sad
     """
     Your apology falls on deaf ears, and Carla swiftly retreats to her room.
-    
-    After a few minutes, you decide what to say and head to Carla's room to apologize.
+
+    After a few minutes, you decide what to say and head to Carla's room.
     """
     menu:
         "Knock on her door.":
@@ -224,7 +242,17 @@ label huh:
 label im_sorry_carls_keep_going:
     """
     Thrilled at your interest in her, Carla continues to speak but her words fade away while you watch her speak.
-    
+
+    A demon? She can't be.
+
+    Carla may be a bit mischievous, but she wouldn't hurt me.
+
+    Right?
+
+    The pain in your right leg has subsided.
+
+    You catch yourself unfocused on Carla's story and watch her mouth move as she recounts her time at the pool, her words continue to pass you by.
+
     After a few moments, Carla finishes her story.
     """
     
@@ -265,9 +293,9 @@ label im_sorry_carls_keep_going:
     $ lipsync(Parents, "act3", 'audio_25', "Get what ready?", 'mouth_sad')
     
     """
-    Minutes pass and you begin to wonder what Carla had to collect to declare the game as "ready". 
-    
-    The idea is troubling and you head for her room to check on her.
+    Minutes pass and you begin to wonder what Carla had to collect to declare the game as //ready//. 
+
+    You're troubled by the idea and head for her room to check on her.
     """
     menu:
         "Knock on her door.":
@@ -325,17 +353,6 @@ label kick_at_whatever_is_grabbing_your_leg:
     
     Without hesitation, you exit the cave and try to leave the nightmare.
     """
-    
-    # (Escape gameplay?)
-    scene bg underwater_game
-    "Game Start"
-    window hide
-    $ minigame2 = UnderwaterGame()
-    $ minigame2.run()
-    scene black
-    if minigame2.status.survived == False:
-        return # Ending : Drowned...
-
     scene bg underwater_door
     """
     With the air in your body wearing thin, your salvation is within your grasp.
@@ -402,20 +419,40 @@ label open_your_eyes_again:
     """
     
     # (Here be gameplay for the underwater portion until you find the sea cave)
-    
-    jump enter_the_underwater_cave
+    scene bg underwater_game
+    "Game Start"
+    window hide
+    $ minigame2 = UnderwaterGame()
+    $ minigame2.run()
+    scene black
+    if minigame2.status.survived == False:
+        return # Ending : Drowned...
+    """
+    After aimlessly swimming around, an underwater cave catches your eye.
+
+    Hoping to find a large enough air pocket to rest and breathe, you swim into it.
+
+    The crevice is smaller than anticipated, but it's enough for you to pull yourself through.
+
+    The air provided by the air bubbles gives you enough energy to find an open area.
+
+    Above you is a surface you can finally reach.
+    """
+    menu:
+        "Enter the underwater cave.":
+            jump enter_the_underwater_cave
 
 label read_the_notebook:
     play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 0.7 fadein 1.0
     
     """
     The notebook doesn't have any notes, but drawings.
-    
+
     There are many references to monsters in movies that you're familiar with.
-    
-    Amazed with Carla's artistic talent, you aren't surprised that she managed to create a world of her own.
-    
-    However, the monsters that you don't recognize lead you to believe that Carla may be seeing these monstrosities outside of the movies.
+
+    Amazed with Carla's artistic talent, you aren't surprised that she managed to create a world of her own before.
+
+    However, there are monsters that you don't recognize.
     """
     
     jump continue_your_search_through_carlas_room
@@ -439,9 +476,7 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     "The urge to act on this conclusion is stopped when Carla enters the room."
     
     play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
-    
-    "With a shortened breath, Carla exclaims,"
-    
+
     show Carla at left
     $ lipsync(Carla, "act3", 'audio_28', "I'm home!")
     
@@ -449,6 +484,7 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     
     $ lipsync(Carla, "act3", 'audio_29', "You totally missed it.")
     $ lipsync(Carla, "act3", 'audio_30', "I got to the edge of the diving board and everyone was cheering me on.")
+    
     $ lipsync(Parents, "act3", 'audio_31', "Oh really?")
     
     "Your voice obviously shows that you're distracted, but Carla moves on with her tale."
@@ -457,7 +493,8 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     $ lipsync(Carla, "act3", 'audio_33', "I kept thinking about that movie with the shark, but it didn't make sense because...")
     $ lipsync(Carla, "act3", 'audio_34', "Everyone's already in the pool, and no one was panicking-")
     
-    "Carla notices your distracted look."
+    "Carla notices your preoccupied look."
+    
     show Parents mouth_G eye_default brow_surprised
     show parents_fear_overlay_mask at center:
         alpha 0.5
@@ -468,8 +505,10 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     #<!--(SECOND MAJOR CHOICE)-->
     menu:
         "Huh?":
+            $ ending_condition -= 10
             jump huh
         "I'm sorry Carls, keep going.":
+            $ ending_condition += 10
             jump im_sorry_carls_keep_going
 
 label you_knock_again:
@@ -583,7 +622,7 @@ label act31:
     show Parents mouth_fear overlay_fear eye_default brow_surprised with vpunch
     
     """
-    Your eyes widen as you find a bite mark on your leg.
+    Your eyes widen as you find a bite mark on your right leg.
     """
     
     scene black
@@ -592,16 +631,17 @@ label act31:
     """
     Months have passed since the incident on Halloween.
     
-    Although Carla has completely forgotten about it, the events have haunted you to this day.
-    
-    Thankfully, Carla hasn't had another "episode" since, but the fear has continued to eat at you.
+    Although Carla doesn't think about it, the events have haunted you to this day.
+
+    Thankfully, Carla hasn't had another “episode” since, but the fear has continued to eat at you.
     """
+    
     scene bg livingroom_sunset with dissolve
     play music 'audio/Music/A_Trick_of_Mind_House.ogg' volume 0.05
     """
     The summer heat beats into your apartment while you finish up some chores.
     
-    Carla has been with some family friends at the pool and you decide to seize the moment to catch up on some of the research notes you've gathered in the past month.
+    Carla is with some family friends at the pool and you decide to seize the moment to catch up on some of the research notes you've gathered in the past months.
     """
     window auto hide
     menu:
@@ -640,7 +680,7 @@ label act32b:
     scene bg bedroom_day with pushright
     """
     Carla's room always terrifies you, her sweet personality never made sense with her favorite movie genre to you, but you love her regardless.
-    
+
     Your trip here isn't for nostalgia's sake, you're searching for any out of the ordinary clues, so you start looking.
     """
     menu:

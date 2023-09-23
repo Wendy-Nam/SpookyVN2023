@@ -1,11 +1,8 @@
 label act11:
     scene black
     scene bg livingroom_night
+    
     play sound "audio/Sound/House Scene Sounds/Lock and Unlock Door.wav" volume 0.2
-    # camera:
-    #     zoom 2.5 anchor (18, 72)
-    #     linear 2.5 zoom 1.0 anchor (0, 0) 
-        
     play music "audio/Music/A_Trick_of_Mind_House.ogg" fadein 2.0 volume 0.3
     
     """
@@ -20,7 +17,6 @@ label act11:
     
     After a few moments, she stops to ask you a question.
     """
-    # show Carla at left
 
     $ lipsync(Carla, 'act1', "audio_0", "Why do people leave 'Take One Only' signs in front of their door?")
     $ lipsync(Carla, 'act1', "audio_1", "It makes me want to take more than that?")
@@ -96,6 +92,8 @@ label act11:
     "Carla stops her puppy face."
     
     $ lipsync(Carla, 'act1', "audio_16", "No dentist for me.")  
+    
+    $ lipsync(Dad, 'act1', "audio_17", "Ha, good.")
     # $ lipsync(Dad, 'act1', "audio_17", "No dentist for me.")
     $ lipsync(Dad, 'act1', "audio_18", "Now c'mon, lets get you changed out of that scary costume.")
     
@@ -119,12 +117,13 @@ label act12:
     $ lipsync(Mom, 'act1', "audio_21", "What is it Carls?")
         
     $ lipsync(Carla, 'act1', "audio_22", "I know it's late but...")
-    $ lipsync(Carla, 'act1', "audio_23", "can we at least play //Story Time// before we go to sleep?")
+    $ lipsync(Carla, 'act1', "audio_23", "can we at least play //the Game// before we go to sleep?")
     
     show Carla brow_sad eye_default mouth_sad
     
     """
     Carla refrains from using her puppy face.
+    
     She sincerely looks at you.
     """
     menu:
@@ -160,17 +159,19 @@ label act13b:
     hide Dad
     show Parents eye_closed
     stop music fadeout 2.0
-    jump act21
+    menu:
+        "You close your eyes.":
+            jump act21
 
 label act13a:
+    "Carla's voice breaks with a bit of desperation."
+    
     $ lipsync(Carla, 'act1', "audio_28", "But we're practically in costume already...")
     $ lipsync(Carla, 'act1', "audio_29", "That's like half of the work!")
-
-    "Carla's voice breaks with a bit of desperation."
     
     $ lipsync(Dad, 'act1', "audio_30", "It was so much work getting it on though...")
         
-    $ lipsync(Carla, 'act1', "audio_31", "Just one story.")
+    $ lipsync(Carla, 'act1', "audio_31", "Just once.")
     $ lipsync(Carla, 'act1', "audio_32", "I promise?")
     
     show Mom brow_surprised eye_serious mouth_H
@@ -183,4 +184,6 @@ label act13a:
     
     "After seeing Carla try to spend more time with you. you to break."
     
-    jump act13b
+    menu:
+        "Fine. On one condition.":
+            jump act13b
