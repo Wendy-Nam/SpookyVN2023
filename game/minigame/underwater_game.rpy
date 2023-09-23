@@ -101,7 +101,15 @@ init:
         ypos 850
         pause 0.01
         repeat
-
+    
+    transform drowning:
+        yalign 0.3
+        zoom 2.0
+        parallel:
+            linear 2.5 yalign 0.9
+        parallel:
+            linear 2.5 zoom 3.0
+            
 init python:
     def moveNose(trans, at, st):
         trans.xpos = renpy.get_mouse_pos()[0] - int(scaled_nose_size[0] / 4)
@@ -125,7 +133,11 @@ init python:
             if self.status.survived:
                 narrator("You nearly survived")
             else:
-                narrator("Drowned...")
+                renpy.scene()
+                renpy.show('blink')
+                renpy.show('bg underwater_game', at_list=[drowning])
+                renpy.music.play('<from 5>audio/Sound/Underwater Scene Sounds/Drowning.mp3', channel='music', relative_volume=0.5)
+                narrator("You Drowned...")
             renpy.hide_screen('hp_bar')
 
         def run(self):
@@ -147,6 +159,7 @@ init python:
                 if obj.hitted:
                     continue
                 if self.is_hit(obj):
+                    renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=0.5)
                     hp_change = obj.handle_collision()
                     if self.status.air_hp < self.status.max_hp:
                         self.status.air_hp += hp_change
@@ -165,7 +178,7 @@ init python:
 
         def spawn_object(self):
             # Create a new object (either bubble or fish) with random properties
-            object_type = renpy.random.choice(["bubble", "bubble", "bubble", "bubble", "fish"])
+            object_type = renpy.random.choice(["bubble", "bubble", "bubble", "fish"])
             if object_type == "bubble":
                 obj = self.Bubble(len(self.objects) + 1)
             else:

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/act3.rpy", line 482: expected simple expression
-    stop music fadeout
-                      ^
+File "game/story/act4.rpy", line 868: expected end of line
+    play target play sound 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.3
+                     ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Sat Sep 23 05:26:26 2023
+Sat Sep 23 20:49:09 2023

@@ -1,8 +1,8 @@
 
 label when_you_lose:
-    
+    hide Carla
     show Carla brow_surprised eye_default mouth_C at left
-    
+
     """
     With a defeated look, you put the toy pistol down.
     """
@@ -27,16 +27,18 @@ label when_you_lose:
     
     show Carla mouth_stingy
     $ lipsync(Carla, 'act2', 'audio_3', "You didn't.", 'mouth_stingy')
+    play music 'audio/Music/A_Trick_of_Mind_Carnival_Creepy.ogg' volume 0.03 fadein 3.0   
     play sound '<from 2 to 8>audio/Sound/Fast Heartbeat.wav' fadein 1.0
+    
     "The targets from the minigame face towards you and you feel the rate of your heart beat rise."
     
     show Dad mouth_sad eye_default brow_surprised
     show Mom mouth_sad eye_default brow_surprised
     with sshake3
     $ lipsync(Dad, 'act2', 'audio_4', "Carls, what are you doing?", default_mouth="mouth_surprised")
-    stop music fadeout 2.0
     hide Dad
     hide Mom
+    show Carla brow_angry mouth_angry2
     "She open's her mouth to speak, but it opens unnatrually wide."
     show bg carnival_minigame with sshake
     show Parents eye_default brow_surprised mouth_fear overlay_fear
@@ -101,9 +103,8 @@ label when_you_win:
     
     $ lipsync(Carla, 'act2', 'audio_11', "It's not just a game, it's my game.", 'mouth_sad')
     $ lipsync(Carla, 'act2', 'audio_12', "You weren't supposed to beat it.", 'mouth_stingy')
-
+    show Carla brow_angry2 mouth_C overlay_fear
     "Carla's eyes shift towards the floor for a few seconds and she looks back at you with a sinister smile."
-    # TODO : ADD A SINISTER SMILE
     $ lipsync(Carla, 'act2', 'audio_13', "You want to play again?")
     menu:
         "Play the game again.":
@@ -462,22 +463,26 @@ label act24d:
 
 label act25a:
     "You pick up the toy pistol and play the game."
+    "Instructions: Click on the targets to fire." 
+    "You have 10 bullets and 30 seconds."
     "Game Start"
     window hide
     scene bg carnival_minigame
-    $ my_game_config1 = GameConfig(target_nb=7, time_limit=30, bullet_max=15)
+    $ my_game_config1 = GameConfig(target_nb=7, time_limit=30, bullet_max=10)
     $ minigame1 = ShootingGame(my_game_config1)
     $ minigame1.run()
     $ score = [(minigame1.status.target_nb - minigame1.status.target_now), minigame1.status.target_nb] 
     $ karma = [(minigame1.status.karma)]
     "Score : [score[0]]/[score[1]]"
     scene bg carnival_minigame
+    stop music fadeout 2.0
     if score[0] == score[1]:
         jump when_you_win
     else:
         jump when_you_lose
 
 label act25b:
+    stop music fadeout 2.0
     $ lipsync(Carla, 'act2', 'audio_49', "I set all of this up and it's already over?")
     show Carla brow_sad eye_default mouth_stingy overlay_fear
     
@@ -506,7 +511,7 @@ label act25b:
     camera:
         linear 0.5 offset (0.0, -1053.0) matrixanchor (0.5, 0.55) zoom 2.16 
     show Carla brow_angry eye_default mouth_angry
-    stop music fadeout 2.0
+    
     """
     Carla angrily looks at you.
     """
@@ -518,6 +523,7 @@ label act25b:
     camera
     show bg carnival_minigame with sshake3
     play weapon '<from 0 to 3>audio/Sound/Carnival Scene Sounds/Snarling.WAV' fadein 2.0 loop
+    play music 'audio/Music/A_Trick_of_Mind_Carnival_Creepy.ogg' volume 0.03 fadein 3.0
     """
     The environment begins to shake and you notice the targets from the minigame have morphed into disfigured versions of their previous incarnation.
     """

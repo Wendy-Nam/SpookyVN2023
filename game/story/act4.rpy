@@ -173,19 +173,26 @@ label attack_the_monster:
             jump after_defeating_the_monster_childs_ending
 
 label begin_unlocking_her_door:
+    hide Carla with dissolve
+    stop music fadeout 3.0
     show Parents mouth_sad eye_serious brow_default
     with sshake3
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     """
     You reach up for the first latch and unhook it.
     """
     with sshake3
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     """
     The second latch is then undone.
     """
     with sshake3
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     """
     The third.
     """
+    with sshake3
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     """
     Finally, the fourth.
     """
@@ -197,6 +204,7 @@ label begin_unlocking_her_door:
     But it never comes. 
     """
     scene black
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
     """
     Once the door opens fully, to your horror, you find yourself peering into a dark hallway.
     
@@ -533,12 +541,15 @@ label keep_fighting:
     return
 
 label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
+    stop sound fadeout 2.0
     scene bg bedroom_sunset
     show blink
     show Carla brow_sad eye_crying mouth_angry2 overlay_fear at left
     
     $ lipsync(Carla, "act4", 'audio_37', "Hello??", 'mouth_angry2')
     $ lipsync(Carla, "act4", 'audio_38', "Wake up!", 'mouth_angry2')
+    
+    play music 'audio/Music/A_Trick_of_Mind_House.ogg' volume 0.05
     
     """
     Carla's cries bring you to reality.
@@ -853,31 +864,40 @@ label shut_the_door_and_lock_it:
     The unnerving silence eats at you as your internal voice tells you to shut the door.
     """
     show Parents mouth_sad
+    play weapon 'audio/Sound/Prison Scene Sounds/Monster Heavy Breathing.wav' fadein 3.0 volume 0.01
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.02
     """
     You decide that you waited long enough, but before you can act you see a monster reach out from the the blackness.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
     """
     The terrifying sight urges you to slam the door shut and begin latching it.
     """
     with sshake2
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
     """
     As you begin locking the door, the hands slam into it, pushing you away.
     
     You rush back to the door forcing all of your might into it, trying to keep the demon inside as you continue to lock it.
     """
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     with sshake
     """
     The first lock. The hands continue to bang at the door.
     """
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     with sshake
     """
     The second lock.
     """
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
     with sshake3
     """
     On the third lock you feel the door start to give and you press your feet to the ground, hoping you have enough strength to get the final lock.
-    
+    """
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    """
     On the fourth lock, the slamming ceases.
     
     You've managed to shut the entity away. For now.
@@ -885,11 +905,17 @@ label shut_the_door_and_lock_it:
     show Parents mouth_sad overlay_fear eye_serious brow_angry
     """
     Backing away from the door, you grab the bat by the door, ready to strike.
-    
+    """
+    stop sound fadeout 1.0
+    stop target fadeout 1.0
+    stop weapon fadeout 1.0
+    """
     Silence.
     """
     with sshake
     show Parents mouth_fear eye_default brow_surprised
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.3
     """
     The door bursts open and the hands successfully grab at you and pull you in. The door slams behind you as you get further and further away.
     

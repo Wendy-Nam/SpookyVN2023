@@ -109,6 +109,8 @@ label continue_your_search_through_carlas_room:
                 jump go_back_to_the_living_room
 
 label enter_the_underwater_cave:
+    stop music fadeout 2.0
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Cave Dripping Sound.WAV' volume 0.2
     scene bg hand_drowning with fade
     show bg hand_drowning at hand_drowning
     """
@@ -150,6 +152,7 @@ label enter_the_underwater_cave:
     $ lipsync(Dad, "act3", 'audio_6', "I just wanted to check on you and-", 'mouth_fear')
     with hpunch
     hide Carla with dissolve
+    stop sound fadeout 2.0
     """
     Your anxiety stops you when you feel a tugging on your leg again.
     
@@ -157,6 +160,8 @@ label enter_the_underwater_cave:
     """
     scene black
     scene bg underwater with dissolve
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.02 fadein 1.0
+
     menu:
         "Kick at whatever is grabbing your leg.":
             jump kick_at_whatever_is_grabbing_your_leg
@@ -314,14 +319,17 @@ label ignore_it_and_keep_going:
     jump bash_the_door
 
 label its_too_late_the_monster_swallows_you_whole:
+    play sound '<from 1 to 3>audio/Sound/Underwater Scene Sounds/Slimy Slither.wav' volume 1.5
     """
     But It's too late. The monster swallows you whole.
     
     Enveloped in darkness, you stop trying to hold your breath.
-    
+    """
+    stop music fadeout 2.0
+    play sound '<from 5 to 8>audio/Sound/Underwater Scene Sounds/Drowning.mp3' volume 0.5
+    """
     The dread sets in while you choke on the water entering your lungs.
     """
-    
     jump knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew
 
 label keep_swimming:
@@ -340,6 +348,7 @@ label keep_swimming:
 
 label kick_at_whatever_is_grabbing_your_leg:
     with vpunch
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Growling.WAV' volume 0.5
     scene bg underwater_creature with dissolve
     
     """    
@@ -398,7 +407,11 @@ label look_back:
 
 label open_the_door:
     play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0 fadein 1.0
-    play sound '<from 6>audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.1 fadein 2.0
+    play weapon 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Female Scream.mp3' volume 0.1 fadein 1.0
+    play target 'audio/Sound/Underwater Scene Sounds/Underwater Male Scream.mp3' volume 0.1 fadein 2.0
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.03 fadein 1.0
+    
     scene bg underwater with pixellate
     # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
@@ -420,16 +433,28 @@ label open_your_eyes_again:
     
     # (Here be gameplay for the underwater portion until you find the sea cave)
     scene bg underwater_game
-    "Game Start"
+    """
+    Instructions: Survive until the time runs out.
+    
+    Your HP decreases by 1 every second, and you must collect air from bubbles falling from the top.
+    
+    However, avoid the blowfish, as it may reduce your HP.
+    
+    Game Start
+    """
     window hide
     $ minigame2 = UnderwaterGame()
+    play AirTank 'audio/Sound/Underwater Scene Sounds/Air Tank Hiss.WAV' fadein 1.0 volume 0.05
     $ minigame2.run()
     scene black
-    if minigame2.status.survived == False:
+    if minigame2.status.survived == False:  
         return # Ending : Drowned...
+    stop AirTank fadeout 1.0
     """
     After aimlessly swimming around, an underwater cave catches your eye.
-
+    """
+    play sound 'audio/Sound/Underwater Scene Sounds/Treading Water Sound.WAV' volume 0.2
+    """
     Hoping to find a large enough air pocket to rest and breathe, you swim into it.
 
     The crevice is smaller than anticipated, but it's enough for you to pull yourself through.
@@ -533,6 +558,11 @@ label act31:
     
     You open your eyes.
     """
+    stop music fadeout 2.0
+    stop weapon fadeout 2.0
+    stop target fadeout 2.0
+    stop sound fadeout 2.0
+    
     scene bg livingroom_night
     show Carla eye_crying brow_angry2 mouth_angry2 overlay_fear at left
     show blink
@@ -620,7 +650,7 @@ label act31:
     When you take a step to your own room to remove the costume, a sharp pain shoots up your leg.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised with vpunch
-    
+    play sound 'audio/Sound/Scraping Gong.wav' fadein 1.0 volume 0.1
     """
     Your eyes widen as you find a bite mark on your right leg.
     """
