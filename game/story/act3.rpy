@@ -1,112 +1,28 @@
-
+## UNDERWATER PART
 label bash_the_door:
     with vpunch
     """
-    With what little you have left in you, your fist slams on the door, hoping that it'll move.
+    {wave=nunderwater_text}With what little you have left in you, your fist slams on the door, hoping that it'll move.{/wave}
     
-    You feel the monster swiftly approaching, but before you can do anything more to the door.
+    {wave=nunderwater_text}You feel the monster swiftly approaching, but before you can do anything more to the door.{/wave}
     """
     scene black with hpunch
     jump its_too_late_the_monster_swallows_you_whole
 
 label check_back:
     """
-    The temptation is too strong and you turn your head.
+    {wave=nunderwater_text}The temptation is too strong and you turn your head.{/wave}
     """
     show bg underwater_creature at jumpAttack
     """
-    To your horror, the monster's jaw is agape, ready to swallow you whole.
+    {wave=nunderwater_text}To your horror, the monster's jaw is agape, ready to swallow you whole.{/wave}
     
-    You let out a gasp, not realizing that was the last of your air and you stop swimming.
+    {wave=nunderwater_text}You let out a gasp, not realizing that was the last of your air and you stop swimming.{/wave}
     
-    With no energy to carry on, you make one push for the door.
+    {wave=nunderwater_text}With no energy to carry on, you make one push for the door.{/wave}
     """
     scene black with hpunch
     jump its_too_late_the_monster_swallows_you_whole
-    
-label check_her_bookshelves:
-    $ searched['bookshelves'] = True
-    
-    window auto hide
-    camera:
-        subpixel True additive 0.0 
-        offset (0, 0) zoom 1.0 blur 1.99 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-        linear 1.17 offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
-    with Pause(1.27)
-    camera:
-        offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
-    window auto show
-
-    """
-    The bookshelves are littered with horror movie merchandise that you forgot purchasing for her.
-
-    A suspicious notebook catches your eye.
-    """
-    menu:
-        "Read the notebook.":
-            jump read_the_notebook
-        "Continue your search through Carla's room.":
-            jump continue_your_search_through_carlas_room
-
-label check_the_nightstand:
-    $ searched['nightstand'] = True
-    
-    window auto hide
-    camera:
-        subpixel True 
-        offset (0, 0) zoom 1.0 blur 3.55 
-        linear 0.77 offset (-828, 0) zoom 2.13 blur 0.0 
-    with Pause(0.87)
-    camera:
-        offset (-828, 0) zoom 2.13 blur 0.0 
-    window auto show
-    
-    "Carla's nightstand has nothing of interest."
-    
-    jump continue_your_search_through_carlas_room
-
-label check_under_her_bed:
-    $ searched['bed'] = True
-    
-    window auto hide
-    camera:
-        subpixel True matrixanchor (0.5, 0.5) 
-        offset (0, 0) zoom 1.0 additive 0.0 blur 4.44 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-        linear 0.91 offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
-    with Pause(1.01)
-    camera:
-        offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
-    window auto show
-
-    """
-    Under her bed are remnants of her old toys and books before she found her love for horror.
-
-    Colorful books and soft duck plushies remind you of the carnival incident, compelling you to pull away from the bed.
-
-    Oddly enough, you're happy that Carla is in the phase she's in now.
-    """
-    
-    jump continue_your_search_through_carlas_room
-
-default searched = {'bed':False, 'bookshelves':False, 'nightstand':False}
-
-label continue_your_search_through_carlas_room:
-    camera
-    $ all_searched = all(searched.values())
-    if all_searched == False:
-        menu:
-            "Check under her bed." if searched['bed'] == False:
-                jump check_under_her_bed
-            "Check her bookshelves."  if searched['bookshelves'] == False:
-                jump check_her_bookshelves
-            "Check the nightstand." if searched['nightstand'] == False:
-                jump check_the_nightstand
-    else:
-        scene bg bedroom_night with dissolve
-        # Once the player selects all of the options once (They don't have to look at the notebook), they can move on.
-        menu:
-            "Go back to the living room.":
-                jump go_back_to_the_living_room
 
 label enter_the_underwater_cave:
     stop music fadeout 2.0
@@ -114,13 +30,13 @@ label enter_the_underwater_cave:
     scene bg hand_drowning with fade
     show bg hand_drowning at hand_drowning
     """
-    Though the cave is incredibly small, you manage to squeeze your way through enough to reach an air pocket. 
+    {wave=nunderwater_text}Though the cave is incredibly small, you manage to squeeze your way through enough to reach an air pocket.{/wave} 
     
-    You have enough space to keep yourself afloat wondering if you'll be stuck here forever. 
+    {wave=nunderwater_text}You have enough space to keep yourself afloat wondering if you'll be stuck here forever.{/wave} 
     
-    As you start to run out of energy to stay afloat, you feel a tugging at your leg.
+    {wave=nunderwater_text}As you start to run out of energy to stay afloat, you feel a tugging at your leg.{/wave}
     
-    You scream in panic and Carla's head pops out of the water, unfazed by the situation.
+    {wave=nunderwater_text}You scream in panic and Carla's head pops out of the water, unfazed by the situation.{/wave}
     """
     
     scene bg hand_drowning with fade
@@ -153,6 +69,7 @@ label enter_the_underwater_cave:
     with hpunch
     hide Carla with dissolve
     stop sound fadeout 2.0
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
     """
     Your anxiety stops you when you feel a tugging on your leg again.
     
@@ -160,166 +77,27 @@ label enter_the_underwater_cave:
     """
     scene black
     scene bg underwater with dissolve
-    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.02 fadein 1.0
+    stop sound fadeout 2.0
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.05 fadein 1.0
 
     menu:
-        "Kick at whatever is grabbing your leg.":
+        "{wave=nunderwater_text}Kick at whatever is grabbing your leg.":
             jump kick_at_whatever_is_grabbing_your_leg
-
-label go_back_to_the_living_room:
-    scene bg livingroom_night with dissolve
-    """
-    Once in the living room, the clues you've gathered repeat the same idea you've been scared of admitting for the past few weeks.
-
-    Carla is getting possessed by something.
-
-    Whether it's a demon or a monster, you're not sure.
-
-    Yet.
-    """
-    
-    jump the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room
-
-label huh:
-    "Carla's worried look catches your attention but it's too late."
-
-    $ lipsync(Carla, "act3", 'audio_7', "Why do you look sick?")
-    
-    $ lipsync(Parents, "act3", 'audio_8', "Nothing.")
-    
-    hide Parents
-    hide parents_fear_overlay_mask
-    show Dad brow_sad eye_default mouth_sad
-    show Mom brow_sad eye_default mouth_sad
-    
-    $ lipsync(Dad, "act3", 'audio_9', "I'm sorry, I had a lot to do while you were gone and I still have more to take care of.")
-    
-    "Carla contemplates for a moment." 
-    
-    show Carla brow_surprised eye_default mouth_G
-    
-    $ lipsync(Carla, "act3", 'audio_10', "Oh!")
-    $ lipsync(Carla, "act3", 'audio_11', "I know what we can do.")
-    $ lipsync(Carla, "act3", 'audio_12', "Let's play.")
-    $ lipsync(Carla, "act3", 'audio_13', "It'll take your mind off-")
-    
-    """
-    Her words bring out a primal response from within.
-    
-    Your response is blurted out before you can think about it.
-    """
-    hide Dad
-    hide Mom
-    show Parents mouth_fear overlay_fear eye_default brow_surprised    
-    $ lipsync(Parents, "act3", 'audio_14', "NO", 'mouth_fear')
-    
-    # TODO : Add expression
-    """
-    Carla is startled by your anguished look.
-
-    You snap back to reality finding that your face is nearly two inches from hers.
-
-    She steps back from you with fear in her eyes.
-    """
-    
-    # TODO : add some visual effects and expressions
-    
-    $ lipsync(Carla, "act3", "audio_001", "Ok...")
-    
-    "With her head down, Carla quickly retreats to her room."
-    
-    hide Parents
-    show Parents eye_default brow_surprised
-    
-    $ lipsync(Parents, "act3", 'audio_002', "Wait, Carls.", 'mouth_fear')
-    $ lipsync(Parents, "act3", 'audio_003', "I'm really sorry!", 'mouth_fear')
-    hide Carla with moveoutleft
-    show Parents mouth_sad  eye_serious brow_sad
-    """
-    Your apology falls on deaf ears, and Carla swiftly retreats to her room.
-
-    After a few minutes, you decide what to say and head to Carla's room.
-    """
-    menu:
-        "Knock on her door.":
-            jump knock_on_her_door
-
-label im_sorry_carls_keep_going:
-    """
-    Thrilled at your interest in her, Carla continues to speak but her words fade away while you watch her speak.
-
-    A demon? She can't be.
-
-    Carla may be a bit mischievous, but she wouldn't hurt me.
-
-    Right?
-
-    The pain in your right leg has subsided.
-
-    You catch yourself unfocused on Carla's story and watch her mouth move as she recounts her time at the pool, her words continue to pass you by.
-
-    After a few moments, Carla finishes her story.
-    """
-    
-    $ lipsync(Carla, "act3", 'audio_16', "-then I was like dun dun.")
-    $ lipsync(Carla, "act3", 'audio_17', "Dun dun.")
-    $ lipsync(Carla, "act3", 'audio_18', "Then I jumped out of the water and tackled them!" )
-    
-    "Carla stops for a moment and observes the glazed look in your eyes."
-    
-    $ lipsync(Carla, "act3", 'audio_19', "I think we should play something together, you look like you need it...")
-    
-    show Parents mouth_fear  eye_default brow_surprised
-    
-    """
-    Before you say anything, Carla's disturbed look stops you from giving her your initial answer. 
-    
-    You rationalize your decision internally. Maybe that was a one time thing?
-    
-    It hasn't happened at school, it probably won't happen here again.
-    
-    These questions raise your confidence and you give Carla your answer.
-    """
-    
-    $ lipsync(Parents, "act3", 'audio_20', "Y-yeah.")
-    $ lipsync(Parents, "act3", 'audio_21', "Let's do that.")
-    $ lipsync(Parents, "act3", 'audio_22', "I need a break anyway.")
-    
-    $ lipsync(Carla, "act3", 'audio_23', "Great!")
-    $ lipsync(Carla, "act3", 'audio_24', "I'll get everything ready.")
-     
-    hide Carla with moveoutleft
-    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
-    
-    "Carla runs for her room and closes the door."
-    
-    hide parents_fear_overlay_mask with dissolve
-    show Parents mouth_fear eye_default brow_surprised
-    $ lipsync(Parents, "act3", 'audio_25', "Get what ready?", 'mouth_sad')
-    
-    """
-    Minutes pass and you begin to wonder what Carla had to collect to declare the game as //ready//. 
-
-    You're troubled by the idea and head for her room to check on her.
-    """
-    menu:
-        "Knock on her door.":
-            jump knock_on_her_door
 
 label ignore_it_and_keep_going:
     scene bg underwater_door_closeup with dissolve
     """
-    With one hand in front of you, the doorknob reaches your grasp.
+    {wave=nunderwater_text}With one hand in front of you, the doorknob reaches your grasp.{/wave}
     
-    You turn the knob, feeling triumphant.
+    {wave=nunderwater_text}You turn the knob, feeling triumphant.{/wave}
     
-    But the door is locked.
+    {wave=nunderwater_text}But the door is locked.{/wave}
     """
     
     jump bash_the_door
 
 label its_too_late_the_monster_swallows_you_whole:
-    play sound '<from 1 to 3>audio/Sound/Underwater Scene Sounds/Slimy Slither.wav' volume 1.5
+    play sound '<from 1 to 3>audio/Sound/Underwater Scene Sounds/Slimy Slither.wav' volume 3.0
     """
     But It's too late. The monster swallows you whole.
     
@@ -334,16 +112,16 @@ label its_too_late_the_monster_swallows_you_whole:
 
 label keep_swimming:
     """
-    Anticipating the sensation of drowning motivates you to push harder despite the strain on your lungs.
+    {wave=nunderwater_text}Anticipating the sensation of drowning motivates you to push harder despite the strain on your lungs.{/wave}
     
-    However the door moves out of your reach, on its own accord.
+    {wave=nunderwater_text}However the door moves out of your reach, on its own accord.{/wave}
     
-    Feeling the monster getting closer, you're tempted to check again.
+    {wave=nunderwater_text}Feeling the monster getting closer, you're tempted to check again.{/wave}
     """
     menu:
-        "Check back.":
+        "{wave=nunderwater_text}Check back.{/wave}":
             jump check_back
-        "Ignore it and keep going.":
+        "{wave=nunderwater_text}gnore it and keep going.{/wave}":
             jump ignore_it_and_keep_going
 
 label kick_at_whatever_is_grabbing_your_leg:
@@ -352,41 +130,41 @@ label kick_at_whatever_is_grabbing_your_leg:
     scene bg underwater_creature with dissolve
     
     """    
-    Blindly, you use your other leg to kick at the entity holding on to your foot.
+    {wave=nunderwater_text}Blindly, you use your other leg to kick at the entity holding on to your foot.{/wave}
     """
     with vpunch
     """
-    Once free you manage to catch a glimpse at your captor.
+    {wave=nunderwater_text}Once free you manage to catch a glimpse at your captor.{/wave}
     
-    An ugly monster smiles back at you menacingly.
+    {wave=nunderwater_text}An ugly monster smiles back at you menacingly.{/wave}
     
-    Without hesitation, you exit the cave and try to leave the nightmare.
+    {wave=nunderwater_text}Without hesitation, you exit the cave and try to leave the nightmare.{/wave}
     """
     scene bg underwater_door
     """
-    With the air in your body wearing thin, your salvation is within your grasp.
+    {wave=nunderwater_text}With the air in your body wearing thin, your salvation is within your grasp.{/wave}
     
-    A door similar to Carla's bedroom door is close enough for you to reach.
+    {wave=nunderwater_text}A door similar to Carla's bedroom door is close enough for you to reach.{/wave}
     
-    You swim faster and faster, not knowing if the nightmare is following behind you.
+    {wave=nunderwater_text}You swim faster and faster, not knowing if the nightmare is following behind you.{/wave}
     """
     menu:
-        "Look back.":
+        "{wave=nunderwater_text}Look back.{/wave}":
             jump look_back
-        "Keep swimming.":
+        "{wave=nunderwater_text}Keep swimming.{/wave}":
             jump keep_swimming
 
 label kick_it:
     with vpunch
     """
-    Multiple satisfying kicks wrests your leg free of the monster's control.
+    {wave=nunderwater_text}Multiple satisfying kicks wrests your leg free of the monster's control.{/wave}
     
-    You move ahead, but you can't shake the feeling that something is wrong.
+    {wave=nunderwater_text}You move ahead, but you can't shake the feeling that something is wrong.{/wave}
     """
     menu:
-        "Keep swimming.":
+        "{wave=nunderwater_text}Keep swimming.{/wave}":
             jump keep_swimming
-        "Check back.":
+        "{wave=nunderwater_text}Check back.{/wave}":
             jump check_back
 
 label knock_on_her_door:
@@ -397,38 +175,39 @@ label knock_on_her_door:
 
 label look_back:
     """
-    To be sure, you check behind you. 
+    {wave=nunderwater_text}To be sure, you check behind you.{/wave} 
     
-    You bitterly regret it as the abomination grabs you by the foot.
+    {wave=nunderwater_text}You bitterly regret it as the abomination grabs you by the foot.{/wave}
     """
     menu:
-        "Kick it.":
+        "{wave=nunderwater_text}Kick it.{/wave}":
             jump kick_it
 
 label open_the_door:
     play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0 fadein 1.0
     play weapon 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
+    pause 1.0
     play sound 'audio/Sound/Underwater Scene Sounds/Underwater Female Scream.mp3' volume 0.1 fadein 1.0
     play target 'audio/Sound/Underwater Scene Sounds/Underwater Male Scream.mp3' volume 0.1 fadein 2.0
-    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.03 fadein 1.0
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.05 fadein 3.0
     
     scene bg underwater with pixellate
     # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
-    Water rushes out of her room completely filling the room. 
+    {wave=nunderwater_text}Water rushes out of her room completely filling the room.{/wave}
     
-    You hold your breath as the current spins you around, disorienting you until you eventually stop. 
+    {wave=nunderwater_text}You hold your breath as the current spins you around, disorienting you until you eventually stop.{/wave}
     
-    Once again, your fears about Carla have manifested again as you find yourself at the bottom of the sea floor.
+    {wave=nunderwater_text}Once again, your fears about Carla have manifested again as you find yourself at the bottom of the sea floor.{/wave}
     """
     # show Parents mouth_sad overlay_fear eye_serious
     jump swim_to_the_surface
 
 label open_your_eyes_again:
     """
-    Realizing you hadn't died, you avoid searching for a way out through the surface. 
+    {wave=nunderwater_text}Realizing you hadn't died, you avoid searching for a way out through the surface.{/wave}
     
-    Your energy is better spent trying to find a way to survive on the seafloor.
+    {wave=nunderwater_text}Your energy is better spent trying to find a way to survive on the seafloor.{/wave}
     """
     
     # (Here be gameplay for the underwater portion until you find the sea cave)
@@ -443,60 +222,46 @@ label open_your_eyes_again:
     Game Start
     """
     window hide
-    $ minigame2 = UnderwaterGame()
     play AirTank 'audio/Sound/Underwater Scene Sounds/Air Tank Hiss.WAV' fadein 1.0 volume 0.05
+    $ minigame2 = UnderwaterGame()
     $ minigame2.run()
     scene black
     if minigame2.status.survived == False:  
         return # Ending : Drowned...
     stop AirTank fadeout 1.0
     """
-    After aimlessly swimming around, an underwater cave catches your eye.
+    {wave=nunderwater_text}After aimlessly swimming around, an underwater cave catches your eye.{/wave}
     """
     play sound 'audio/Sound/Underwater Scene Sounds/Treading Water Sound.WAV' volume 0.2
     """
-    Hoping to find a large enough air pocket to rest and breathe, you swim into it.
+    {wave=nunderwater_text}Hoping to find a large enough air pocket to rest and breathe, you swim into it.{/wave}
 
-    The crevice is smaller than anticipated, but it's enough for you to pull yourself through.
+    {wave=nunderwater_text}The crevice is smaller than anticipated, but it's enough for you to pull yourself through.{/wave}
 
-    The air provided by the air bubbles gives you enough energy to find an open area.
+    {wave=nunderwater_text}The air provided by the air bubbles gives you enough energy to find an open area.{/wave}
 
-    Above you is a surface you can finally reach.
+    {wave=nunderwater_text}Above you is a surface you can finally reach.{/wave}
     """
     menu:
-        "Enter the underwater cave.":
+        "{wave=nunderwater_text}Enter the underwater cave.{/wave}":
             jump enter_the_underwater_cave
-
-label read_the_notebook:
-    play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 0.7 fadein 1.0
-    
-    """
-    The notebook doesn't have any notes, but drawings.
-
-    There are many references to monsters in movies that you're familiar with.
-
-    Amazed with Carla's artistic talent, you aren't surprised that she managed to create a world of her own before.
-
-    However, there are monsters that you don't recognize.
-    """
-    
-    jump continue_your_search_through_carlas_room
 
 label swim_to_the_surface:
 
     """
-    You ascend as fast as possible to the surface but find that the water's surface never approaches. 
+    {wave=nunderwater_text}You ascend as fast as possible to the surface but find that the water's surface never approaches.{/wave}
     
-    With every stroke, you feel your lungs collapse as you try to hold on. 
+    {wave=nunderwater_text}With every stroke, you feel your lungs collapse as you try to hold on.{/wave}
     
-    Unfortunately, you never reach the surface and your dread sets in as you involuntarily try to breathe again. 
+    {wave=nunderwater_text}Unfortunately, you never reach the surface and your dread sets in as you involuntarily try to breathe again.{/wave}
     
-    Your eyesight dims and you accept your fate in darkness, choking on the water as you pass out.
+    {wave=nunderwater_text}Your eyesight dims and you accept your fate in darkness, choking on the water as you pass out.{/wave}
     """
     menu:
-        'Open your eyes again.':
+        '{wave=nunderwater_text}Open your eyes again.{/wave}':
             jump open_your_eyes_again
 
+## HOUSE : BEFORE UNDERWATER PART
 label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     "The urge to act on this conclusion is stopped when Carla enters the room."
     
@@ -550,6 +315,7 @@ label you_knock_again:
         "Open the door":
             jump open_the_door
 
+## HOUSE : SEARCH PART
 label act31:
     """
     With your eyes closed, you continue to shudder at the gnashing teeth sinking into your skin.
@@ -667,7 +433,7 @@ label act31:
     """
     
     scene bg livingroom_sunset with dissolve
-    play music 'audio/Music/A_Trick_of_Mind_House.ogg' volume 0.05
+    play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 2.0 volume 0.15
     """
     The summer heat beats into your apartment while you finish up some chores.
     
@@ -704,7 +470,7 @@ label act32a:
             jump act32c
         "Family Mourns Child's Death at the Hands of the Father":
             jump act32d
-
+            
 label act32b:
     play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.5
     scene bg bedroom_day with pushright
@@ -760,3 +526,242 @@ label act32d:
     
     jump act32b
 
+default searched = {'bed':False, 'bookshelves':False, 'nightstand':False}
+
+label continue_your_search_through_carlas_room:
+    camera
+    $ all_searched = all(searched.values())
+    if all_searched == False:
+        menu:
+            "Check under her bed." if searched['bed'] == False:
+                jump check_under_her_bed
+            "Check her bookshelves."  if searched['bookshelves'] == False:
+                jump check_her_bookshelves
+            "Check the nightstand." if searched['nightstand'] == False:
+                jump check_the_nightstand
+    else:
+        scene bg bedroom_night with dissolve
+        # Once the player selects all of the options once (They don't have to look at the notebook), they can move on.
+        menu:
+            "Go back to the living room.":
+                jump go_back_to_the_living_room
+    
+label check_her_bookshelves:
+    $ searched['bookshelves'] = True
+    
+    window auto hide
+    camera:
+        subpixel True additive 0.0 
+        offset (0, 0) zoom 1.0 blur 1.99 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 1.17 offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
+    with Pause(1.27)
+    camera:
+        offset (-243, -756) zoom 2.37 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.2)*SaturationMatrix(0.79)*BrightnessMatrix(-0.03)*HueMatrix(0.0) 
+    window auto show
+
+    """
+    The bookshelves are littered with horror movie merchandise that you forgot purchasing for her.
+
+    A suspicious notebook catches your eye.
+    """
+    menu:
+        "Read the notebook.":
+            jump read_the_notebook
+        "Continue your search through Carla's room.":
+            jump continue_your_search_through_carlas_room
+
+label check_the_nightstand:
+    $ searched['nightstand'] = True
+    
+    window auto hide
+    camera:
+        subpixel True 
+        offset (0, 0) zoom 1.0 blur 3.55 
+        linear 0.77 offset (-828, 0) zoom 2.13 blur 0.0 
+    with Pause(0.87)
+    camera:
+        offset (-828, 0) zoom 2.13 blur 0.0 
+    window auto show
+    
+    "Carla's nightstand has nothing of interest."
+    
+    jump continue_your_search_through_carlas_room
+
+label check_under_her_bed:
+    $ searched['bed'] = True
+    
+    window auto hide
+    camera:
+        subpixel True matrixanchor (0.5, 0.5) 
+        offset (0, 0) zoom 1.0 additive 0.0 blur 4.44 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.91 offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
+    with Pause(1.01)
+    camera:
+        offset (-1026, -1260) zoom 2.2 additive 0.12 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.87)*BrightnessMatrix(-0.07)*HueMatrix(0.0) 
+    window auto show
+
+    """
+    Under her bed are remnants of her old toys and books before she found her love for horror.
+
+    Colorful books and soft duck plushies remind you of the carnival incident, compelling you to pull away from the bed.
+
+    Oddly enough, you're happy that Carla is in the phase she's in now.
+    """
+    
+    jump continue_your_search_through_carlas_room
+
+
+label read_the_notebook:
+    play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 0.7 fadein 1.0
+    
+    """
+    The notebook doesn't have any notes, but drawings.
+
+    There are many references to monsters in movies that you're familiar with.
+
+    Amazed with Carla's artistic talent, you aren't surprised that she managed to create a world of her own before.
+
+    However, there are monsters that you don't recognize.
+    """
+    
+    jump continue_your_search_through_carlas_room
+
+label go_back_to_the_living_room:
+    scene bg livingroom_night with dissolve
+    """
+    Once in the living room, the clues you've gathered repeat the same idea you've been scared of admitting for the past few weeks.
+
+    Carla is getting possessed by something.
+
+    Whether it's a demon or a monster, you're not sure.
+
+    Yet.
+    """
+    
+    jump the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room
+
+label huh:
+    "Carla's worried look catches your attention but it's too late."
+
+    $ lipsync(Carla, "act3", 'audio_7', "Why do you look sick?")
+    
+    $ lipsync(Parents, "act3", 'audio_8', "Nothing.")
+    
+    hide Parents
+    hide parents_fear_overlay_mask
+    show Dad brow_sad eye_default mouth_sad
+    show Mom brow_sad eye_default mouth_sad
+    
+    $ lipsync(Dad, "act3", 'audio_9', "I'm sorry, I had a lot to do while you were gone and I still have more to take care of.")
+    
+    "Carla contemplates for a moment." 
+    
+    show Carla brow_surprised eye_default mouth_G
+    
+    $ lipsync(Carla, "act3", 'audio_10', "Oh!")
+    $ lipsync(Carla, "act3", 'audio_11', "I know what we can do.")
+    $ lipsync(Carla, "act3", 'audio_12', "Let's play.")
+    $ lipsync(Carla, "act3", 'audio_13', "It'll take your mind off-")
+    
+    """
+    Her words bring out a primal response from within.
+    
+    Your response is blurted out before you can think about it.
+    """
+    hide Dad
+    hide Mom
+    show Parents mouth_fear overlay_fear eye_default brow_surprised    
+    $ lipsync(Parents, "act3", 'audio_14', "NO", 'mouth_fear')
+    
+    # TODO : Add expression
+    """
+    Carla is startled by your anguished look.
+
+    You snap back to reality finding that your face is nearly two inches from hers.
+
+    She steps back from you with fear in her eyes.
+    """
+    
+    # TODO : add some visual effects and expressions
+    
+    $ lipsync(Carla, "act3", "audio_001", "Ok...", 'mouth_sad')
+    
+    "With her head down, Carla quickly retreats to her room."
+    
+    hide Parents
+    show Parents eye_default brow_surprised
+    
+    $ lipsync(Parents, "act3", 'audio_002', "Wait, Carls.", 'mouth_fear')
+    $ lipsync(Parents, "act3", 'audio_003', "I'm really sorry!", 'mouth_fear')
+    hide Carla with moveoutleft
+    show Parents mouth_sad  eye_serious brow_sad
+    """
+    Your apology falls on deaf ears, and Carla swiftly retreats to her room.
+
+    After a few minutes, you decide what to say and head to Carla's room.
+    """
+    menu:
+        "Knock on her door.":
+            jump knock_on_her_door
+
+label im_sorry_carls_keep_going:
+    """
+    Thrilled at your interest in her, Carla continues to speak but her words fade away while you watch her speak.
+
+    A demon? She can't be.
+
+    Carla may be a bit mischievous, but she wouldn't hurt me.
+
+    Right?
+
+    The pain in your right leg has subsided.
+
+    You catch yourself unfocused on Carla's story and watch her mouth move as she recounts her time at the pool, her words continue to pass you by.
+
+    After a few moments, Carla finishes her story.
+    """
+    
+    $ lipsync(Carla, "act3", 'audio_16', "-then I was like dun dun.")
+    $ lipsync(Carla, "act3", 'audio_17', "Dun dun.")
+    $ lipsync(Carla, "act3", 'audio_18', "Then I jumped out of the water and tackled them!" )
+    
+    "Carla stops for a moment and observes the glazed look in your eyes."
+    
+    $ lipsync(Carla, "act3", 'audio_19', "I think we should play something together, you look like you need it...")
+    
+    show Parents mouth_fear  eye_default brow_surprised
+    
+    """
+    Before you say anything, Carla's disturbed look stops you from giving her your initial answer. 
+    
+    You rationalize your decision internally. Maybe that was a one time thing?
+    
+    It hasn't happened at school, it probably won't happen here again.
+    
+    These questions raise your confidence and you give Carla your answer.
+    """
+    
+    $ lipsync(Parents, "act3", 'audio_20', "Y-yeah.")
+    $ lipsync(Parents, "act3", 'audio_21', "Let's do that.")
+    $ lipsync(Parents, "act3", 'audio_22', "I need a break anyway.")
+    
+    $ lipsync(Carla, "act3", 'audio_23', "Great!")
+    $ lipsync(Carla, "act3", 'audio_24', "I'll get everything ready.")
+     
+    hide Carla with moveoutleft
+    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
+    
+    "Carla runs for her room and closes the door."
+    
+    hide parents_fear_overlay_mask with dissolve
+    show Parents mouth_fear eye_default brow_surprised
+    $ lipsync(Parents, "act3", 'audio_25', "Get what ready?", 'mouth_sad')
+    
+    """
+    Minutes pass and you begin to wonder what Carla had to collect to declare the game as //ready//. 
+
+    You're troubled by the idea and head for her room to check on her.
+    """
+    menu:
+        "Knock on her door.":
+            jump knock_on_her_door

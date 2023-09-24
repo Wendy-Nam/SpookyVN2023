@@ -1,3 +1,4 @@
+define underwater_text = WaveShader(amp = 0, melt="both", melt_params=(15, 0.5, 1, 0.2))
 
 image blink:
     "images/effects/mask_blink_half.png"
@@ -14,6 +15,39 @@ transform carnival_wheel_tint:
 transform closed_eye_tint:
     matrixcolor TintMatrix("#221b2b")*SaturationMatrix(1.0000)*ContrastMatrix(2.8426)
     center
+
+transform corridor_tint:
+    matrixcolor TintMatrix("#2d2d3c")*SaturationMatrix(0.6019)*ContrastMatrix(1.8981)
+    center
+
+transform prison_tint:
+    matrixcolor TintMatrix("#677777")*SaturationMatrix(0.6019)*ContrastMatrix(1.8981)
+    center
+
+transform courtyard_tint_carla:
+    matrixcolor TintMatrix("#606e6e")*SaturationMatrix(0.6019)*ContrastMatrix(2.1852)
+    left
+
+transform courtyard_tint_parents:
+    matrixcolor TintMatrix("#606e6e")*SaturationMatrix(0.6019)*ContrastMatrix(2.1852)
+    center
+
+transform red_blue_beam:
+    matrixcolor TintMatrix("#2125ff")*SaturationMatrix(1.0000)*ContrastMatrix(2.8426)
+    pause 1.0
+    matrixcolor TintMatrix("#df4242")*SaturationMatrix(1.0000)*ContrastMatrix(1.6574)
+    pause 1.5
+    repeat
+    
+transform step_in:
+    parallel:
+        linear 3.5 zoom 2.0
+    parallel:
+        linear 3.5 yalign 0.7 xalign 0.2
+    parallel:
+        ease 0.1 yoffset 25 # will move the character up and down while he's "walking"
+        ease 0.3 yoffset 0
+        repeat 8 # number of "steps". May be adjusted
 
 image bloody_view1:
     alpha 0.0  # Start with zero transparency
@@ -59,8 +93,6 @@ image bloody_view2:
     parallel:
         linear 5.0 alpha 0.0
     repeat
-
-
 
 transform jumpAttack:
     linear 0.5 zoom 3.0

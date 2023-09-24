@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/act4.rpy", line 868: expected end of line
-    play target play sound 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.3
-                     ^
+File "game/screens.rpy", line 346: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    brighter 1.2
+                ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Sat Sep 23 20:49:09 2023
+Sun Sep 24 19:35:05 2023

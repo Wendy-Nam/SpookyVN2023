@@ -43,11 +43,11 @@ label when_you_lose:
     show bg carnival_minigame with sshake
     show Parents eye_default brow_surprised mouth_fear overlay_fear
     show Carla brow_angry eye_crying mouth_angry overlay_fear
-    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.03
+    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.1
     with sshake
     camera:
         linear 0.5 offset (0.0, -1053.0) matrixanchor (0.5, 0.55) zoom 2.16 
-    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.05
+    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.2
     """
     Carla screams at you and the shooting gallery begins to shudder.
     
@@ -184,7 +184,7 @@ label act21:
     $ lipsync(Carla, 'act2', 'audio_17', "Ok.")
     $ lipsync(Carla, 'act2', 'audio_18', "You can open your eyes now!")
     
-    play sound "audio/Sound/Carnival Scene Sounds/Abandoned Carnival.mp3" volume 0.01 fadein 1.0
+    play sound "audio/Sound/Carnival Scene Sounds/Abandoned Carnival.mp3" volume 0.1 fadein 1.0
     
     scene bg carnival
     show blink
@@ -237,7 +237,7 @@ label act21:
     Conflicted, you press Carla for answers.
     """
     $ quick_menu = False
-    play music 'audio/Music/A_Trick_of_Mind_Carnival.ogg' fadein 3.5 volume 0.005
+    play music 'audio/Music/A_Trick_of_Mind_Carnival.ogg' fadein 3.5 volume 0.03
     menu:
         "This isn't funny. What did you do?":
             jump act22a
@@ -341,7 +341,7 @@ label act23:
     with Pause(1.70)
     camera
 
-    play sound 'audio/Sound/Carnival Scene Sounds/Carnival Ambience with Rides and People.mp3' fadein 1.0 volume 0.01
+    play sound 'audio/Sound/Carnival Scene Sounds/Carnival Ambience with Rides and People.mp3' fadein 3.0 volume 0.1
     
     """
     Your first instinct takes you to some food carts parked in front of a tent.
@@ -483,6 +483,7 @@ label act25a:
 
 label act25b:
     stop music fadeout 2.0
+    play music 'audio/Music/A_Trick_of_Mind_Carnival_Creepy.ogg' volume 0.1 fadein 3.0
     $ lipsync(Carla, 'act2', 'audio_49', "I set all of this up and it's already over?")
     show Carla brow_sad eye_default mouth_stingy overlay_fear
     
@@ -516,14 +517,13 @@ label act25b:
     Carla angrily looks at you.
     """
     show Carla brow_angry eye_crying mouth_angry overlay_fear
-    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.03
+    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.1
     """
     Her eyes begin to water and she begins to scream.
     """
     camera
     show bg carnival_minigame with sshake3
     play weapon '<from 0 to 3>audio/Sound/Carnival Scene Sounds/Snarling.WAV' fadein 2.0 loop
-    play music 'audio/Music/A_Trick_of_Mind_Carnival_Creepy.ogg' volume 0.03 fadein 3.0
     """
     The environment begins to shake and you notice the targets from the minigame have morphed into disfigured versions of their previous incarnation.
     """
@@ -539,7 +539,7 @@ label act25b:
     with sshake2
     $ lipsync(Parents, 'act2', 'audio_57', "Stop!", 'mouth_fear')
     with sshake3
-    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.05
+    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.2
     """
     Carla's scream continues and the targets face you again.
     
@@ -566,7 +566,7 @@ label act25c:
 label act26:
     play weapon '<from 0 to 6>audio/Sound/Carnival Scene Sounds/Flesh Squishing.wav' fadein 2.0 volume 1.5 noloop
     show debris1
-    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.05
+    play sound 'audio/Sound/Carnival Scene Sounds/Carla Screaming.mp3' fadein 2.0 volume 0.3
     stop target fadeout 2.0
     $ lipsync(Parents, 'act2', 'audio_58', "Carla!", default_mouth="mouth_fear")
     $ lipsync(Parents, 'act2', 'audio_59', "Please!", default_mouth="mouth_fear")

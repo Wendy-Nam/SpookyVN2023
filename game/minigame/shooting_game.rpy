@@ -294,7 +294,7 @@ init python:
             def attack(self, status, targets):
                 # Perform player attack and hit detection
                 renpy.call_screen("gun")
-                renpy.music.play('audio/Sound/Carnival Scene Sounds/Rifle Shot.WAV', channel='weapon', loop=False, relative_volume=0.01)
+                renpy.music.play('audio/Sound/Carnival Scene Sounds/Rifle Shot.WAV', channel='weapon', loop=False, relative_volume=0.1)
                 self.hit_pos = [renpy.get_mouse_pos()[0], renpy.get_mouse_pos()[1]]
                 targets_nb = int(self.config.target_nb)
                 for i in range(targets_nb):
@@ -305,9 +305,8 @@ init python:
                             targets[i].killed = True
                             if targets[i].image == 'normal_target':
                                 status.target_now -= 1
-                                renpy.music.play('audio/Sound/Carnival Scene Sounds/Target Hit.mp3', channel='target', loop=False, relative_volume=0.)
-                                renpy.music.play('<from 0 to 0.8>audio/Sound/Carnival Scene Sounds/Ducks Quacking.wav', channel='sound', loop=False, relative_volume=0.1)
-                                
+                                renpy.music.play('audio/Sound/Carnival Scene Sounds/Target Hit.mp3', channel='target', loop=False, relative_volume=1.0)
+                                renpy.music.play('<from 0 to 0.8>audio/Sound/Carnival Scene Sounds/Ducks Quacking.wav', channel='sound', loop=False, relative_volume=0.3)
                             # elif targets[i].image == 'avoid_target':
                             #     status.bullet_now -= 1
                             #     status.karma += 1

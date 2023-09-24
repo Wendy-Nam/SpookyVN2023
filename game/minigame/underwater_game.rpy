@@ -79,8 +79,8 @@ init:
             linear 0.5 rotate 30
             repeat
         parallel:
-            zoom 2.2
-            linear 0.5 zoom 3.0
+            zoom 2.0
+            linear 0.5 zoom 1.8 
             repeat
         parallel:
             ypos -30
@@ -90,9 +90,9 @@ init:
     transform object_hitted(xpos, ypos):
         pos (xpos, ypos)
         parallel:
-            zoom 2.5
-            linear 0.3 zoom 4.5
-            linear 0.2 zoom 1.5
+            zoom 2.0
+            linear 0.3 zoom 2.5
+            linear 0.2 zoom 0.5
         parallel:
             linear 0.5 alpha 0.0
 
@@ -213,7 +213,7 @@ init python:
                 super().__init__(id)
                 self.image = 'bubble'
                 self.image_path = 'images/underwater_minigame/bubble1.png'
-                self.target_scale = 2.2
+                self.target_scale = 2.0
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
                 self.position = At(ImageReference(self.image), falling_object(self.target_speed, self.target_xpos))
                 self.hp_change = 1  # Increase HP when the bubble is hit
@@ -223,7 +223,7 @@ init python:
                 super().__init__(id)
                 self.image = 'fish'
                 self.image_path = 'images/underwater_minigame/fish.png'
-                self.target_scale = 2.2
+                self.target_scale = 2.0
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
                 self.position = At(ImageReference(self.image), falling_object(self.target_speed, self.target_xpos))
                 self.hp_change = -2 # Decrease HP when the fish is hit

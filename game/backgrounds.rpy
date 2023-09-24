@@ -111,3 +111,24 @@ transform hand_drowning:
     linear 0.5 xalign 0.8 yalign 1.0 zoom 1.2
     zoom 0.9
     repeat
+
+## Corridor / Prison
+
+image bg cell_prison:
+    'images/backgrounds/Corridor-Prison/cell prison.png'
+
+image bg courtyard_creature_carla:
+    'images/backgrounds/Corridor-Prison/Courteyard with creature and carla.png'
+
+image bg courtyard:
+    'images/backgrounds/Corridor-Prison/Couteryard.png'
+
+image bg corridor_empty:
+    'images/backgrounds/Corridor-Prison/Dark corridor.empty.png'
+
+image bg corridor_creature:
+    'images/backgrounds/Corridor-Prison/dark creature less color.png'
+
+image bg double_doors:
+    'images/backgrounds/Corridor-Prison/double doors.png'
+    matrixcolor TintMatrix("#55a6a8")*SaturationMatrix(0.6019)*ContrastMatrix(1.8981)

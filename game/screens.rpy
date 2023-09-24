@@ -283,49 +283,110 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
-    vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
+    if not main_menu:
+        vbox:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
+    
+            spacing gui.navigation_spacing
             textbutton _("History") action ShowMenu("history")
-
             textbutton _("Save") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
+            textbutton _("Load") action ShowMenu("load")
+            textbutton _("Preferences") action ShowMenu("preferences")
+            if _in_replay:
+    
+                textbutton _("End Replay") action EndReplay(confirm=True)
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+    else:
+        hbox:
+            style_prefix "navigation"
+    
+            xalign 0.5
+            yalign 0.95
+    
+            spacing 80
+        
+            imagebutton idle "gui/mainmenu/Play.png" action Start() at menu_button_hovered
+    
+            imagebutton idle "gui/mainmenu/Load.png" action ShowMenu("load") at menu_button_hovered
+    
+            imagebutton idle "gui/mainmenu/Preferences.png" action ShowMenu("preferences") at menu_button_hovered
+                    
+            imagebutton idle "gui/mainmenu/About.png" action ShowMenu("template_1a") at menu_button_hovered
+    
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+    
+                ## Help isn't necessary or relevant to mobile devices.
+                imagebutton idle "gui/mainmenu/Help.png" action ShowMenu("help") at menu_button_hovered
+    
+            if renpy.variant("pc"):
+    
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+                imagebutton idle "gui/mainmenu/Quit.png" action Quit(confirm=not main_menu) at menu_button_hovered
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+transform menu_button_hovered:
+    on hover:
+        zoom 1.0
+        parallel:
+            linear 0.5 zoom 1.1
+        parallel:
+            linear 0.5 yoffset -5
+        parallel:
+            linear 0.2 alpha 0.5
+            linear 0.2 alpha 0.8
+            linear 0.2 alpha 1.0
+            repeat
+    on idle:
+        zoom 1.0
+        alpha 1.0
+        yoffset 0
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+screen navigation2():
+    if not main_menu:
+        vbox:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
+    
+            spacing gui.navigation_spacing
+            textbutton _("History") action ShowMenu("history")
+            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Load") action ShowMenu("load")
+            textbutton _("Preferences") action ShowMenu("preferences")
+            if _in_replay:
+    
+                textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("Main Menu") action MainMenu()
+    else:
+        vbox:
+            style_prefix "navigation"
+    
+            xpos gui.navigation_xpos
+            yalign 0.6
+    
+            spacing gui.navigation_spacing
+    
+            textbutton _("Play") action Start()
+            
+            textbutton _("Load") action ShowMenu("load")
+    
+            textbutton _("Preferences") action ShowMenu("preferences")
+                    
+            textbutton _("About") action ShowMenu("template_1a") #ShowMenu("about")
+    
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+    
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help")
+    
+            if renpy.variant("pc"):
+    
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+                textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -382,7 +443,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -463,8 +524,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                 else:
 
                     transclude
-
-    use navigation
+    use navigation2
+    # use navigation
 
     textbutton _("Return"):
         style "return_button"
