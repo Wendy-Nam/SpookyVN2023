@@ -245,8 +245,9 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.84
-            yalign 0.92
+            yalign 0.925
             spacing 20
+            imagebutton idle "gui/quickmenu/icon_achievements.png" action ShowMenu("achievement_gallery") yalign 0.6
             imagebutton idle "gui/quickmenu/icon_history.png" action ShowMenu('history') yalign 0.6
             imagebutton idle "gui/quickmenu/icon_preference.png" action ShowMenu('preferences') yalign 0.6
             imagebutton idle "gui/quickmenu/icon_save.png" action ShowMenu('save') yalign 0.6

@@ -1,0 +1,42 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 529, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 529, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 540, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 212, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 529, in script
+    python hide:
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 529, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 540, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/loadsave.py", line 816, in load
+    log.unfreeze(roots, label="_after_load")
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/rollback.py", line 1108, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/rollback.py", line 908, in rollback
+    self.load_failed()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/rollback.py", line 826, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+
+macOS-13.2-arm64-arm-64bit arm64
+Ren'Py 8.1.2.23090503
+A Trick Of The Mind 1.0
+Mon Sep 25 21:26:12 2023

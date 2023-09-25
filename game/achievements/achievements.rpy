@@ -186,13 +186,7 @@ image locked_achievement = Text("?")
 ## This -2 makes sure it's declared before the other achievements. This is
 ## so it shows up first in the list even though it's defined all the way down
 ## here.
-define -2 all_achievements = Achievement(
-    name=_("Platinum Achievement"),
-    id="platinum_achievement",
-    description=_("Congrats! You unlocked every achievement!"),
-    unlocked_image=Transform("gui/window_icon.png", matrixcolor=BrightnessMatrix(1.0)),
-    hide_description=_("Get all other achievements."),
-)
+
 
 ################################################################################
 ## SCREENS
@@ -228,10 +222,11 @@ screen achievement_popup(a, tag, num):
             ## its dimensions.
             fit "contain" ysize 80 align (0.0, 0.5)
             xoffset -20
-        vbox:
-            yoffset 5
-            text a.name color '#ff8335' bold True line_spacing 5
-            text a.description size 25 color '#160a01'
+            yoffset -15
+        vbox:   
+            yoffset -20
+            text a.name color "#FF8066" bold True line_spacing 5
+            text a.description size 25 color '#fcfcfc' xmaximum 500
 
     ## Hide the screen after 5 seconds. You can change the time but shouldn't
     ## change the action.
@@ -241,8 +236,8 @@ screen achievement_popup(a, tag, num):
 style achieve_popup_frame:
     is confirm_frame
     align (0.0, 0.0)
-    ymaximum 180
-    background "#ffdcdc"
+    ymaximum 200
+    background "gui/achievements/achievement_popup_bg.png"
     
 style achieve_popup_hbox:
     spacing 10
@@ -300,7 +295,7 @@ screen achievement_gallery():
     ############################################################################
     ## Version 3 ###############################################################
     ## You might also consider a vpgrid layout like so:
-    textbutton _("Return") action Return() align (0.92, 0.85)
+    textbutton _("Return") action Return() align (0.82, 0.9)
     vpgrid:
         cols 2
         mousewheel True draggable True pagekeys True
@@ -377,7 +372,7 @@ screen achievement_gallery():
         spacing 50
         label __("Achievements: ") + "{earned}/{total}".format(
             earned=Achievement.num_earned(), total=Achievement.num_total()):
-            text_size 52 xalign 0.1 text_color "#f93c3e" top_padding 30
+            text_size 52 xalign 0.1 text_color "#FF8066" top_padding 30
         bar:
             value Achievement.num_earned()
             range Achievement.num_total()
@@ -411,7 +406,7 @@ style achievement_button:
 style achievement_label:
     padding (2, 2)
 style achievement_label_text:
-    size 40 color "#ff8335"
+    size 40 color "#FF8066"
 style achievement_hbox:
     spacing 10
 style achievement_vbox:
