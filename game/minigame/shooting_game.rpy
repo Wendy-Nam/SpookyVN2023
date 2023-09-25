@@ -1,3 +1,4 @@
+# minigame1
 ### Game Rules ###
 
 # This is a first-person shooter game from the minigame1er's point of view.

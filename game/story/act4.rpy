@@ -171,6 +171,7 @@ label after_defeating_the_monster_childs_ending:
             jump keep_fighting
 
 label attack_the_monster:
+    $ Swing_Now_Ask_Later.grant()
     show Parents mouth_fear overlay_fear eye_default brow_angry at courtyard_tint_parents
     play weapon 'audio/Sound/Prison Scene Sounds/Bat Impact.WAV' volume 0.7
     """
@@ -619,7 +620,7 @@ label keep_fighting:
     You feel your neck snapping in several places until your vision is swallowed by the blackness.
     """
     scene black with dissolve
-    
+    $ child_ending.grant()
     Demon "Whether dead or alive, all I need is a little imagination to play with you."
     # $ lipsync(Carla, "act4", 'audio_36', "Whether dead or alive, all I need is a little imagination to play with you.")
     
@@ -871,7 +872,7 @@ label pick_it_up:
     show Parents mouth_fear eye_default brow_surprised:
         matrixcolor TintMatrix("#7b7cbb")*SaturationMatrix(0.2352)*ContrastMatrix(2.4722)
         center
-    
+    $ adults_ending.grant()
     $ lipsync(Parents, "act4", 'audio_74', "...Carls?", 'mouth_fear')
     
     "GAME END."
@@ -1119,9 +1120,13 @@ label the_monster_leaves_carlas_side_and_faces_you_its_grotesque_features_make_y
     menu:
         "Attack the monster.":
             $ ending_condition += 10
+            if ending_condition == 50:
+                $ Perfect_Parent.grant()
             jump attack_the_monster
         "Wait.":
             $ ending_condition -= 10
+            if ending_condition == -50:
+                $ Carlas_Nightmare.grant()
             jump wait
 
 label wait:

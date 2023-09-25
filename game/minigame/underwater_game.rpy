@@ -1,3 +1,5 @@
+# survive the underwater minigame (minigame2)
+
 init:
     screen hp_bar:
         $ air_hp = ExtraAnimatedValue(
@@ -178,7 +180,7 @@ init python:
 
         def spawn_object(self):
             # Create a new object (either bubble or fish) with random properties
-            object_type = renpy.random.choice(["bubble", "bubble", "bubble", "fish"])
+            object_type = renpy.random.choice(["bubble", "bubble", "bubble", "bubble", "fish"])
             if object_type == "bubble":
                 obj = self.Bubble(len(self.objects) + 1)
             else:

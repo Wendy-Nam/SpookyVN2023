@@ -8,12 +8,15 @@ screen template_2a():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("2a: Two columns"), scroll="viewport"):
+    use game_menu(_("About"), scroll="viewport"):
 
         style_prefix "about"
-
-        text "Credits:" style "about_header" 
-        null height 50 # manual vertical spacing
+        text "Credits" style "about_header" line_spacing 20
+        
+        if gui.about:
+            text "[gui.about!t]\n"
+        ## gui.about is usually set in options.rpy.
+        null height 100 # manual vertical spacing
 
         # syntax: grid <amount_columns> <amount_rows>
         # You need to calculate this manually to fill in these <amount_columns> and <amount_rows> values.
@@ -21,112 +24,32 @@ screen template_2a():
         # vpgrid is also an option over grid depending on preference.
         # NOTE As fas as I know, you can't give fixed coordinates to grid slots, positions are calculated for slots in relation to each other.
         # Such as having long text strings in first column will push the second column more to the right. Play around with xspacing value for the look you want.
-        grid 2 4:            
+        grid 2 3:            
             # horizontal spacing
-            xspacing 100
+            xspacing -150
             # vertical spacing
-            yspacing 100
-
+            yspacing 50
             # Credit block
-            hbox:
-                add "logo" zoom 0.6 #-> if images are not resized properly you can do it with zoom
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                    text "Gaming Variety Potato" style "credits_name_small"
-                    null height 10  # manual vertical spacing
-                    text "Art, Story & Programming" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "itch-io"
-                        textbutton _("https://gaming-variety-potato.itch.io/") action OpenURL("https://gaming-variety-potato.itch.io/") style "credits_url_button" text_style "credits_url_text_small"
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"                    
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Name 2" style "credits_name_small"
-                    null height 10
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Name 3" style "credits_name_small"
-                    null height 10
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6 #-> if images are not resized properly you can do it with zoom
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                    text "Name 4" style "credits_name_small"
-                    null height 10  # manual vertical spacing
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"                          
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Name 5" style "credits_name_small"
-                    null height 10
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6 #-> if images are not resized properly you can do it with zoom
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                    text "Name 6" style "credits_name_small"
-                    null height 10  # manual vertical spacing
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"                          
-
-            # Credit block
-            hbox:
-                add "logo" zoom 0.6
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Name 7" style "credits_name_small"
-                    null height 10
-                    text "(Placeholder)" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text_small"
-
+            for member in credit_list:
+                hbox:
+                    add member.image_name zoom 0.3
+                    null width 25 # manual horizontal spacing
+                    vbox:
+                        null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
+                        text member.name style "credits_name_small"
+                        null height 10  # manual vertical spacing
+                        text member.role style "credits_role_small"
+                        null height 10
+                        for link in member.url_list:
+                            hbox:
+                                add link[0] zoom 0.15 yalign 0.5
+                                textbutton link[1] action OpenURL(link[1]) style "credits_url_button" text_style "credits_url_text_small"
             # fill unused grid spot (when amount is uneven) with null
             null
+        null
+        label "[config.name!t]"
+        text _("Version [config.version!t]\n")
+        text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        
+        # style_prefix "about"
+            

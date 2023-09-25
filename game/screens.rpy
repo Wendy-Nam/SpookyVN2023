@@ -245,7 +245,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.84
-            yalign 0.91
+            yalign 0.92
             spacing 20
             imagebutton idle "gui/quickmenu/icon_history.png" action ShowMenu('history') yalign 0.6
             imagebutton idle "gui/quickmenu/icon_preference.png" action ShowMenu('preferences') yalign 0.6
@@ -282,7 +282,7 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation():
+screen navigation(): # first main menu screen of the game
     if not main_menu:
         vbox:
             style_prefix "navigation"
@@ -298,7 +298,6 @@ screen navigation():
     
                 textbutton _("End Replay") action EndReplay(confirm=True)
             textbutton _("Main Menu") action MainMenu()
-
     else:
         hbox:
             style_prefix "navigation"
@@ -314,7 +313,7 @@ screen navigation():
     
             imagebutton idle "gui/mainmenu/Preferences.png" action ShowMenu("preferences") at menu_button_hovered
                     
-            imagebutton idle "gui/mainmenu/About.png" action ShowMenu("template_1a") at menu_button_hovered
+            imagebutton idle "gui/mainmenu/About.png" action ShowMenu("template_2a") at menu_button_hovered
     
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
     
@@ -344,7 +343,7 @@ transform menu_button_hovered:
         alpha 1.0
         yoffset 0
 
-screen navigation2():
+screen navigation2(): # display main menu list when it is in sub menu or display menu during the game play
     if not main_menu:
         vbox:
             style_prefix "navigation"
@@ -375,7 +374,7 @@ screen navigation2():
     
             textbutton _("Preferences") action ShowMenu("preferences")
                     
-            textbutton _("About") action ShowMenu("template_1a") #ShowMenu("about")
+            textbutton _("About") action ShowMenu("template_2a") #ShowMenu("about")
     
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
     
@@ -1305,7 +1304,7 @@ style skip_text:
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
-    font "madspixel2.ttf"
+    font "Cambria-Font-For-Windows.ttf"
 
 
 ## Notify screen ###############################################################

@@ -228,6 +228,8 @@ label open_your_eyes_again:
     scene black
     if minigame2.status.survived == False:  
         return # Ending : Drowned...
+    if minigame2.status.air_hp > minigame2.status.air_hp:
+        $ Practically_Jaws.grant()
     stop AirTank fadeout 1.0
     """
     {wave=nunderwater_text}After aimlessly swimming around, an underwater cave catches your eye.{/wave}
