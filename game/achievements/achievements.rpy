@@ -77,7 +77,7 @@ init python:
 ################################################################################
 ## Replace this with whatever locked image you want to use as the default
 ## for a locked achievement.
-image locked_achievement = Text("?")
+image locked_achievement = "gui/achievements/locked.png"
 
 ## Example 1 ###################################################################
 ## This is how you declare achievements. You will use `define` and NOT
