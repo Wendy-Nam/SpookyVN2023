@@ -621,8 +621,8 @@ label keep_fighting:
     """
     scene black with dissolve
     $ child_ending.grant()
-    Demon "Whether dead or alive, all I need is a little imagination to play with you."
-    # $ lipsync(Carla, "act4", 'audio_36', "Whether dead or alive, all I need is a little imagination to play with you.")
+    
+    $ lipsync(Demon, 'act4', 'audio_36', "Whether dead or alive, all I need is a little imagination to play with you.", invisible=True)
     
     "GAME END."
     
