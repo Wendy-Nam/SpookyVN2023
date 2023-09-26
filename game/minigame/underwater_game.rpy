@@ -86,8 +86,7 @@ init:
             repeat
         parallel:
             ypos -30
-            linear target_speed ypos 1000
-            repeat
+            linear target_speed ypos int(renpy.config.screen_height * 1.2)
 
     transform object_hitted(xpos, ypos):
         pos (xpos, ypos)
@@ -122,10 +121,9 @@ init python:
         def __init__(self):
             self.objects = []  # Store falling objects (bubbles and fish)
             self.status = self.Status()
-            self.nose = "images/underwater_minigame/nose.png"
             self.status.is_game_over = False
             self.object_spawn_timer = 0
-            self.object_spawn_interval = 0.5  # Adjust this interval as needed
+            self.object_spawn_interval = 0.1  # Adjust this interval as needed
             
         def round_init(self):
             renpy.show('nose', at_list=[moving_nose])
@@ -167,16 +165,33 @@ init python:
                         self.status.air_hp += hp_change
 
         def is_hit(self, obj):
-            mouse_x, mouse_y = renpy.get_mouse_pos()[0], 950
-            obj_pos = obj.get_pos()
-            obj_size = obj.image_size
-            if obj_pos[0] is None:
+            # Get mouse position
+            mouse_x, mouse_y = renpy.get_mouse_pos()[0], 850
+            
+            # Get object position and size
+            obj_x, obj_y = obj.get_pos()
+            obj_width, obj_height = obj.image_size 
+            
+            # Check if object position is valid
+            if obj_x is None or obj_y is None:
                 return False
-            if obj_pos[0] - obj_size[0] <= mouse_x <= obj_pos[0] + obj_size[0]:
-                if obj_pos[1] + int(obj_size[1]/2) <= mouse_y <= obj_pos[1] + obj_size[1] + int(scaled_nose_size[1]):
-                    obj.hitted = True
-                    return True
-                return False
+        
+            # Calculate boundaries for the object and player nose
+            obj_left = min(obj_x - obj_width / 2, obj_x - scaled_nose_size[0] / 2)
+            obj_right = max(obj_x + obj_width / 2, obj_x + scaled_nose_size[0] / 2)
+            obj_top = min(obj_y - obj_height / 2, obj_y - scaled_nose_size[1] / 2)
+            obj_bottom = max(obj_y + obj_height / 2, obj_y + scaled_nose_size[1] / 2)
+            
+            player_nose_top = 850
+            player_nose_bottom = 850 + scaled_nose_size[1]
+        
+            # Check for collision
+            if obj_left <= mouse_x <= obj_right and obj_top <= player_nose_bottom and player_nose_top <= obj_bottom:
+                obj.hitted = True
+                return True
+        
+            return False
+
 
         def spawn_object(self):
             # Create a new object (either bubble or fish) with random properties

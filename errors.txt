@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lip-sync-plugin/slient_lipsync_module.rpy", line 45: invalid syntax
-                if character_name is '????'
+File "game/minigame/trpg_combat/monster_attack.rpy", line 105: expected 'comma or end of line' not found.
+    linear target_speed ypos renpy.config.screen_height += 20  
+                                                         ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Tue Sep 26 11:49:01 2023
+Tue Sep 26 22:49:42 2023

@@ -1,0 +1,38 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/story/act3.rpy", line 227, in script
+    $ minigame2.run()
+  File "game/story/act3.rpy", line 227, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 147, in run
+    self.update()
+  File "game/minigame/underwater_game.rpy", line 161, in update
+    if self.is_hit(obj):
+  File "game/minigame/underwater_game.rpy", line 183, in is_hit
+    obj_bottom = max(obj_y + height / 2, obj_y + scaled_nose_size[1] / 2)
+NameError: name 'height' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/story/act3.rpy", line 227, in script
+    $ minigame2.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/story/act3.rpy", line 227, in <module>
+    $ minigame2.run()
+  File "game/minigame/underwater_game.rpy", line 147, in run
+    self.update()
+  File "game/minigame/underwater_game.rpy", line 161, in update
+    if self.is_hit(obj):
+  File "game/minigame/underwater_game.rpy", line 183, in is_hit
+    obj_bottom = max(obj_y + height / 2, obj_y + scaled_nose_size[1] / 2)
+NameError: name 'height' is not defined
+
+macOS-13.2-arm64-arm-64bit arm64
+Ren'Py 8.1.2.23090503
+A Trick Of The Mind 1.0
+Tue Sep 26 23:28:30 2023
