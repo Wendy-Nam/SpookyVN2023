@@ -8,13 +8,15 @@ init:
     default scaled_heart_size = [int(heart_size[0] * heart_scale), int(heart_size[1] * heart_scale)]
     default player_initial_pos = [750, 850] 
     default wall_pos = [500, 500, 500, 500] # (xpos, width, ypos, height)
+    default slide_wall = 0
+    default slide_direction = None
     default step = 8
     
     transform moving_player_box:
         xpos wall_pos[0]  # Initial xpos from wall_pos
         ypos wall_pos[2]  # Initial ypos from wall_pos
         function move_player_box  # Use the custom Python function
-        pause 1.0  # Adjust the pause duration for smoother movement
+        pause 0.1  # Adjust the pause duration for smoother movement
         repeat
 
     screen player_box:
@@ -132,25 +134,48 @@ init python:
         return None
 
     def move_player_box(trans, at, st):
-        global wall_pos
-        # direction = random.choice(["left", "right"])
-        direction = random.choice(["up", "down", "left", "right"])
-        step_distance = 100  # Adjust this value as needed
+        global wall_pos, slide_wall, slide_direction
+        if slide_wall == 0:
+            slide_direction = random.choice(["up", "down", "left", "right"])
+            slide_wall = 5
+        else:
+            slide_wall -= 1
+        # direction = random.choice(["up", "down", "left", "right"])
+        # direction = random.choice(["up", "down", "left", "right"])
+        
+        step_distance = 25  # Adjust this value as needed
         xpos, width, ypos, height = wall_pos
-        # Update the box's position based on the selected direction
-        if direction == "up":
-            ypos -= step_distance
-        elif direction == "down":
-            ypos += step_distance
-        if direction == "left":
-            xpos -= step_distance
-        elif direction == "right":
-            xpos += step_distance
+
+        # Calculate the target position based on the selected direction
+        target_xpos = xpos
+        target_ypos = ypos
+
+        if slide_direction == "up":
+            target_ypos -= step_distance
+        elif slide_direction == "down":
+            target_ypos += step_distance
+        elif slide_direction == "left":
+            target_xpos -= step_distance
+        elif slide_direction == "right":
+            target_xpos += step_distance
+
         # Ensure that the box stays within the screen boundaries
-        xpos = max(0, min(xpos, renpy.config.screen_width - width))
-        ypos = max(0, min(ypos, renpy.config.screen_height - height))   
+        target_xpos = max(0, min(target_xpos, renpy.config.screen_width - width))
+        target_ypos = max(0, min(target_ypos, renpy.config.screen_height - height))
+
+        # Calculate the step for linear movement
+        num_steps = 25  # Adjust the number of steps for smoother movement
+        step_x = int((target_xpos - trans.xpos) / num_steps)
+        step_y = int((target_ypos - trans.ypos) / num_steps)
+
+        # Linearly move the box
+        for _ in range(num_steps):
+            trans.xpos += step_x
+            trans.ypos += step_y
+            wall_pos = [trans.xpos, width, trans.ypos, height]
+            
         # Update the wall_pos variable with the new position
-        wall_pos = [xpos, width, ypos, height]
+        # wall_pos = [trans.xpos, width, trans.ypos, height]
 
     # Define the main game class
     class MonsterAttack:

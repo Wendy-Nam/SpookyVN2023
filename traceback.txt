@@ -1,38 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/story/act3.rpy", line 227, in script
-    $ minigame2.run()
-  File "game/story/act3.rpy", line 227, in <module>
-    $ minigame2.run()
-  File "game/minigame/underwater_game.rpy", line 147, in run
-    self.update()
-  File "game/minigame/underwater_game.rpy", line 161, in update
-    if self.is_hit(obj):
-  File "game/minigame/underwater_game.rpy", line 183, in is_hit
-    obj_bottom = max(obj_y + height / 2, obj_y + scaled_nose_size[1] / 2)
-NameError: name 'height' is not defined
+Executing ATL code at game/minigame/trpg_combat/monster_attack.rpy:15
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in script
+    $ test2.run()
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in <module>
+    $ test2.run()
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 200, in run
+    renpy.pause(0.1)
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 167, in move_player_box
+    renpy.pause(0.01)
+Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/act3.rpy", line 227, in script
-    $ minigame2.run()
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in script
+    $ test2.run()
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/story/act3.rpy", line 227, in <module>
-    $ minigame2.run()
-  File "game/minigame/underwater_game.rpy", line 147, in run
-    self.update()
-  File "game/minigame/underwater_game.rpy", line 161, in update
-    if self.is_hit(obj):
-  File "game/minigame/underwater_game.rpy", line 183, in is_hit
-    obj_bottom = max(obj_y + height / 2, obj_y + scaled_nose_size[1] / 2)
-NameError: name 'height' is not defined
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in <module>
+    $ test2.run()
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 200, in run
+    renpy.pause(0.1)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 907, in render
+    self.update_state()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 1088, in update_state
+    fr = self.execute(self, self.st, self.at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 618, in execute
+    action, arg, pause = block.execute(trans, timebase, self.atl_state, events)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 863, in execute
+    action, arg, pause = stmt.execute(trans, target - start, child_state, events)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 1881, in execute
+    fr = self.function(trans, st if block else 0, trans.at)
+  File "game/minigame/trpg_combat/monster_attack.rpy", line 167, in move_player_box
+    renpy.pause(0.01)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3556, in interact
+    raise Exception("Cannot start an interaction in the middle of an interaction, without creating a new context.")
+Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A Trick Of The Mind 1.0
-Tue Sep 26 23:28:30 2023
+Wed Sep 27 00:03:21 2023

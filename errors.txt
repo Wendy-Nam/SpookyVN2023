@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/trpg_combat/monster_attack.rpy", line 105: expected 'comma or end of line' not found.
-    linear target_speed ypos renpy.config.screen_height += 20  
-                                                         ^
+File "game/minigame/trpg_combat/monster_attack.rpy", line 167: invalid syntax
+            ease linear
+                  ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Tue Sep 26 22:49:42 2023
+Wed Sep 27 00:05:58 2023
