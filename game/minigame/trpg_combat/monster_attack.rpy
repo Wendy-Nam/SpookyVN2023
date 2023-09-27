@@ -1,59 +1,53 @@
 # survive the underwater minigame (minigame2)
 
 init:
-    default player_hp = 100
-    default time_left_monsterAttack = 15
-    default heart_size = renpy.image_size("images/turnRPG_combat/player_heart.png")
-    default heart_scale = 0.8
-    default scaled_heart_size = [int(heart_size[0] * heart_scale), int(heart_size[1] * heart_scale)]
-    default player_initial_pos = [750, 850] 
-    default wall_pos = [500, 500, 500, 500] # (xpos, width, ypos, height)
+    define BOX_START_POS = [500, 500, 500, 500]
+    define PLAYER_START_POS = [750, 850]
+    define heart_scale = 0.8
+    define heart_size = renpy.image_size("images/turnRPG_combat/player_heart.png")
+    define scaled_heart_size = [int(heart_size[0] * heart_scale), int(heart_size[1] * heart_scale)]
+    define PLAYER_STEP = 8
+    define BOX_STEP = 25
+    define BOX_STEP_NUM = 25 # Adjust the number of steps for smoother box movement
+    
+    default monsterAttack_timeleft = 15
+    default player_initial_pos = PLAYER_START_POS
+    default BOX = BOX_START_POS # (xpos, width, ypos, height)
     default slide_wall = 0
     default slide_direction = None
-    default step = 8
     
     transform moving_player_box:
-        xpos wall_pos[0]  # Initial xpos from wall_pos
-        ypos wall_pos[2]  # Initial ypos from wall_pos
+        xpos BOX[0]  # Initial xpos from BOX
+        ypos BOX[2]  # Initial ypos from BOX
         function move_player_box  # Use the custom Python function
         pause 0.1  # Adjust the pause duration for smoother movement
         repeat
 
     screen player_box:
-        frame pos(wall_pos[0], wall_pos[2]) at moving_player_box:
-            minimum (wall_pos[1], wall_pos[3])
-            maximum (wall_pos[1], wall_pos[3])
+        frame pos(BOX[0], BOX[2]) at moving_player_box:
+            minimum (BOX[1], BOX[3])
+            maximum (BOX[1], BOX[3])
             background "#8c8c8c32"
-
-    screen monster_attack_screen:
-        timer 1 repeat True action If (time_left_monsterAttack > 0, true=SetVariable("time_left_monsterAttack", time_left_monsterAttack - 1))
-        frame align (0, 0):
-            background im.FactorScale("gui/frame.png", 0.4)
-            margin (30, 30)
-            padding (30, 30)
-            hbox:
-                spacing 20
-                image 'images/turnRPG_combat/clock_icon.png' xalign 0.5 yalign 0.5
-                text "Time Left : [time_left_monsterAttack]" size 50 color "#ffffff" xalign 0.5 yalign 0.5
-        
-        $ bar_val3 = ExtraAnimatedValue(
-                    value=player_hp, 
-                    range=100, 
-                    range_delay=3.0,
-                    warper="ease_quart")
+    
+    screen monsterAttack_playerHP(P1):
+        $ player_hp = ExtraAnimatedValue(
+                value=P1.hp, 
+                range=P1.max_hp, 
+                range_delay=3.0,
+                warper="ease_quart")
         fixed:
                 area (1200, 50, 500, 120) # position of the hp-bar 
                 bar:
-                    value bar_val3
+                    value player_hp
                     left_bar ValueImage(
-                        bar_val3,
+                        player_hp,
                         Transform("images/turnRPG_combat/bar/hp_bar_red.png", zoom=0.8),
                         Transform("images/turnRPG_combat/bar/hp_bar_yellow.png", zoom=0.8),
                         Transform("images/turnRPG_combat/bar/hp_bar_green.png", zoom=0.8))
                     right_bar Transform("images/turnRPG_combat/bar/hp_bar_blank.png", zoom=0.8)
                     area (0,0, 800, 150)
 
-                add bar_val3.text(
+                add player_hp.text(
                     "{0.current_value:.0f} hp",
                     size = 35,
                     color = "#FFF",
@@ -62,16 +56,32 @@ init:
                     xcenter = 0.7,
                     ycenter = 0.5)
     
+    screen monsterAttack_Clock:
+        timer 1 repeat True action If (monsterAttack_timeleft > 0, true=SetVariable("monsterAttack_timeleft", monsterAttack_timeleft - 1))
+        frame align (0, 0):
+            background im.FactorScale("gui/frame.png", 0.4)
+            margin (30, 30)
+            padding (30, 30)
+            hbox:
+                spacing 20
+                image 'images/turnRPG_combat/clock_icon.png' xalign 0.5 yalign 0.5
+                text "Time Left : [monsterAttack_timeleft]" size 50 color "#ffffff" xalign 0.5 yalign 0.5
+        
+    screen monster_attack_screen(P1):
+        use monsterAttack_playerHP(P1)
+        use monsterAttack_Clock
+        
+    
     image player_heart:
         zoom heart_scale
         "images/turnRPG_combat/player_heart.png"
 
-    image bubble:
-        'images/underwater_minigame/bubble1.png'
-        pause 0.2
-        'images/underwater_minigame/bubble2.png'
-        pause 0.3
-        repeat
+    # image bubble:
+    #     'images/underwater_minigame/bubble1.png'
+    #     pause 0.2
+    #     'images/underwater_minigame/bubble2.png'
+    #     pause 0.3
+    #     repeat
 
     image bomb:
         zoom 1.5
@@ -80,8 +90,8 @@ init:
     # Moving target transform for target animation
     transform falling_object_monster(target_speed=1.0):
         zoom 1.5
-        xpos renpy.random.randint(wall_pos[0], wall_pos[0] + wall_pos[1])  # Random x position within the box
-        ypos wall_pos[2]  # Start from the top of the box
+        xpos renpy.random.randint(BOX[0], BOX[0] + BOX[1])  # Random x position within the box
+        ypos BOX[2]  # Start from the top of the box
         parallel:
             rotate -30 + renpy.random.randint(-10, 10)  # Random rotation angle
             linear 0.5 rotate 30 + renpy.random.randint(-10, 10)  # Random rotation angle
@@ -117,24 +127,24 @@ init python:
         key_input = pygame.key.get_pressed()
         key_input = pygame.key.get_pressed()  
         if key_input[pygame.K_LEFT]:
-            if wall_pos[0] <= (trans.xpos - step) <= wall_pos[0] + wall_pos[1]:
-                trans.xpos -= step
+            if BOX[0] <= (trans.xpos - PLAYER_STEP) <= BOX[0] + BOX[1]:
+                trans.xpos -= PLAYER_STEP
         if key_input[pygame.K_UP]:
-            if wall_pos[2] <= (trans.ypos - step) <= wall_pos[2] + wall_pos[3]:
-                trans.ypos -= step
+            if BOX[2] <= (trans.ypos - PLAYER_STEP) <= BOX[2] + BOX[3]:
+                trans.ypos -= PLAYER_STEP
         if key_input[pygame.K_RIGHT]:
-            if wall_pos[0] <= (trans.xpos + step) <= wall_pos[0] + wall_pos[1]:
-                trans.xpos += step
+            if BOX[0] <= (trans.xpos + PLAYER_STEP) <= BOX[0] + BOX[1]:
+                trans.xpos += PLAYER_STEP
         if key_input[pygame.K_DOWN]:
-            if wall_pos[2] <= (trans.ypos + step) <= wall_pos[2] + wall_pos[3]:
-                trans.ypos += step
+            if BOX[2] <= (trans.ypos + PLAYER_STEP) <= BOX[2] + BOX[3]:
+                trans.ypos += PLAYER_STEP
         # Check for collisions with walls
-        trans.xpos = max(wall_pos[0], min(trans.xpos, wall_pos[0] + wall_pos[1] - scaled_heart_size[0]))
-        trans.ypos = max(wall_pos[2], min(trans.ypos, wall_pos[2] + wall_pos[3] - scaled_heart_size[1]))
+        trans.xpos = max(BOX[0], min(trans.xpos, BOX[0] + BOX[1] - scaled_heart_size[0]))
+        trans.ypos = max(BOX[2], min(trans.ypos, BOX[2] + BOX[3] - scaled_heart_size[1]))
         return None
 
     def move_player_box(trans, at, st):
-        global wall_pos, slide_wall, slide_direction
+        global BOX, slide_wall, slide_direction
         if slide_wall == 0:
             slide_direction = random.choice(["up", "down", "left", "right"])
             slide_wall = 5
@@ -142,40 +152,38 @@ init python:
             slide_wall -= 1
         # direction = random.choice(["up", "down", "left", "right"])
         # direction = random.choice(["up", "down", "left", "right"])
-        
-        step_distance = 25  # Adjust this value as needed
-        xpos, width, ypos, height = wall_pos
+        xpos, width, ypos, height = BOX
 
         # Calculate the target position based on the selected direction
         target_xpos = xpos
         target_ypos = ypos
 
         if slide_direction == "up":
-            target_ypos -= step_distance
+            target_ypos -= BOX_STEP
         elif slide_direction == "down":
-            target_ypos += step_distance
+            target_ypos += BOX_STEP
         elif slide_direction == "left":
-            target_xpos -= step_distance
+            target_xpos -= BOX_STEP
         elif slide_direction == "right":
-            target_xpos += step_distance
+            target_xpos += BOX_STEP
 
         # Ensure that the box stays within the screen boundaries
         target_xpos = max(0, min(target_xpos, renpy.config.screen_width - width))
         target_ypos = max(0, min(target_ypos, renpy.config.screen_height - height))
 
         # Calculate the step for linear movement
-        num_steps = 25  # Adjust the number of steps for smoother movement
-        step_x = int((target_xpos - trans.xpos) / num_steps)
-        step_y = int((target_ypos - trans.ypos) / num_steps)
+        BOX_STEP_NUM = 25  # Adjust the number of steps for smoother movement
+        step_x = int((target_xpos - trans.xpos) / BOX_STEP_NUM)
+        step_y = int((target_ypos - trans.ypos) / BOX_STEP_NUM)
 
         # Linearly move the box
-        for _ in range(num_steps):
+        for _ in range(BOX_STEP_NUM):
             trans.xpos += step_x
             trans.ypos += step_y
-            wall_pos = [trans.xpos, width, trans.ypos, height]
+            BOX = [trans.xpos, width, trans.ypos, height]
             
-        # Update the wall_pos variable with the new position
-        # wall_pos = [trans.xpos, width, trans.ypos, height]
+        # Update the BOX variable with the new position
+        # BOX = [trans.xpos, width, trans.ypos, height]
 
     # Define the main game class
     class MonsterAttack:
@@ -187,8 +195,17 @@ init python:
             self.object_spawn_interval = 0.3  # Adjust this interval as needed
             self.player_pos = At(ImageReference('player_heart'), moving_player_heart)
         
-        def round_init(self):
-            renpy.show_screen('monster_attack_screen')
+        def round_init(self, player):
+            global monsterAttack_timeleft, player_initial_pos, BOX, slide_direction, slide_wall
+            monsterAttack_timeleft = 15
+            player_initial_pos = PLAYER_START_POS
+            BOX = BOX_START_POS # (xpos, width, ypos, height)
+            slide_direction = None
+            slide_wall = 0
+            self.status.player = player
+            self.status.is_game_over = False
+            self.status.survived = False
+            renpy.show_screen('monster_attack_screen', self.status.player)
             renpy.show_screen('player_box')
             renpy.show('player_heart', what=self.player_pos)
 
@@ -201,8 +218,8 @@ init python:
             renpy.hide_screen('monster_attack_screen')
             renpy.hide_screen('player_box')
 
-        def run(self):
-            self.round_init()
+        def run(self, player_hp):
+            self.round_init(player_hp)
             while not self.status.is_game_over:
                 renpy.pause(0.1)
                 self.update()
@@ -224,17 +241,17 @@ init python:
                 if obj_ypos is None:
                     continue
                 # Check if the object is out of bounds and hide it
-                if obj_xpos is not None and (obj_xpos < wall_pos[0] or obj_xpos > wall_pos[0] + wall_pos[1]):
+                if obj_xpos is not None and (obj_xpos < BOX[0] or obj_xpos > BOX[0] + BOX[1]):
                     obj.hidden = True
                     obj.hide()
-                if (obj_ypos < wall_pos[2]) or (obj_ypos > wall_pos[2] + wall_pos[3]):
+                if (obj_ypos < BOX[2]) or (obj_ypos > BOX[2] + BOX[3]):
                     obj.hidden = True
                     obj.hide()
                 if self.is_hit(obj):
                     # renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=0.5)
-                    global player_hp
+                    # global player_hp
                     hp_change = obj.handle_collision()
-                    player_hp += hp_change
+                    self.status.player.hp += hp_change
 
         def is_hit(self, obj):
             player_xpos, player_ypos = self.player_pos.xpos, self.player_pos.ypos
@@ -272,7 +289,7 @@ init python:
             # Create a new object (either bubble or fish) with random properties
             # object_type = renpy.random.choice(["bubble", "bubble", "bubble", "bubble", "fish"])
             # if object_type == "bubble":
-            #     obj = self.Bubble(len(self.objects) + 1)
+            #     obj = self.Item(len(self.objects) + 1)
             # else:
             obj = self.Bomb(len(self.objects) + 1)
             self.objects.append(obj)
@@ -300,10 +317,10 @@ init python:
                 self.hide()
                 return self.hp_change
 
-        class Bubble(FallingObject):
+        class Item(FallingObject):
             def __init__(self, id):
                 super().__init__(id)
-                self.image = 'bubble'
+                self.image = 'item'
                 self.image_path = 'images/underwater_minigame/bubble1.png'
                 self.target_scale = 2.0
                 self.image_size = [renpy.image_size(self.image_path)[0] * self.target_scale, renpy.image_size(self.image_path)[1] * self.target_scale]
@@ -328,15 +345,16 @@ init python:
                 # self.time_left = 30  # Time left in seconds
                 self.is_game_over = False
                 self.survived = False
+                self.player = None
 
             def is_fail(self):
-                if player_hp <= 0:
+                if self.player.hp <= 0:
                     self.is_game_over = True
                     return True
                 return False
 
             def is_clear(self):
-                if time_left_monsterAttack <= 0 and player_hp > 0:
+                if monsterAttack_timeleft <= 0 and self.player.hp > 0:
                     self.survived = True
                     self.is_game_over = True
                     return True

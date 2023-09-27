@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/trpg_combat/combat_boss_game.rpy", line 60: The textbutton statement is not a valid child of the add statement.
-    textbutton "🆘" pos (120, 900)
-              ^
+File "game/minigame/trpg_combat/combat_boss_game.rpy", line 79: 'If' is not a keyword argument or valid child of the timer statement.
+    timer 1 repeat action If (game_escape_flag == True, true=Return())
+                            ^
 
 Ren'Py Version: Ren'Py 8.1.2.23090503
-Wed Sep 27 16:12:49 2023
+Wed Sep 27 18:05:27 2023

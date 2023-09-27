@@ -1,78 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {/bt} in '{b}Attack{/b}{/bt}{/sc}{/omega}'.:
-  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
-    "You have been defeated."
-Exception: '/bt' closes a text tag that isn't open.
+While running game code:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 198, in script
+    $ game.run()
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 198, in <module>
+    $ game.run()
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 115, in run
+    renpy.say("You found the secret escape button!")
+TypeError: say() missing 1 required positional argument: 'what'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
-    "You have been defeated."
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
-    who(what, *args, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
-    display_say(who,
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
-    surf = render(d, width - x, rh, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1066, in segment
-    raise Exception("%r closes a text tag that isn't open." % text)
-Exception: '/bt' closes a text tag that isn't open.
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 198, in script
+    $ game.run()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 198, in <module>
+    $ game.run()
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 115, in run
+    renpy.say("You found the secret escape button!")
+TypeError: say() missing 1 required positional argument: 'what'
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A Trick Of The Mind 1.0
-Wed Sep 27 16:27:09 2023
+Wed Sep 27 18:03:21 2023
