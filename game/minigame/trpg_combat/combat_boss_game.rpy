@@ -1,101 +1,12 @@
 # minigame3
 # Undertale style. hp bar / striking by matching the certain position of bar / turn based / etc.
+
 init:
     default game_escape_flag = False
+    default game_escape_pressed_num = 0
     
-    screen monster_hp_bar(monster):
-        $ monster_hp = ExtraAnimatedValue(
-                    value=monster.hp, 
-                    range=monster.max_hp, 
-                    range_delay=3.0,
-                    warper="ease_quart")
-        fixed:
-            area (1200, 50, 500, 120) # position of the hp-bar 
-            bar:
-                value monster_hp
-                left_bar ValueImage(
-                    monster_hp,
-                    Transform("images/turnRPG_combat/bar/hp_bar_red.png", zoom=0.8),
-                    Transform("images/turnRPG_combat/bar/hp_bar_yellow.png", zoom=0.8),
-                    Transform("images/turnRPG_combat/bar/hp_bar_green.png", zoom=0.8))
-                right_bar Transform("images/turnRPG_combat/bar/hp_bar_blank.png", zoom=0.8)
-                area (0,0, 800, 150)
-
-            add monster_hp.text(
-                "{0.current_value:.0f} hp",
-                size = 35,
-                color = "#FFF",
-                outlines = [(abs(2), "#000")],
-                bold = True,
-                xcenter = 0.7,
-                ycenter = 0.5)
+    image bg minigame3 = "images/turnRPG_combat/bg minigame3.png"
     
-    screen player_hp_bar(player):
-        $ player_hp = ExtraAnimatedValue(
-            value=player.hp, 
-            range=player.max_hp, 
-            range_delay=3.0,
-            warper="ease_quart")
-        textbutton "{b}Escape{b}" area (100, 50, 800, 120) action [SetVariable('game_escape_flag', True), Hide('player_hp_bar')]
-        fixed:
-            drag:
-                drag_name "draggable_player_hp_bar"
-                droppable True
-                area (100, 50, 800, 120) # position of the hp-bar 
-                bar:
-                    value player_hp
-                    left_bar ValueImage(
-                        player_hp,
-                        Transform("images/turnRPG_combat/bar/hp_bar_red.png", zoom=0.8),
-                        Transform("images/turnRPG_combat/bar/hp_bar_yellow.png", zoom=0.8),
-                        Transform("images/turnRPG_combat/bar/hp_bar_green.png", zoom=0.8))
-                    right_bar Transform("images/turnRPG_combat/bar/hp_bar_blank.png", zoom=0.8)
-                    area (0,0, 800, 150)
-                add player_hp.text(
-                    "{0.current_value:.0f} hp",
-                    size = 35,
-                    color = "#FFF",
-                    outlines = [(abs(2), "#000")],
-                    bold = True,
-                    xcenter = 0.4,
-                    ycenter = 0.5)
-    transform fooling_msg_trans:
-        alpha 1.0
-        align (0.5, 0.5)
-        linear 2.0 alpha 0.0
-    screen fooling_msg:
-        text "Do you think you can escape from this game? LOL" size 50 at fooling_msg_trans
-    
-    screen trpg_player_menu_board(player):
-        frame align (0.85, 0.8):
-            background im.FactorScale("images/turnRPG_combat/trpg_player_menu.png", 0.8)
-            padding (120, 80)
-            vbox:
-                spacing 10
-                textbutton "{b}Attack{/b}" action [Return()] text_size 45
-                textbutton "{b}Inventory{/b}" action [NullAction()] text_size 45
-                textbutton "{b}Hp{/b}" action [NullAction(), Show('player_hp_bar', None, player)] text_size 45
-                textbutton "{b}Escape{/b}" action [Show('fooling_msg'),  If (game_escape_flag == True, true=Return())] text_size 45
-        timer 1 repeat True action If (game_escape_flag == True, true=Return())
-    
-    screen display_turn(game):
-        $ turn = game.current_turn
-        frame align (0, 0):
-            background im.FactorScale("gui/frame.png", 0.4)
-            margin (30, 30)
-            padding (30, 30)
-            hbox:
-                spacing 20
-                image 'images/turnRPG_combat/clock_icon.png' xalign 0.5 yalign 0.5
-                text "Turn - [turn]" size 50 color "#ffffff" xalign 0.5 yalign 0.5
-
-    screen trpg_game_board(game, monster, player):
-        use display_turn(game)
-        # use player_hp_bar(player)
-        use monster_hp_bar(monster)
-        # use player_hp_bar(player)
-        # use trpg_player_menu_board(player)
-
 init python:
     # def fake_escape_button_msg():
     #     narrator()
@@ -105,9 +16,12 @@ init python:
             self.player = self.Player()
             self.monster = self.Monster()
             self.current_turn = "Player"
+            self.attack_started = False
             self.player_win = False
 
         def run(self):
+            renpy.scene()
+            renpy.show('bg minigame3')
             self.player_win = False
             # renpy.show_screen('trpg_game_board', self, self.monster, self.player)
             while self.player.hp > 0 and self.monster.hp > 0:
@@ -125,14 +39,13 @@ init python:
                     break
             renpy.hide_screen('trpg_game_board')
             
-
         # def display_game_status(self):
             
             # Implement a screen to display game status (HP bars, etc.)
             # You can use Ren'Py screens for this.
 
         def take_turn(self):
-            renpy.hide_screen('trpg_game_board')
+            # renpy.hide_screen('trpg_game_board')
             if self.current_turn == "Player":
                 self.player_turn()
                 self.current_turn = "Monster"
@@ -141,28 +54,21 @@ init python:
                 self.current_turn = "Player"
 
         def player_turn(self): 
-            renpy.show_screen('trpg_game_board', self, self.monster, self.player)
+            # renpy.show_screen('player_hp_bar', self.player)
+            renpy.show_screen('trpg_game_board', self, self.player, self.monster)
             renpy.call_screen('trpg_player_menu_board', self.player)
+            self.attack_started = True
             if game_escape_flag:
                 return
             self.monster.hp -= self.player.attack()
-            # renpy.pause(2.0)
-            # pass
-            
-            # narrator("Player's turn")
-            # Implement the player's turn logic
-            # Show the menu (Attack / Item / HP / Escape)
-            # Handle player's choice and update game state accordingly
+            self.attack_started = False
 
         def monster_turn(self):
+            renpy.pause(2.0)
             narrator("HAHAHA your turn is done!!!!")
+            self.attack_started = True
             self.monster.attack(self.player)
-            # renpy.pause(2.0)
-            # pass
-            # narrator("Monster's turn")
-            # Implement the monster's turn logic
-            # Determine the monster's action (e.g., attack)
-            # Calculate damage to the player and update game state
+            self.attack_started = False
     
         class Player:
             def __init__(self):
@@ -173,7 +79,9 @@ init python:
                 self.attack_mechanism = PlayerAttack()
         
             def attack(self):
-                return (self.attack_mechanism.run())
+                damage = self.attack_mechanism.run()
+                narrator('damage: ' + str(damage))
+                return (damage)
                 # Implement the player's attack logic
                 # Calculate damage to the monster and update its HP
         

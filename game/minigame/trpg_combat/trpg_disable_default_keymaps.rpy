@@ -1,0 +1,40 @@
+
+init python:
+    # renpy.clear_keymap_cache()
+    config.keymap['focus_left'].remove('any_K_LEFT')
+    config.keymap['focus_left'].remove('any_KP_LEFT')
+    config.keymap['focus_right'].remove('any_K_RIGHT')
+    config.keymap['focus_right'].remove('any_KP_RIGHT')
+    config.keymap['focus_up'].remove('any_K_UP')
+    config.keymap['focus_up'].remove('any_KP_UP')
+    config.keymap['focus_down'].remove('any_K_DOWN')
+    config.keymap['focus_down'].remove('any_KP_DOWN')
+    
+    config.keymap['input_left'].remove('any_K_LEFT')
+    config.keymap['input_left'].remove('any_KP_LEFT')
+    config.keymap['input_right'].remove('any_K_RIGHT')
+    config.keymap['input_right'].remove('any_KP_RIGHT')
+    config.keymap['input_up'].remove('any_K_UP')
+    config.keymap['input_up'].remove('any_KP_UP')
+    config.keymap['input_down'].remove('any_K_DOWN')
+    config.keymap['input_down'].remove('any_KP_DOWN')
+    
+    
+    config.keymap['viewport_leftarrow'].remove('any_K_LEFT')
+    config.keymap['viewport_leftarrow'].remove('any_KP_LEFT')
+    config.keymap['viewport_rightarrow'].remove('any_K_RIGHT')
+    config.keymap['viewport_rightarrow'].remove('any_KP_RIGHT')
+    config.keymap['viewport_uparrow'].remove('any_K_UP')
+    config.keymap['viewport_uparrow'].remove('any_KP_UP')
+    config.keymap['viewport_downarrow'].remove('any_K_DOWN')
+    config.keymap['viewport_downarrow'].remove('any_KP_DOWN')
+    
+    config.keymap['bar_left'].remove('any_K_LEFT')
+    config.keymap['bar_left'].remove('any_KP_LEFT')
+    config.keymap['bar_right'].remove('any_K_RIGHT')
+    config.keymap['bar_right'].remove('any_KP_RIGHT')
+    config.keymap['bar_up'].remove('any_K_UP')
+    config.keymap['bar_up'].remove('any_KP_UP')
+    config.keymap['bar_down'].remove('any_K_DOWN')
+    config.keymap['bar_down'].remove('any_KP_DOWN')
+    

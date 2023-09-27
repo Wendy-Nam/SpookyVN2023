@@ -4,7 +4,7 @@ init:
     define BOX_START_POS = [500, 500, 500, 500]
     define PLAYER_START_POS = [750, 850]
     define heart_scale = 0.8
-    define heart_size = renpy.image_size("images/turnRPG_combat/player_heart.png")
+    define heart_size = renpy.image_size("images/turnRPG_combat/life.png")
     define scaled_heart_size = [int(heart_size[0] * heart_scale), int(heart_size[1] * heart_scale)]
     define PLAYER_STEP = 8
     define BOX_STEP = 25
@@ -22,66 +22,10 @@ init:
         function move_player_box  # Use the custom Python function
         pause 0.1  # Adjust the pause duration for smoother movement
         repeat
-
-    screen player_box:
-        frame pos(BOX[0], BOX[2]) at moving_player_box:
-            minimum (BOX[1], BOX[3])
-            maximum (BOX[1], BOX[3])
-            background "#8c8c8c32"
-    
-    screen monsterAttack_playerHP(P1):
-        $ player_hp = ExtraAnimatedValue(
-                value=P1.hp, 
-                range=P1.max_hp, 
-                range_delay=3.0,
-                warper="ease_quart")
-        fixed:
-                area (1200, 50, 500, 120) # position of the hp-bar 
-                bar:
-                    value player_hp
-                    left_bar ValueImage(
-                        player_hp,
-                        Transform("images/turnRPG_combat/bar/hp_bar_red.png", zoom=0.8),
-                        Transform("images/turnRPG_combat/bar/hp_bar_yellow.png", zoom=0.8),
-                        Transform("images/turnRPG_combat/bar/hp_bar_green.png", zoom=0.8))
-                    right_bar Transform("images/turnRPG_combat/bar/hp_bar_blank.png", zoom=0.8)
-                    area (0,0, 800, 150)
-
-                add player_hp.text(
-                    "{0.current_value:.0f} hp",
-                    size = 35,
-                    color = "#FFF",
-                    outlines = [(abs(2), "#000")],
-                    bold = True,
-                    xcenter = 0.7,
-                    ycenter = 0.5)
-    
-    screen monsterAttack_Clock:
-        timer 1 repeat True action If (monsterAttack_timeleft > 0, true=SetVariable("monsterAttack_timeleft", monsterAttack_timeleft - 1))
-        frame align (0, 0):
-            background im.FactorScale("gui/frame.png", 0.4)
-            margin (30, 30)
-            padding (30, 30)
-            hbox:
-                spacing 20
-                image 'images/turnRPG_combat/clock_icon.png' xalign 0.5 yalign 0.5
-                text "Time Left : [monsterAttack_timeleft]" size 50 color "#ffffff" xalign 0.5 yalign 0.5
         
-    screen monster_attack_screen(P1):
-        use monsterAttack_playerHP(P1)
-        use monsterAttack_Clock
-        
-    
     image player_heart:
         zoom heart_scale
-        "images/turnRPG_combat/player_heart.png"
-
-    # image bubble:
-    #     'images/underwater_minigame/bubble1.png'
-    #     pause 0.2
-    #     'images/underwater_minigame/bubble2.png'
-    #     pause 0.3
-    #     repeat
+        "images/turnRPG_combat/life.png"
 
     image bomb:
         zoom 1.5
@@ -99,8 +43,6 @@ init:
         parallel:
             linear target_speed ypos renpy.config.screen_height + 20  # Move objects down to the bottom of the box
         pause 1.0
-        # repeat  # Keep the objects looping
-        # stop
 
     transform monster_object_hitted(xpos, ypos):
         pos (xpos, ypos)
@@ -121,9 +63,6 @@ init python:
         if (trans.xpos is None) or (trans.ypos is None):
             trans.xpos = player_initial_pos[0]
             trans.ypos = player_initial_pos[1]
-        #for eve in pygame.event.get():
-            # if eve.type==pygame.QUIT:
-            #     pygame.quit()
         key_input = pygame.key.get_pressed()
         key_input = pygame.key.get_pressed()  
         if key_input[pygame.K_LEFT]:
@@ -150,8 +89,6 @@ init python:
             slide_wall = 5
         else:
             slide_wall -= 1
-        # direction = random.choice(["up", "down", "left", "right"])
-        # direction = random.choice(["up", "down", "left", "right"])
         xpos, width, ypos, height = BOX
 
         # Calculate the target position based on the selected direction
@@ -180,10 +117,7 @@ init python:
         for _ in range(BOX_STEP_NUM):
             trans.xpos += step_x
             trans.ypos += step_y
-            BOX = [trans.xpos, width, trans.ypos, height]
-            
-        # Update the BOX variable with the new position
-        # BOX = [trans.xpos, width, trans.ypos, height]
+            BOX = [trans.xpos, width, trans.ypos, height] # Update the global box position
 
     # Define the main game class
     class MonsterAttack:
@@ -205,18 +139,19 @@ init python:
             self.status.player = player
             self.status.is_game_over = False
             self.status.survived = False
-            renpy.show_screen('monster_attack_screen', self.status.player)
-            renpy.show_screen('player_box')
             renpy.show('player_heart', what=self.player_pos)
+            renpy.show_screen('player_box')
 
         def round_end(self):
             if self.status.survived:
                 narrator("You nearly survived")
             else:
-                renpy.scene()
+                # renpy.scene('bg minigame3')
                 narrator("You Dided...")
-            renpy.hide_screen('monster_attack_screen')
+            renpy.hide('player_heart')
             renpy.hide_screen('player_box')
+            renpy.scene()
+            renpy.show('bg minigame3')
 
         def run(self, player_hp):
             self.round_init(player_hp)
@@ -359,10 +294,3 @@ init python:
                     self.is_game_over = True
                     return True
                 return False
-
-label minigame3_monsterAttack_test:
-    $ test2 = MonsterAttack()
-    # show screen monster_attack_screen
-    "Start"
-    window hide
-    $ test2.run()
