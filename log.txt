@@ -1,13 +1,13 @@
-Wed Sep 27 00:12:50 2023
+Wed Sep 27 16:15:30 2023
 macOS-13.2-arm64-arm-64bit
 Ren'Py 8.1.2.23090503
  
 
 Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
-Loader init. took 0.02s
+Loader init. took 0.01s
 Loading error handling. took 0.02s
-Loading script. took 0.20s
+Loading script. took 0.10s
 Loading save slot metadata. took 0.05s
 Loading persistent. took 0.00s
 Running init code. took 0.04s
@@ -29,10 +29,10 @@ Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.28s
+Interface start. took 0.22s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -47,14 +47,2380 @@ Maximum texture size: 4096x4096
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.03s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.03s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 106.93s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 147.85s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 157.09s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 197.98s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 205.73s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 216.47s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 240.73s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 249.98s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 260.73s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 276.01s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 288.25s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1289, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'rotate'
+
+While processing text tag {rotate} in '{rotate}{sc=2}{bt=3}{b}Attack{/b}{/bt}{/sc}{/rotate}'.:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+Exception: Unknown text tag 'rotate'
+Resetting cache.
+Bootstrap to the start of init.init. took 294.49s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 303.73s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 337.04s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 343.31s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 481, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 674, in visit_all
+    for d in self.visit():
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1891, in visit
+    self.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '0.2'
+
+While running game code:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '0.2'
+Resetting cache.
+Bootstrap to the start of init.init. took 348.05s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 357.29s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 371.04s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 481, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 674, in visit_all
+    for d in self.visit():
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1891, in visit
+    self.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '10-10'
+
+While running game code:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '10-10'
+Resetting cache.
+Bootstrap to the start of init.init. took 396.85s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1289, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'chas'
+
+While processing text tag {chas} in '{chas}{sc=2}{bt=3}{b}Attack{/b}{/bt}{/sc}{/rotat}'.:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+Exception: Unknown text tag 'chas'
+Resetting cache.
+Bootstrap to the start of init.init. took 400.08s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1289, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'chas'
+
+While processing text tag {chas} in '{chas}{sc=2}{bt=3}{b}Attack{/b}{/bt}{/sc}{/chas}'.:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+Exception: Unknown text tag 'chas'
+Resetting cache.
+Bootstrap to the start of init.init. took 406.31s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 423.05s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 481, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 674, in visit_all
+    for d in self.visit():
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1891, in visit
+    self.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1868, in update
+    tokens = self.apply_custom_tags(tokens)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2423, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '10-10'
+
+While running game code:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "game/utils/kinetic_text_tags.rpy", line 612, in rotate_tag
+    argument = int(argument)
+ValueError: invalid literal for int() with base 10: '10-10'
+Resetting cache.
+Bootstrap to the start of init.init. took 450.41s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 470.21s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 493.00s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 502.24s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 508.47s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 522.23s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 536.02s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 548.28s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 557.51s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 566.78s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 592.59s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 603.34s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 626.11s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 635.34s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 641.56s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 646.29s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 655.54s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.04s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 666.30s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.02s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Bootstrap to the start of init.init. took 698.15s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.13s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4180, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1066, in segment
+    raise Exception("%r closes a text tag that isn't open." % text)
+Exception: '/bt' closes a text tag that isn't open.
+
+While processing text tag {/bt} in '{b}Attack{/b}{/bt}{/sc}{/omega}'.:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+Exception: '/bt' closes a text tag that isn't open.
+Resetting cache.
+Bootstrap to the start of init.init. took 702.90s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.10s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 712.13s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 722.87s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(565, 318) drawable=(1130, 636)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s

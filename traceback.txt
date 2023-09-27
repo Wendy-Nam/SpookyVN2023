@@ -1,31 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Executing ATL code at game/minigame/trpg_combat/monster_attack.rpy:15
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in script
-    $ test2.run()
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in <module>
-    $ test2.run()
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 200, in run
-    renpy.pause(0.1)
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 167, in move_player_box
-    renpy.pause(0.01)
-Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
+While processing text tag {/bt} in '{b}Attack{/b}{/bt}{/sc}{/omega}'.:
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+Exception: '/bt' closes a text tag that isn't open.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in script
-    $ test2.run()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 343, in <module>
-    $ test2.run()
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 200, in run
-    renpy.pause(0.1)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "game/minigame/trpg_combat/combat_boss_game.rpy", line 180, in script
+    "You have been defeated."
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1474, in say
+    who(what, *args, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 1003, in do_display
+    display_say(who,
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
@@ -56,27 +50,29 @@ Full traceback:
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 907, in render
-    self.update_state()
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/transform.py", line 1088, in update_state
-    fr = self.execute(self, self.st, self.at)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 618, in execute
-    action, arg, pause = block.execute(trans, timebase, self.atl_state, events)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 863, in execute
-    action, arg, pause = stmt.execute(trans, target - start, child_state, events)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/atl.py", line 1881, in execute
-    fr = self.function(trans, st if block else 0, trans.at)
-  File "game/minigame/trpg_combat/monster_attack.rpy", line 167, in move_player_box
-    renpy.pause(0.01)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3556, in interact
-    raise Exception("Cannot start an interaction in the middle of an interaction, without creating a new context.")
-Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1109, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 1338, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/text/text.py", line 1066, in segment
+    raise Exception("%r closes a text tag that isn't open." % text)
+Exception: '/bt' closes a text tag that isn't open.
 
 macOS-13.2-arm64-arm-64bit arm64
 Ren'Py 8.1.2.23090503
 A Trick Of The Mind 1.0
-Wed Sep 27 00:03:21 2023
+Wed Sep 27 16:27:09 2023
