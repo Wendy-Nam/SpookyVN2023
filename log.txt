@@ -1,0 +1,258 @@
+Thu Sep 28 22:12:57 2023
+macOS-13.2-arm64-arm-64bit
+Ren'Py 8.1.2.23090503
+ 
+
+Bootstrap to the start of init.init. took 0.02s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.12s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.02s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+game/minigame/trpg_combat/trpg_main_screens.rpy:47: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+game/minigame/trpg_combat/trpg_main_screens.rpy:50: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "monster":
+game/minigame/trpg_combat/trpg_main_screens.rpy:52: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.25s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(729, 410) drawable=(1458, 820)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 33.45s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.02s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+game/minigame/trpg_combat/trpg_main_screens.rpy:47: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+game/minigame/trpg_combat/trpg_main_screens.rpy:50: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "monster":
+game/minigame/trpg_combat/trpg_main_screens.rpy:52: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(729, 410) drawable=(1458, 820)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 41.31s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.09s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+game/minigame/trpg_combat/trpg_main_screens.rpy:47: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+game/minigame/trpg_combat/trpg_main_screens.rpy:50: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "monster":
+game/minigame/trpg_combat/trpg_main_screens.rpy:52: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(729, 410) drawable=(1458, 820)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 52.22s
+Early init. took 0.00s
+Loader init. took 0.01s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+game/minigame/trpg_combat/trpg_main_screens.rpy:47: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+game/minigame/trpg_combat/trpg_main_screens.rpy:50: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "monster":
+game/minigame/trpg_combat/trpg_main_screens.rpy:52: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(729, 410) drawable=(1458, 820)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 73.67s
+Early init. took 0.00s
+Loader init. took 0.02s
+Loading error handling. took 0.01s
+Loading script. took 0.11s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to '/Users/namseoa/Library/RenPy/backups/A_Trick_Of_Mind':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object. took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+game/minigame/trpg_combat/trpg_main_screens.rpy:47: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+game/minigame/trpg_combat/trpg_main_screens.rpy:50: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "monster":
+game/minigame/trpg_combat/trpg_main_screens.rpy:52: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if name is "player":
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Apple'"
+Renderer: b'Apple M1'
+Version: b'2.1 Metal - 83'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(729, 410) drawable=(1458, 820)
+Maximum texture size: 4096x4096
+Stricked Position :  694
+Stricked Position :  759
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
