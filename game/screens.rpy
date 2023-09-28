@@ -882,7 +882,7 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 style pref_slider:
-    xmaximum 525
+    xmaximum 550
     ymaximum 22
     left_bar "gui/slider/horizontal_idle_bar.png"
     right_bar "gui/slider/horizontal_hover_bar.png"
