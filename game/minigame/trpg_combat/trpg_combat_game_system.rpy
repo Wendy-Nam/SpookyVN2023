@@ -1,12 +1,6 @@
 # minigame3
 # Undertale style. hp bar / striking by matching the certain position of bar / turn based / etc.
 
-init:
-    default game_escape_flag = False
-    default game_escape_pressed_num = 0
-    
-    image bg minigame3 = "images/turnRPG_combat/bg minigame3.png"
-    
 init python:
     # def fake_escape_button_msg():
     #     narrator()
@@ -101,15 +95,3 @@ init python:
                 # Calculate damage to the player and update their HP
                 pass
 
-# Define Ren'Py screens and UI elements to display game status and handle menu choices.
-
-# Start the game
-label start_game:
-    $ game = TurnBasedGame()
-    $ game.run()
-    # show screen trpg_game_board(game, game.monster, game.player)
-    # Handle game over and other outcomes here
-    if game.player_win:
-        "You have defeated the monster."
-    else:
-        "You have been defeated."

@@ -6,15 +6,15 @@ label act11:
     play music "audio/Music/A_Trick_of_Mind_House.ogg" fadein 2.0 volume 0.3
     
     """
-    You and your child, Carla, walk into your home on Halloween night after a successful Trick or Treat adventure.
+    You all walk into your home on Halloween night after a successful Trick or Treat adventure.
+
+    Your child, Carla excitedly sets her full bucket of candy down and begins taking out empty candy wrappers.
     """
     show Carla at left
     camera:
         linear 0.5 zoom 1.85 anchor (0, 800)
 
     """
-    She excitedly sets her full bucket of candy down and begins taking out empty candy wrappers.
-    
     After a few moments, she stops to ask you a question.
     """
 
@@ -32,7 +32,7 @@ label act11:
 
     $ lipsync(Mom, 'act1', "audio_2", "Good thing I was there so you wouldn't take more than one.")
     
-    "you chuckle to yourself as you take the empty candy wrappers Carla has collected."
+    "Mom chuckles to herself as she takes the empty candy wrappers Carla has collected."
     
     $ lipsync(Carla, 'act1', "audio_3", "Hehe that's what you think..")
     
@@ -42,9 +42,9 @@ label act11:
     $ lipsync(Dad, 'act1', "audio_4", "Excuse me?")
     show Dad brow_default eye_default
     """
-    Carla realizes her mistake and ignores your question by pretending to put her bucket of candy away.
-    
-    You yawn loudly, which catches her attention and you begin to explain your next move
+    Carla realizes her mistake and ignores the question by pretending to put her bucket of candy away.
+
+    Dad yawns loudly, which catches her attention and they begin to explain the next move
     """
     
     $ lipsync(Dad, 'act1', "audio_5", "Well!")
@@ -55,16 +55,16 @@ label act11:
     show Carla brow_surprised eye_default mouth_stingy
     
     """
-    Carla frowns as you begin taking off your costume.
-    
-    The frown turns into a devious smile as she starts to bargain.
+    Carla frowns as you both begin taking off your costume.
+
+    Her frown turns into a devious smile as she starts to bargain.
     """
     
     show Carla brow_default
     
     $ lipsync(Carla, 'act1', "audio_8", "Can I at least have one of the king size candy bars?")
     
-    "Amused with her request, you stop taking off your costume and begin the negotiation."
+    "Amused with her request, stop and begin the negotiation."
     
     show Mom brow_angry eye_serious
     
@@ -75,7 +75,7 @@ label act11:
     
     $ lipsync(Carla, 'act1', "audio_11", "Half of one?")
     
-    "Carla widens her eyes to imitate a puppy face but you remain steadfast."
+    "Carla widens her eyes to imitate a puppy face but Mom remains steadfast"
     
     $ lipsync(Mom, 'act1', "audio_12", "Nope, no king size candy bars, no regular candy bars, or any candy for the rest of the night.")
     
@@ -97,7 +97,8 @@ label act11:
     # $ lipsync(Dad, 'act1', "audio_17", "No dentist for me.")
     $ lipsync(Dad, 'act1', "audio_18", "Now c'mon, lets get you changed out of that scary costume.")
     
-    "With a sigh of relief, you begin to head to Carla's room until she stops you."
+    "With a sigh of relief, you both begin to head to Carla's room until she stops you."
+    
     show Dad brow_default eye_default
     show Mom brow_default eye_default
     jump act12
@@ -143,7 +144,7 @@ label act13b:
     
     show Mom brow_surprised eye_default mouth_B
     
-    "you give Carla a devious smile of your own."
+    "Mom gives Carla a devious smile of her own."
     
     $ lipsync(Carla, 'act1', "audio_25", "Deal, but you have do let me set up with your eyes closed.")
     
@@ -182,7 +183,7 @@ label act13a:
     $ lipsync(Carla, 'act1', "audio_35", "I promise I won't sneak any of my candy to my room.")
     $ lipsync(Dad, 'act1', "audio_36", "You shouldn't be doing that in the first place.")
     
-    "After seeing Carla try to spend more time with you. you to break."
+    "After seeing Carla's efforts trying to spend quality time together, you two break."
     
     menu:
         "Fine. On one condition.":

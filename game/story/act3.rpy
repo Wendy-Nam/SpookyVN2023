@@ -30,13 +30,15 @@ label enter_the_underwater_cave:
     scene bg hand_drowning with fade
     show bg hand_drowning at hand_drowning
     """
-    {wave=nunderwater_text}Though the cave is incredibly small, you manage to squeeze your way through enough to reach an air pocket.{/wave} 
+    {wave=nunderwater_text}You both breach the surface.{/wave}
     
-    {wave=nunderwater_text}You have enough space to keep yourself afloat wondering if you'll be stuck here forever.{/wave} 
+    {wave=nunderwater_text}Just enough space sits between the water and the roof of the cave, enough for you to keep your head above the water.{/wave}
+
+    {wave=nunderwater_text}You tread the water, wondering if you'll be stuck here forever.{/wave}
     
     {wave=nunderwater_text}As you start to run out of energy to stay afloat, you feel a tugging at your leg.{/wave}
     
-    {wave=nunderwater_text}You scream in panic and Carla's head pops out of the water, unfazed by the situation.{/wave}
+    {wave=nunderwater_text}You scream in panic and Carla's head pops out of the water, unfazed.{/wave}
     """
     
     scene bg hand_drowning with fade
@@ -48,7 +50,7 @@ label enter_the_underwater_cave:
     """
     Her carefree attitude itches at you.
     
-    WIth your voice raised you ask her.
+    With your voice raised you ask her.
     """
     
     show Parents overlay_fear eye_serious brow_angry
@@ -72,7 +74,7 @@ label enter_the_underwater_cave:
     play sound 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
     """
     Your anxiety stops you when you feel a tugging on your leg again.
-    
+
     A powerful force pulls you back underwater as you fight to stay afloat.
     """
     scene black
@@ -194,11 +196,13 @@ label open_the_door:
     scene bg underwater with pixellate
     # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
-    {wave=nunderwater_text}Water rushes out of her room completely filling the room.{/wave}
+    {wave=nunderwater_text}Water rushes out of her room completely filling the living room.{/wave}
     
-    {wave=nunderwater_text}You hold your breath as the current spins you around, disorienting you until you eventually stop.{/wave}
+    {wave=nunderwater_text}You hold your breath as the current spins you around, disorienting you until you both eventually stop.{/wave}
     
-    {wave=nunderwater_text}Once again, your fears about Carla have manifested again as you find yourself at the bottom of the sea floor.{/wave}
+    {wave=nunderwater_text}Once again, your fears about Carla have manifested as you find yourself at the bottom of a sea floor.{/wave}
+    
+    {wave=nunderwater_text}Desperate for air, you swim upwards.{/wave}
     """
     # show Parents mouth_sad overlay_fear eye_serious
     jump swim_to_the_surface
@@ -212,13 +216,8 @@ label open_your_eyes_again:
     
     # (Here be gameplay for the underwater portion until you find the sea cave)
     scene bg underwater_game
+    call screen game_rules_minigame2
     """
-    Instructions: Survive until the time runs out.
-    
-    Your HP decreases by 1 every second, and you must collect air from bubbles falling from the top.
-    
-    However, avoid the blowfish, as it may reduce your HP.
-    
     Game Start
     """
     window hide
@@ -279,7 +278,7 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     
     $ lipsync(Parents, "act3", 'audio_31', "Oh really?")
     
-    "Your voice obviously shows that you're distracted, but Carla moves on with her tale."
+    "Your voices are obviously distracted, but Carla moves on with her tale."
     
     $ lipsync(Carla, "act3", 'audio_32',"It was pretty scary.")
     $ lipsync(Carla, "act3", 'audio_33', "I kept thinking about that movie with the shark, but it didn't make sense because...")
@@ -292,7 +291,7 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
         alpha 0.5
     show Carla brow_sad eye_default mouth_sad
     
-    $ lipsync(Carla, "act3", 'audio_35', "Are you ok?")
+    $ lipsync(Carla, "act3", 'audio_35', "Are you two ok?")
     
     #<!--(SECOND MAJOR CHOICE)-->
     menu:
@@ -307,7 +306,9 @@ label you_knock_again:
     $ lipsync(Parents, "act3", 'audio_36', "Carls?", 'mouth_sad')
     
     """
-    You press your ear to the door for any signs but get nothing in return. 
+    You both press your ears to the door, bothered by the lack of acknowledgement.
+
+    You search for any signs or sounds from the other side but get nothing in return. 
     
     With a wave of worry, you fear the worst for Carla.
     """
@@ -357,13 +358,13 @@ label act31:
     """
     Carla continues to scream, but you find yourself back in the living room.
     
-    Which remains undisturbed since you both entered the house.
+    Which remains undisturbed since you all entered the house.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised
     
     $ lipsync(Parents, "act3", 'audio_37', "Huh?", 'mouth_fear')
     
-    "confused, you try to get Carla's attention."
+    "Confused, you try to get Carla's attention."
     
     $ lipsync(Parents, "act3", 'audio_38', "Carla.", 'mouth_fear')
     hide Carla
@@ -392,15 +393,15 @@ label act31:
     show Carla brow_sad eye_default mouth_sad
     $ lipsync(Carla, "act3", "audio_43", "O-oh, ok...", 'mouth_sad')
     
-    "she wipes her tears away"
+    "She wipes her tears away"
     hide Dad
     hide Mom
     show Dad brow_sad eye_default mouth_sad
     show Mom brow_sad eye_default mouth_sad
     show parents_fear_overlay_mask
-    $ lipsync(Dad, "act3", "audio_44", "I'm sorry for yelling at you.")
+    $ lipsync(Dad, "act3", "audio_44", "We're sorry for yelling at you.")
     
-    "With a bewildered look, you look at Carla who's back to her controlled self and respond"
+    "With a bewildered look, you look at Carla who's back to her controlled self."
     
     $ lipsync(Mom, "act3", "audio_45", "N-no more candy Carls.", 'mouth_fear')
     $ lipsync(Mom, "act3", "audio_46", "Please, just get changed out of your costume and  go to bed alright?")
@@ -415,12 +416,12 @@ label act31:
     hide Mom
     show Parents at walking
     """
-    When you take a step to your own room to remove the costume, a sharp pain shoots up your leg.
+    When you take a step to your own room to remove the costume, a sharp pain shoots up dad's leg.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised with vpunch
     play sound 'audio/Sound/Scraping Gong.wav' fadein 1.0 volume 0.1
     """
-    Your eyes widen as you find a bite mark on your right leg.
+    Shocked eyes widen when they discover a bite mark on his leg.
     """
     
     scene black
@@ -428,20 +429,23 @@ label act31:
     # <!--Go to bed.-->
     """
     Months have passed since the incident on Halloween.
-    
-    Although Carla doesn't think about it, the events have haunted you to this day.
 
-    Thankfully, Carla hasn't had another “episode” since, but the fear has continued to eat at you.
+    Although Carla doesn't think about it, the events have haunted you both to this day.
+    
+    Thankfully, Carla hasn't had another episode since, but the fear persisted.
+
     """
     
     scene bg livingroom_sunset with dissolve
     play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 2.0 volume 0.15
-    """
-    The summer heat beats into your apartment while you finish up some chores.
     
-    Carla is with some family friends at the pool and you decide to seize the moment to catch up on some of the research notes you've gathered in the past months.
+    """
+    The summer heat beats into the apartment while some chores are finished up.
+    
+    Carla is with some family friends at the pool and you both decide to seize the moment to catch up on some of the research notes you've gathered in the past months
     """
     window auto hide
+    
     menu:
         "Go to the office.":
             jump act32a
@@ -488,6 +492,8 @@ label act32b:
             jump check_her_bookshelves
         "Check the nightstand.":
             jump check_the_nightstand
+        "Go to the office":
+            jump act32a
 
 label act32c:
     camera
@@ -631,12 +637,12 @@ label read_the_notebook:
 label go_back_to_the_living_room:
     scene bg livingroom_night with dissolve
     """
-    Once in the living room, the clues you've gathered repeat the same idea you've been scared of admitting for the past few weeks.
-
+    Once in the living room, the clues repeat the same idea that's been circulating for the past few weeks.
+    
     Carla is getting possessed by something.
-
-    Whether it's a demon or a monster, you're not sure.
-
+    
+    Whether it's a demon or a monster, it's not clear.
+    
     Yet.
     """
     
@@ -708,18 +714,18 @@ label huh:
 
 label im_sorry_carls_keep_going:
     """
-    Thrilled at your interest in her, Carla continues to speak but her words fade away while you watch her speak.
-
+    Thrilled at the interest in her, Carla continues to speak but her words fade away.
+    
     A demon? She can't be.
-
-    Carla may be a bit mischievous, but she wouldn't hurt me.
-
+    
+    Carla may be a bit mischievous, but she wouldn't hurt anyone.
+    
     Right?
-
-    The pain in your right leg has subsided.
-
-    You catch yourself unfocused on Carla's story and watch her mouth move as she recounts her time at the pool, her words continue to pass you by.
-
+    
+    The pain in Dad's leg has subsided and the scar is disappeared, but it feels off.
+    
+    Carla's recounts her time at the pool, but her words continue to pass by.
+    
     After a few moments, Carla finishes her story.
     """
     
@@ -734,13 +740,13 @@ label im_sorry_carls_keep_going:
     show Parents mouth_fear  eye_default brow_surprised
     
     """
-    Before you say anything, Carla's disturbed look stops you from giving her your initial answer. 
+    Before you say anything, Carla's disturbed look stops you from giving her your answer. 
     
-    You rationalize your decision internally. Maybe that was a one time thing?
+    You look at each other as you rationalize your decision internally. Maybe that was a one time thing?
     
     It hasn't happened at school, it probably won't happen here again.
     
-    These questions raise your confidence and you give Carla your answer.
+    These questions raise your confidence as you look at each other and give Carla your answer.
     """
     
     $ lipsync(Parents, "act3", 'audio_20', "Y-yeah.")

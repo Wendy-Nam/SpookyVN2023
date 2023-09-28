@@ -125,11 +125,11 @@ label act21:
     play sound "<from 0 to 3>audio/Sound/Carnival Scene Sounds/Abandoned Carnival.mp3" volume 0.02 fadein 1.0
     
     """
-    You begin humming a tune to yourself.
+    Dad begins humming a tune to himself.
     
-    After a brief moment you realize you don't hear Carla moving, but feel a breeze of the wind against your face.
+    After a brief moment Carla can't be heard moving, but a gust of the wind brushes against their faces.
     
-    Unsure of what's happening, you ask.
+    Unsure of what's happening, Dad asks.
     """
     hide Parents
     
@@ -157,25 +157,25 @@ label act21:
     show Mom mouth_sad
     
     """
-    Going against your better judgement, you keep your eyes shut.
-    
-    You take a deep breath and begin smelling... food.
+    Going against your better judgement, you both keep your eyes shut.
+
+    You both take a deep breath and begin smelling... food.
     
     Specifially popcorn and churros.
     
-    The scent catches you off guard, but since nothing is burning, you trust Carla with the set up.
+    The scent is surprising, but since nothing is burning, you trust Carla with the set up.
 
-    You continue to hum your tune, patiently waiting for Carla to finish.
+    Dad continues to hum his tune, patiently waiting for Carla to finish.
     
-    Your attention is further grabbed hearing music similar to your hum.
-    
-    To double check, you stop and realize that there //is// music playing in the background.  
+    Music similar to his hum catches his ears.
+
+    To double check, he stops and realizes that there //is// music playing in the background. 
     """
     
     show Dad mouth_C
     
     """
-    Before you can voice your concerns, Carla finally breaks her silence from your left.
+    Carla finally breaks her silence.
     """
     
     show Dad mouth_sad
@@ -203,13 +203,13 @@ label act21:
     show Parents eye_default brow_surprised mouth_fear
     """
     Nervously, you open your eyes and find that the set up was not what you expected at all.
-    
+
     To your shock, you're sitting on a ferris wheel overlooking a carnival.
     """
     show Parents overlay_fear
     """
     The sudden change in height frightens you, causing you to hold on to Carla.
-
+    
     In a panicked voice, you question her.
     """
     
@@ -217,7 +217,7 @@ label act21:
     hide Parents
     show Dad brow_surprised eye_default mouth_fear overlay_fear
     show Mom brow_surprised eye_serious mouth_fear overlay_fear
-    $ lipsync(Mom, 'act2', 'audio_20', "What the hell is this?")
+    $ lipsync(Mom, 'act2', 'audio_20', "What is this?!")
     
     show Carla brow_surprised eye_default at left
     
@@ -308,9 +308,9 @@ label act22b:
 
 label act23:
     """
-    Carla's eyes illuminate again as the ferris wheel settles down on the ground.
-    
-    As soon as the ferris wheel touches the ground, Carla pulls off the seat harness and bolts out in front of you.
+    Carla's eyes illuminate again as the ferris wheel settles down.
+
+    As soon as the ferris wheel touches the ground, Carla pulls off the seat harness and darts out in front of you.
     """
     
     $ lipsync(Carla, 'act2', 'audio_40', "C'mon!")
@@ -344,11 +344,11 @@ label act23:
     play sound 'audio/Sound/Carnival Scene Sounds/Carnival Ambience with Rides and People.mp3' fadein 3.0 volume 0.1
     
     """
-    Your first instinct takes you to some food carts parked in front of a tent.
+    Your first instinct takes you to a food stand with several options.
 
     Oddly enough, there is no one available to serve you.
-
-    Knowing you have to focus on finding Carla, you only have time to look at one cart
+    
+    Knowing you have to focus on finding Carla, you only have time to look at one cart.
     """
     menu:
         "Look at the first food cart.":
@@ -396,13 +396,13 @@ label act24c:
     scene bg carnival_minigame
     
     """
-    You pass the food cart and hear Carla cheering for excitement followed by what sounds like a game with sound effects.
-    
-    Following the source, you reach Carla, who seems to be playing a minigame involving a gun and some targets.
+    You pass the food cart and hear Carla giggling with excitement followed by what sounds like a game with sound effects.
+
+    Following the source, you reach Carla, who seems to be playing a minigame involving a rifle and some targets.
     
     Carla skillfully shoots at the targets and finishes the game as you approach.
     
-    As you get closer, the targets appear to be looking at you for a brief moment.
+    As you get closer, the prizes appear to be looking at you for a brief moment.
     
     Pretending to ignore what you saw, you express excitement.
     """
@@ -415,8 +415,8 @@ label act24c:
     show Mom mouth_C
     show Dad mouth_C
     """
-    your smile beams while you observe the targets and the gun.
-    
+    Her smile beams while she observe the targets and the rifle.
+
     Carla puts the rifle down and cheerfully tells you her accomplishments.
     """
     
@@ -425,8 +425,8 @@ label act24c:
     $ lipsync(Carla, 'act2', 'audio_47', "I got the high score, I bet you can't beat me.")
     
     """
-    she points at the game and motions you to play.
-    
+    She points at the game and motions you to play.
+
     You look at Carla's smile and back at the game.
     
     The excitement of what Carla has created during the game has worn off, but you don't want to disappoint her.
@@ -462,12 +462,10 @@ label act24d:
     jump act24c
 
 label act25a:
-    "You pick up the toy pistol and play the game."
-    "Instructions: Click on the targets to fire." 
-    "You have 10 bullets and 30 seconds."
-    "Game Start"
+    "You pick up the toy rifle and play the game."
     window hide
     scene bg carnival_minigame
+    call screen game_rules_minigame1
     $ my_game_config1 = GameConfig(target_nb=7, time_limit=30, bullet_max=10)
     $ minigame1 = ShootingGame(my_game_config1)
     $ minigame1.run()

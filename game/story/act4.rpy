@@ -4,7 +4,7 @@ label carls_of_course_i_want_to_spend_time_with_you:
     show Dad brow_sad eye_crying mouth_sad
     show Mom brow_sad eye_crying mouth_sad
     
-    $ lipsync(Mom, "act4", 'audio_0', "I'm sorry, I don't know why I passed out earlier.")
+    $ lipsync(Mom, "act4", 'audio_0', "We're sorry, I don't know why I passed out earlier.")
     
     hide Carla
     show Carla brow_sad eye_crying mouth_sad at left
@@ -16,26 +16,26 @@ label carls_of_course_i_want_to_spend_time_with_you:
     "You look at Carla, whose concern for your wellbeing forces your emotions to swell through you."
         
     $ lipsync(Mom, "act4", 'audio_4', "You're right missy.")
-    $ lipsync(Dad, "act4", 'audio_5', "But I can't play right now, I'm just exhausted.")
+    $ lipsync(Dad, "act4", 'audio_5', "But we can't play right now, we're just exhausted.")
     
     show Carla brow_sad eye_default mouth_G
     $ lipsync(Carla, "act4", 'audio_7', "Oh... ok...", 'mouth_sad')
     
-    $ lipsync(Mom, "act4", 'audio_8', "Just stay here and play for a bit alright?")
+    $ lipsync(Mom, "act4", 'audio_8', "Just stay here and play on your own for a bit alright?")
     
     $ lipsync(Carla, "act4", 'audio_6', "That's it?", 'mouth_E')
     
     "Cautiously, you get up to leave the room."
     
-    $ lipsync(Carla, "act4", 'audio_9', "I love you.")
+    $ lipsync(Carla, "act4", 'audio_9', "I love you guys.")
     
-    "Ashamed, you turn towards her tell her the same."
+    "Ashamed, you look at each other and respond."
     
     hide Mom
     hide Dad
     show Parents brow_sad eye_crying mouth_sad
     
-    $ lipsync(Parents, "act4", 'audio_10', "I love you too Carls.")
+    $ lipsync(Parents, "act4", 'audio_10', "We love you too Carls.")
     
     show Parents eye_default at parents_walk
     
@@ -51,7 +51,7 @@ label carls_of_course_i_want_to_spend_time_with_you:
     camera:
         zoom 1.6 crop (0.00, 0.33, 1.0, 1.0) 
 
-    "Carla's kind smile slowly transforms into a sinister smile as you walk out."
+    "Carla's kind smile slowly makes a sinsister transition as you walk out."
     
     camera
         
@@ -186,6 +186,18 @@ label attack_the_monster:
     $ lipsync(Parents, "act4", 'audio_20', "Leave her alone!", 'mouth_fear')
     
     # -Player does the bat and monster minigame-
+    window hide
+    scene bg minigame3
+    call screen game_rules_minigame3
+    $ minigame3 = TurnBasedGame()
+    $ minigame3.run()
+    # show screen trpg_game_board(game, game.monster, game.player)
+    # Handle game over and other outcomes here
+    if minigame3.player_win:
+        "You have defeated the monster."
+    else:
+        "You have been defeated."
+        return
     if ending_condition < 30:
         jump after_defeating_the_monster_adults_ending
     else:
@@ -340,13 +352,11 @@ label check_the_rest_of_the_cell:
 label explore_the_rest_of_the_prison:
     scene bg corridor_empty with dissolve
     """
-    The prison hallways are as dirty as Carla's cell. Despite it's very open layout, it feels suffocating.
-    
+    The prison hallways are as dirty as Carla's cell. It's tight feeling along with the darkness chokes you.
+
     One by one you pass by another empty cell, wondering what could've been held behind the bars.
     
-    You recall that Carla has manifested and drawn several monsters.
-    
-    Could they be what was hidden here? 
+    You recall that Carla has manifested and drawn several monsters. Could they be what was hidden here? 
     
     The thought stops you in your tracks.
     
@@ -354,7 +364,7 @@ label explore_the_rest_of_the_prison:
     """
     scene bg double_doors with fade
     """
-    The end of the hallway leads  you to a set of double doors.
+    The end of the hallway leads to a set of double doors.
     """
     
     jump open_the_doors
@@ -427,7 +437,7 @@ label get_closer:
     
     $ lipsync(Carla, "act4", 'audio_26', "Why did you come?", 'mouth_G')
     
-    $ lipsync(Parents, "act4", 'audio_27', "I came because I was worried about you Carla.", 'mouth_sad')
+    $ lipsync(Parents, "act4", 'audio_27', "We came because we was worried about you Carla.", 'mouth_sad')
     
     show Carla brow_angry2 eye_default mouth_angry overlay_dirt
     
@@ -640,8 +650,8 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 3.0 volume 0.15
     
     """
-    Carla's cries bring you to reality.
-    
+    Carla's cries bring you both back to reality.
+
     On the ground, Carla tugs at your leg. You pull away and immediately stand up.
     """
     
@@ -690,8 +700,8 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     Carla's words cut deeply, but there is more at play here.
     
     Your account of the past events conflicts with Carla's retelling.
-    
-    That's to be expected if a demon is possibly taking her over...
+
+    What do you do?
     """
     hide parents_fear_overlay_mask with dissolve
     menu:
@@ -712,8 +722,8 @@ label leave_the_room:
     
     """
     For a brief moment you hesitate, compelled to tell Carla what's happening.
-
-    The demon might act if you give it away. You can't afford to be in another nightmare.
+    
+    The demon might act if you give it away.
     """
     show Parents mouth_sad eye_serious brow_sad
     $ lipsync(Parents, "act4", 'audio_53', "I'll be back.", 'mouth_sad')
@@ -731,9 +741,9 @@ label leave_the_room:
     """
     Your mind is focused and Carla's voice fades out as you leave. 
 
-    You can't allow yourself to be honeyed by Carla's words since she can't be fully trusted.
+    You can't allow yourself to be convinced by Carla's words since she can't be fully trusted.
     
-    You feel shame and guilt for your actions but you press on.
+    You feel shame and guilt wash over you both but you press on.
     """
     show Dad eye_serious brow_sad at dad_walk
     """
@@ -752,7 +762,7 @@ label open_the_doors:
     """
     scene bg courtyard with dissolve
     """
-    Even in the open, the air is suffocating.
+    Even in the open, you feel confined.
     
     Your attention is drawn towards an evil aura coming from a large shadow at the center of the courtyard.
     """
@@ -764,7 +774,7 @@ label open_the_doors:
     show Parents mouth_sad overlay_fear eye_crying brow_angry
     """
     Step by step, you cautiously approach the shadow.
-    
+
     Every inch closer to the being brings out a wave of rage inside of you. 
     
     Seething anger at your situation.
@@ -772,7 +782,7 @@ label open_the_doors:
     show Parents mouth_sad overlay_fear eye_serious brow_angry
     """
     Unending rage towards Carla.
-    
+
     Spiteful resentment to yourself.
     
     You manage to get close enough for the shadow to subside.
@@ -881,14 +891,14 @@ label pick_it_up:
 
 label pull_the_knob_harder:
     """
-    You tightly grip the knob and take a deep breath.
-    
-    With a strong and quick tug you pull on the knob, hoping to make enough space to pass Carla her food.
+    Both of you tightly grip the knob to the compartment and take a deep breath.
+
+    With a strong and quick tug you pull on the handle, hoping to make enough space to pass Carla her food.
     """
     with sshake3
     """
-    You feel the door starting to give which signals you that you're almost there.
-    
+    The door starts to give which signals you that you're almost there.
+
     One more pull and...
     """
     with sshake2
@@ -920,7 +930,7 @@ label pull_the_knob_harder:
     $ lipsync(Carla, "act4", 'audio_77', "Wait please, I'm starving.", 'mouth_stingy')
     $ lipsync(Carla, "act4", 'audio_78', "I won't laugh any more I promise.", 'mouth_E')
     
-    "Unwilling to let your daughter starve, you decide to pass the food another way."
+    "Unwilling to let her starve, you decide to pass the food another way"
     
     jump pass_the_food_directly_to_carla
 
@@ -929,7 +939,7 @@ label respond:
     $ lipsync(Dad, "act4", "audio_80", "just hang in there alright?", 'mouth_sad')
     
     $ lipsync(Carla, "act4", "audio_81", "Sure.")
-    $ lipsync(Carla, "act4", "audio_82", "I'll just wait here, it's not like I can go anywhere else.")
+    $ lipsync(Carla, "act4", "audio_82", "Sure. I'll just wait here, not like I can go anywhere else.")
     
     hide Mom
     hide Dad
@@ -941,7 +951,7 @@ label respond:
     show Mom mouth_sad eye_serious brow_angry
     
     $ lipsync(Mom, "act4", "audio_84", "I'm trying to save you.", 'mouth_sad')
-    $ lipsync(Dad, "act4", "audio_85", "Well, I'm not even sure if you're //Carla// right now.", 'mouth_sad')
+    $ lipsync(Dad, "act4", "audio_85", "Hell, I'm not even sure if you're //you// right now.", 'mouth_sad')
 
     show Carla brow_default eye_default mouth_C overlay_fear at laugh
     play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 0.3
@@ -1105,7 +1115,7 @@ label the_monster_leaves_carlas_side_and_faces_you_its_grotesque_features_make_y
     hide Dad
     show Parents mouth_fear overlay_fear eye_default brow_angry at courtyard_tint_parents
     
-    $ lipsync(Parents, "act4", "audio_106", "I had no choice.", 'mouth_fear')
+    $ lipsync(Parents, "act4", "audio_106", "We had no choice.", 'mouth_fear')
     
     """
     The monster is close enough for you to strike. The aura of hatred seethes under your skin.

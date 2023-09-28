@@ -1,25 +1,5 @@
 # player attack part
 # : Instead of directly hitting monsters, players must hit a specific area within a timed hit box (rectangle) to damage the monster.
-
-init -1:
-    default player_attack_timeleft = 15
-    # Moving weapon transform for weapon animation
-    transform moving_timing_bar: 
-        yalign 0.8
-        xpos 100
-        linear 0.1 xpos 500
-        linear 0.1 xpos 700
-        linear 0.1 xpos 1000
-        linear 0.1 xpos 1200
-        linear 0.1 xpos 1600
-        linear 0.1 xpos 1200
-        linear 0.1 xpos 1000
-        linear 0.1 xpos 700
-        linear 0.1 xpos 500
-        linear 0.1 xpos 100
-        repeat
-
-    image stick = "images/turnRPG_combat/stick.png"
             
 init python:
     # Define the main game class

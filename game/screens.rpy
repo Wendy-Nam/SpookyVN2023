@@ -406,13 +406,30 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform animating_main:
+    zoom 1.0
+    align (0.5, 0.9)
+    parallel:
+        linear 1.5 zoom 1.2
+    parallel:
+        linear 1.0 alpha 0.8
+        linear 1.0 alpha 1.0
+        repeat
+        
+screen animated_main_menu:
+    frame at alpha_dissolve:
+        background "#0000005c"
+    frame at animating_main:
+        background "#00000000"
+        add "gui/title.png"
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background
-
+    use animated_main_menu
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"

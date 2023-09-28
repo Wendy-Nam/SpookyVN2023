@@ -8,14 +8,7 @@ image dad_eyes_default:
     pause 0.1
     repeat
 
-image dad_eyes_red:
-    "images/charactors/dad/eyes/eyes_red.png"
-    pause 3.0
-    "images/charactors/dad/eyes/eyes_closed.png"
-    pause 0.1
-    repeat
-
-image dad_eyes_cyring:
+image dad_eyes_crying:
     "images/charactors/dad/eyes/eyes_cry.png"
     pause 3.0
     "images/charactors/dad/eyes/eyes_closed.png"
@@ -39,11 +32,9 @@ layeredimage Dad:
         attribute eye_default default:
             'dad_eyes_default'
         attribute eye_crying:
-            'dad_eyes_cyring'
+            'dad_eyes_crying'
         attribute eye_closed:
             'images/charactors/dad/eyes/eyes_closed.png'
-        attribute eye_red:
-            'dad_eyes_red'
         attribute eye_serious:
             'dad_eyes_serious'
     group brows:
@@ -103,7 +94,7 @@ image mom_eyes_serious:
     pause 0.1
     repeat
 
-image mom_eyes_cyring:
+image mom_eyes_crying:
     "images/charactors/mom/eyes/eyes_cry.png"
     pause 3.0
     "images/charactors/mom/eyes/eyes_closed.png"
@@ -120,7 +111,7 @@ layeredimage Mom:
         attribute eye_default default:
             'mom_eyes_default'
         attribute eye_crying:
-            'mom_eyes_cyring'
+            'mom_eyes_crying'
         attribute eye_serious:
             'mom_eyes_serious'
         attribute eye_closed:
@@ -182,7 +173,7 @@ image parents_eyes_serious:
     pause 0.1
     repeat
 
-image parents_eyes_cyring:
+image parents_eyes_crying:
     "images/charactors/parents/eyes/eyes_cry.png"
     pause 3.0
     "images/charactors/parents/eyes/eyes_closed.png"
@@ -202,7 +193,7 @@ layeredimage Parents:
         attribute eye_default default:
             'parents_eyes_default'
         attribute eye_crying:
-            'parents_eyes_cyring'
+            'parents_eyes_crying'
         attribute eye_serious:
             'parents_eyes_serious'
         attribute eye_closed:
@@ -257,7 +248,7 @@ image kid_eyes_default:
     pause 0.1
     repeat
 
-image kid_eyes_cyring:
+image kid_eyes_crying:
     "images/charactors/kid/eyes/eyes_cry.png"
     pause 3.0
     "images/charactors/kid/eyes/eyes_closed.png"
@@ -275,7 +266,7 @@ layeredimage Carla:
         attribute eye_default default:
             'kid_eyes_default'
         attribute eye_crying:
-            'kid_eyes_cyring'
+            'kid_eyes_crying'
     group brows:
         attribute brow_default default:
             'images/charactors/kid/brows/brow_default.png'
