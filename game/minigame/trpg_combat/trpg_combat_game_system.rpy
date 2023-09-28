@@ -68,20 +68,31 @@ init python:
             def __init__(self):
                 self.hp = 100
                 self.max_hp = 100
-                self.inventory = []
-                self.armor = 'Bat'
+                self.inventory = Inventory()
+                self.inventory.addItem('Popcorn', amount=7)
+                self.inventory.addItem('Churros', amount=2)
+                self.inventory_mode = False
                 self.attack_mechanism = PlayerAttack()
         
             def attack(self):
+                self.inventory_mode = False
                 damage = self.attack_mechanism.run()
                 narrator('damage: ' + str(damage))
                 return (damage)
                 # Implement the player's attack logic
                 # Calculate damage to the monster and update its HP
         
-            def use_item(self):
+            def use_item(self, name):
+                if self.hp >= self.max_hp:
+                    return
+                if name == "Popcorn":
+                    self.hp += 10
+                elif name == "Churros":
+                    self.hp += 20
+                if self.hp >= self.max_hp:
+                    self.hp = self.max_hp
+                self.inventory.deleteItem(name)
                 # Implement item usage logic
-                pass
         
         class Monster:
             def __init__(self):
@@ -95,3 +106,6 @@ init python:
                 # Calculate damage to the player and update their HP
                 pass
 
+    def toggle_inventory(player):
+        player.inventory_mode = not (player.inventory_mode)
+        return None

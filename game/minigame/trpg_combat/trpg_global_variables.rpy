@@ -7,6 +7,8 @@ init -1:
     default BOX = BOX_START_POS # (xpos, width, ypos, height)
     default slide_wall = 0
     default slide_direction = None
+    default damaged_heart = False
+    default damaged_heart_blink = HEART_BLINK_NB
     
     ## For the Monster Attack
     define BOX_START_POS = [500, 500, 500, 500]
@@ -17,7 +19,7 @@ init -1:
     define PLAYER_STEP = 8
     define BOX_STEP = 25
     define BOX_STEP_NUM = 25 # Adjust the number of steps for smoother box movement
-    
+    define HEART_BLINK_NB = 50
     
     image stick = "images/turnRPG_combat/stick.png"
     image bg minigame3 = "images/turnRPG_combat/bg minigame3.png"

@@ -23,7 +23,6 @@ define Practically_Jaws = Achievement(name=_("Practically Jaws"), id="Practicall
 
 # screen game_rules_minigame1:
     
-    
 label start:
     # jump open_your_eyes_again # minigame2
     # jump act25a # minigame1

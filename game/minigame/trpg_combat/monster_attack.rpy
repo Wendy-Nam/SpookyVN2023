@@ -2,6 +2,19 @@
             
 init python:
     def move_player(trans, at, st):
+        # blink heart when collided with obstacles
+        global damaged_heart_blink, damaged_heart
+        if (damaged_heart == True) and (damaged_heart_blink == 0):
+            damaged_heart = False
+            damaged_heart_blink = HEART_BLINK_NB
+            trans.alpha = 1.0
+        elif (damaged_heart == True) and (damaged_heart_blink % 2 == 1):
+            trans.alpha = 0.0
+            damaged_heart_blink -= 1
+        elif (damaged_heart == True) and (damaged_heart_blink % 2 == 0):
+            trans.alpha = 0.8
+            damaged_heart_blink -= 1
+
         if (trans.xpos is None) or (trans.ypos is None):
             trans.xpos = player_initial_pos[0]
             trans.ypos = player_initial_pos[1]
@@ -103,6 +116,7 @@ init python:
             self.round_end()
 
         def update(self):
+            global damaged_heart
             self.object_spawn_timer += 0.1  # Increase the timer
             if self.status.is_clear() or self.status.is_fail():
                 return
@@ -125,6 +139,7 @@ init python:
                     obj.hidden = True
                     obj.hide()
                 if self.is_hit(obj):
+                    damaged_heart = True
                     # renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=0.5)
                     # global player_hp
                     hp_change = obj.handle_collision()

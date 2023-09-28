@@ -1,29 +1,64 @@
-init:
+init:     
+    style trpg_menu_button:
+        color "#FFFFFF"
+        hover_color "#FF8066"
+        insensitive_color "#FFFFFF" 
+        # insensitive "888"
+        background None
+
     # MAIN TRPG SCREEN
     screen trpg_player_menu_board(player):
-        frame align (0.7, 0.85):
-            background "#ffff0000"
-            # background "gui/textbox.png"
-            vbox:
+        zorder 0
+        frame align (0.45, 0.92):
+            # background "#ffff0000"
+            background "images/turnRPG_combat/combat_ui.png"
+            grid 2 2:
+                left_margin 890 top_margin 35
+                spacing 15
+                textbutton "{b}Attack{/b}" action Return() text_size 50 style 'trpg_menu_button'
+                textbutton "{b}Inventory{/b}" action [Function(toggle_inventory, player)] text_size 50 style 'trpg_menu_button'
+                # textbutton "{b}Hp{/b}" action [NullAction(), Show('player_hp_bar', None, player)]
+                textbutton "{b}Escape{/b}" action [Show('fooling_msg'), SetVariable('game_escape_pressed_num', game_escape_pressed_num+1), If (game_escape_flag == True, true=Return())] text_size 50 style 'trpg_menu_button'
+        if player.inventory_mode:
+            frame pos(300, 880):
+                background None
+                left_padding 30
+                bottom_padding 10
                 hbox:
-                    spacing 50
-                    textbutton "{b}Attack{/b}" action [Return()] text_size 50
-                    textbutton "{b}Inventory{/b}" action [NullAction()] text_size 50
-                    # textbutton "{b}Hp{/b}" action [NullAction(), Show('player_hp_bar', None, player)] text_size 50
-                    textbutton "{b}Escape{/b}" action [Show('fooling_msg'), SetVariable('game_escape_pressed_num', game_escape_pressed_num+1), If (game_escape_flag == True, true=Return())] text_size 50
+                    spacing 30
+                    if len(player.inventory.itemList) == 0:
+                        text "Empty"
+                    for item in player.inventory.itemList:
+                        $ item_image = "images/turnRPG_combat/items/" + item['name'] + ".png"
+                        $ item_description = get_item_description(item['name'])
+                        imagebutton idle [item_image]:
+                            action Function(player.use_item, item['name'])
+                            tooltip "{b}" + item['name'] + '(' + str(item['amount']) +')'+ "{/b}\n" + item_description
+                        # if item['amount'] > 1:
+                            # text str(item['amount']) color "#cacaca" size 20 xoffset -7 yoffset 10
+                text "{bt=3}{color=#ff0000}{size=40}{i}[player.hp] / [player.max_hp] HP{/i}{/size}{/color}{/bt}" xalign 0.18 yoffset -20
+                textbutton "close" action [Function(toggle_inventory, player)] xalign 0.23 yoffset 35 text_size 40
+        else:
+            frame align (0.2, 0.87):
+                padding (100, 0)
+                background None
+                # vbox:
+                    # spacing 5
+                    # text "{glitch=1.1}{color=#ff0000}{size=40}{b}{i}[player.hp] HP{/i}{/b}{/size}{/color}{/glitch}"
+                text "{glitch=1.1}{color=#ffffff}{size=40}{i}What will you do next?{/i}{/size}{/color}{/glitch}"
         timer 1 repeat True action If (game_escape_flag == True, true=Return())
 
     screen trpg_game_board(game, player, monster):
+        zorder 2
         if game.attack_started:
             use attack_timer(game.current_turn)
-        if (game.attack_started and game.current_turn == "Player"):
+        if (game.current_turn == "Player"):
             use trpg_hp_bar(monster, name="monster")
         elif (game.attack_started and game.current_turn == "Monster"):
             use trpg_hp_bar(player, name="player")
         else:
             use trpg_hp_bar(monster, name="monster")
-            use trpg_hp_bar(player, name="player")
-
+            # use trpg_hp_bar(player, name="player")
 
     screen attack_timer(turn):
         frame align (0, 0):
@@ -38,19 +73,14 @@ init:
                 text "Time Left : [monsterAttack_timeleft]" size 40 color "#ffffff"
                 
     screen trpg_hp_bar(character, name):
-        zorder 50
         $ hp = ExtraAnimatedValue(
                     value=character.hp, 
                     range=character.max_hp, 
                     range_delay=3.5,
                     warper="easein_bounce")
-        if name is "player":
-            textbutton "{bt=3}{size=30}{color=#FF0000}{i}{b}Exit{/b}{/i}{/color}{/size}{/bt}" action [SetVariable('game_escape_flag', True), Return()] xpos 200 ypos 880
+        textbutton "{bt=3}{size=30}{color=#FF0000}{i}{b}Exit{/b}{/i}{/color}{/size}{/bt}" action [SetVariable('game_escape_flag', True), Return()] xpos 1300 ypos 150
         fixed:
-            if name is "monster":
-                area (1200, 50, 800, 120)
-            if name is "player":
-                area (100, 800, 800, 120) # position of the hp-bar
+            area (1150, 50, 800, 120)
             bar:
                 value hp
                 left_bar ValueImage(
