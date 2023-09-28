@@ -1,0 +1,102 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 5, in execute
+    screen template_2a():
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 5, in execute
+    screen template_2a():
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 11, in execute
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 499, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 499, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 508, in execute
+    frame:
+  File "game/screens.rpy", line 511, in execute
+    hbox:
+  File "game/screens.rpy", line 517, in execute
+    frame:
+  File "game/screens.rpy", line 520, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 522, in execute
+    viewport:
+  File "game/screens.rpy", line 531, in execute
+    vbox:
+  File "game/screens.rpy", line 532, in execute
+    transclude
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 11, in execute
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 26, in execute
+    grid 2 2:
+Exception: Grid overfull.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 3587, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 684, in visit_all
+    d.visit_all(callback, seen)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 476, in visit_all
+    callback(self)
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/core.py", line 4060, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 487, in per_interact
+    self.update()
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/screen.py", line 680, in update
+    self.screen.function(**self.scope)
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 5, in execute
+    screen template_2a():
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 5, in execute
+    screen template_2a():
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 11, in execute
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 499, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 499, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 508, in execute
+    frame:
+  File "game/screens.rpy", line 511, in execute
+    hbox:
+  File "game/screens.rpy", line 517, in execute
+    frame:
+  File "game/screens.rpy", line 520, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 522, in execute
+    viewport:
+  File "game/screens.rpy", line 531, in execute
+    vbox:
+  File "game/screens.rpy", line 532, in execute
+    transclude
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 11, in execute
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/credit_screen/credits_screen_template_2a.rpy", line 26, in execute
+    grid 2 2:
+  File "/Users/namseoa/Desktop/renpy-8.1.1-sdk/renpy/display/layout.py", line 552, in add
+    raise Exception("Grid overfull.")
+Exception: Grid overfull.
+
+macOS-13.2-arm64-arm-64bit arm64
+Ren'Py 8.1.2.23090503
+A Trick Of The Mind 1.0
+Fri Sep 29 04:41:49 2023

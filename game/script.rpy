@@ -21,7 +21,6 @@ define Carlas_Nightmare = Achievement(name=_("Carla's Nightmare"), id="Carlas_Ni
 define Swing_Now_Ask_Later = Achievement(name=_("Swing Now, Ask Later"), id="Swing_Now_Ask_Later", description=_("Attack the Prison monster at the first opportunity."), unlocked_image="gui/achievements/swing_now.png", hide_description=True) 
 define Practically_Jaws = Achievement(name=_("Practically Jaws"), id="Practically_Jaws", description=_("Fill your air meter all the way during the underwater minigame."), unlocked_image="gui/achievements/jaws.png", hide_description=True) 
 
-
 # screen game_rules_minigame1:
     
     

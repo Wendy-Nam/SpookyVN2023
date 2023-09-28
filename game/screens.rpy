@@ -406,6 +406,11 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform spooktober_logo_splash:
+    zoom 0.6 align (0.5, 0.5)
+    linear 3.5 alpha 0.0
+    pause 1.0
+
 transform animating_main:
     zoom 1.0
     align (0.5, 0.9)
@@ -415,8 +420,11 @@ transform animating_main:
         linear 1.0 alpha 0.8
         linear 1.0 alpha 1.0
         repeat
-        
+
 screen animated_main_menu:
+    frame at spooktober_logo_splash:
+        background "#000000ff"
+        add "images/spooktober2023.png"
     frame at alpha_dissolve:
         background "#0000005c"
     frame at animating_main:
@@ -629,11 +637,9 @@ screen about():
 
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
-
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
-
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
@@ -835,11 +841,11 @@ screen preferences():
 
                     label _("Text Speed")
 
-                    bar value Preference("text speed")
+                    bar value Preference("text speed") style 'pref_slider'
 
                     label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    bar value Preference("auto-forward time") style 'pref_slider'
 
                 vbox:
 
@@ -847,14 +853,14 @@ screen preferences():
                         label _("Music Volume")
 
                         hbox:
-                            bar value Preference("music volume")
+                            bar value Preference("music volume") style 'pref_slider'
 
                     if config.has_sound:
 
                         label _("Sound Volume")
 
                         hbox:
-                            bar value Preference("sound volume")
+                            bar value Preference("sound volume") style 'pref_slider'
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
@@ -864,7 +870,7 @@ screen preferences():
                         label _("Voice Volume")
 
                         hbox:
-                            bar value Preference("voice volume")
+                            bar value Preference("voice volume") style 'pref_slider'
 
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
@@ -875,7 +881,13 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-
+style pref_slider:
+    xmaximum 525
+    ymaximum 22
+    left_bar "gui/slider/horizontal_idle_bar.png"
+    right_bar "gui/slider/horizontal_hover_bar.png"
+    thumb "gui/slider/horizontal_hover_thumb.png"
+    thumb_offset 10
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

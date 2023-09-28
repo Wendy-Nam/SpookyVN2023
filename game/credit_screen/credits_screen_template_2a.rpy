@@ -9,7 +9,6 @@ screen template_2a():
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
     use game_menu(_("About"), scroll="viewport"):
-
         style_prefix "about"
         text "Credits" style "about_header" line_spacing 20
         
@@ -45,8 +44,8 @@ screen template_2a():
                                 add link[0] zoom 0.15 yalign 0.5
                                 textbutton link[1] action OpenURL(link[1]) style "credits_url_button" text_style "credits_url_text_small"
             # fill unused grid spot (when amount is uneven) with null
-            null
-        null
+            # null
+        # null
         label "[config.name!t]"
         text _("Version [config.version!t]\n")
         text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")

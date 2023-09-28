@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 420: 'dissolve' is not a keyword argument or valid child of the frame statement.
+    frame at alpha dissolve:
+                           ^
+
+Ren'Py Version: Ren'Py 8.1.2.23090503
+Fri Sep 29 04:29:08 2023
