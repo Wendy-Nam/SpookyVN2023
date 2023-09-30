@@ -777,7 +777,7 @@ label im_sorry_carls_keep_going:
     $ lipsync(Parents, "act3", 'audio_25', "Get what ready?", 'mouth_sad')
     
     """
-    Minutes pass and you begin to wonder what Carla had to collect to declare the game as //ready//. 
+    Minutes pass and you begin to wonder what Carla had to collect to declare the game as {b}{i}ready{/i}{/b}. 
 
     You're troubled by the idea and head for her room to check on her.
     """

@@ -518,7 +518,7 @@ label head_back_to_the_bedroom_door:
     """
     Anxiety transforms into panic and you begin running.
     
-    The direction is unclear, only until you can find //something//.
+    The direction is unclear, only until you can find {bt=5}{sc=2}{color=ff0000}{b}{i}something{/i}{/b}{/color}{/bt}.
     """
     play sound 'audio/Sound/Carla_giggling.mp3' fadein 0.5 volume 2.0
     """
@@ -696,7 +696,7 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     $ lipsync(Carla, "act4", 'audio_47', "I told you I didn't have anything to do with that.", 'mouth_G')
     $ lipsync(Carla, "act4", 'audio_48', "You did the same thing again today!", 'mouth_angry2')
     show Carla eye_default
-    $ lipsync(Carla, "act4", 'audio_49', "The second we started playing, you /passed/ out //again//. ", 'mouth_sad')
+    $ lipsync(Carla, "act4", 'audio_49', "The second we started playing, you {b}{i}passed{/i}{/b} out {color=ff0000}{b}{i}again{/i}{/b}{/color}. ", 'mouth_sad')
     
     "Carla purses her lips and she speaks again."
     show Carla eye_crying
@@ -980,7 +980,7 @@ label respond:
     show Mom mouth_sad eye_serious brow_angry
     
     $ lipsync(Mom, "act4", "audio_84", "I'm trying to save you.", 'mouth_sad')
-    $ lipsync(Dad, "act4", "audio_85", "Hell, I'm not even sure if you're //you// right now.", 'mouth_sad')
+    $ lipsync(Dad, "act4", "audio_85", "Hell, I'm not even sure if you're {sc=3}{color=ff0000}{b}{i}you{/i}{/b}{/color}{/sc} right now.", 'mouth_sad')
 
     show Carla brow_default eye_default mouth_C overlay_fear at laugh
     play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 1.0
@@ -1134,7 +1134,7 @@ label the_monster_leaves_carlas_side_and_faces_you_its_grotesque_features_make_y
     show Carla brow_surprised eye_default mouth_angry2 overlay_dirt
     $ lipsync(Carla, "act4", "audio_99", "Dangerous?", 'mouth_stingy')
     show Carla brow_angry2
-    $ lipsync(Carla, "act4", "audio_100", "It's just //Story Time//.", 'mouth_angry2')
+    $ lipsync(Carla, "act4", "audio_100", "It's just a {bt=4}{sc=3}{color=ff0000}{b}{i}Game{/i}{/b}{/color}{/sc}{/bt}.", 'mouth_angry2')
     $ lipsync(Carla, "act4", "audio_101", "It's a game, that's all it's been.", 'mouth_angry2')
     
     "The monster creeps its way in your direction, causing you to instinctually hold up your bat."
@@ -1257,7 +1257,7 @@ label you_exit_the_room_unable_to_cope_with_what_youre_about_to_do:
         anchor (351, 315) zoom 1.5 
 
     $ lipsync(Parents, "act4", "audio_116", "I'm telling you.", 'mouth_fear')
-    $ lipsync(Parents, "act4", "audio_117", "There //is// something here!", 'mouth_fear')
+    $ lipsync(Parents, "act4", "audio_117", "There {color=ff0000}{b}{i}is{/i}{/b}{/color} something here!", 'mouth_fear')
     
     camera
     

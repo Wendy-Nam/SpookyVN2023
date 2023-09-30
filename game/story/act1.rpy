@@ -69,7 +69,7 @@ label act11:
     show Mom brow_angry eye_serious
     
     $ lipsync(Mom, 'act1', "audio_9", "Definitely not missy.")
-    $ lipsync(Mom, 'act1', "audio_10", "Besides, you ate a lot of your candy on the way home //after// I told you not to.")
+    $ lipsync(Mom, 'act1', "audio_10", "Besides, you ate a lot of your candy on the way home {b}{i}after{/i}{/b} I told you not to.")
     
     show Carla brow_sad eye_default mouth_sad
     
@@ -118,7 +118,7 @@ label act12:
     $ lipsync(Mom, 'act1', "audio_21", "What is it Carls?")
         
     $ lipsync(Carla, 'act1', "audio_22", "I know it's late but...")
-    $ lipsync(Carla, 'act1', "audio_23", "can we at least play //the Game// before we go to sleep?")
+    $ lipsync(Carla, 'act1', "audio_23", "can we at least play {b}{i}the Game{/i}{/b} before we go to sleep?")
     
     show Carla brow_sad eye_default mouth_sad
     
@@ -140,7 +140,7 @@ label act13b:
     
     show Mom brow_default eye_serious
     
-    $ lipsync(Mom, 'act1', "audio_24", "You do the set up //and// the clean up.")
+    $ lipsync(Mom, 'act1', "audio_24", "You do the set up {b}{i}and{/i}{/b} the clean up.")
     
     show Mom brow_surprised eye_default mouth_B
     

@@ -169,7 +169,7 @@ label act21:
     
     Music similar to his hum catches his ears.
 
-    To double check, he stops and realizes that there //is// music playing in the background. 
+    To double check, he stops and realizes that there {b}{i}is{/i}{/b} music playing in the background. 
     """
     
     show Dad mouth_C
