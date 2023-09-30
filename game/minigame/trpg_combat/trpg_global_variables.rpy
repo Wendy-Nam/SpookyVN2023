@@ -9,7 +9,8 @@ init -1:
     default slide_direction = None
     default damaged_heart = False
     default damaged_heart_blink = HEART_BLINK_NB
-    
+    default damaged_monster = False
+
     ## For the Monster Attack
     define BOX_START_POS = [500, 500, 500, 500]
     define PLAYER_START_POS = [750, 850]

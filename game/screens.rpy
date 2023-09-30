@@ -406,56 +406,76 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-transform spooktober_logo_splash:
-    zoom 0.6 align (0.5, 0.5)
-    linear 3.5 alpha 0.0
-    pause 1.0
+transform logo_splash:
+    zoom 0.5 align (0.5, 0.5)
+    linear 4.0 alpha 0.0
+
+image spooktober_logo:
+    "images/spooktober2023.png"
+    pause 0.5
+    glitch("images/spooktober2023.png")
+    pause 0.1
+    repeat
+
+transform blackout_main:
+    linear 3.5 alpha 0.3
 
 transform animating_main:
     zoom 1.0
     align (0.5, 0.9)
+    pause 0.5
     parallel:
         linear 1.5 zoom 1.2
     parallel:
         linear 1.0 alpha 0.8
         linear 1.0 alpha 1.0
-        repeat
-
+        
 screen animated_main_menu:
-    frame at spooktober_logo_splash:
+    frame at blackout_main:
         background "#000000ff"
-        add "images/spooktober2023.png"
-    frame at alpha_dissolve:
-        background "#0000005c"
     frame at animating_main:
         background "#00000000"
         add "gui/title.png"
 
-screen main_menu():
+default start_main_menu = False
 
+screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
-
-    add gui.main_menu_background
-    use animated_main_menu
-    ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
-
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
+    if start_main_menu == False:
+        frame align(0.5, 0.5) at alpha_dissolve:
+            background "#000000ff"
+            # xmaximum 1200
+            padding (500, 300)
+            vbox:
+                spacing 50
+                xmaximum 1000
+                text "This game contains depictions of\n{sc=2}{size=32}{color=#FF0000}{i}violence / gruesome imagery / suggestive jokes / blood and gore{/i}{/color}{/sc}\nPlayer discretion is advised. - please {b}continue{/b} with caution." text_align 0.5
+                textbutton "{b}START{/b}" text_size 100 action SetVariable('start_main_menu', True) xalign 0.5
+        frame at logo_splash:
+            background "#000000ff"
+            add 'spooktober_logo'
+    else:
+        add gui.main_menu_background
+        use animated_main_menu
+        ## This empty frame darkens the main menu.
+        frame:
+            style "main_menu_frame"
+    
+        ## The use statement includes another screen inside this one. The actual
+        ## contents of the main menu are in the navigation screen.
+        use navigation
+    
+        if gui.show_name:
+    
+            vbox:
+                style "main_menu_vbox"
+    
+                text "[config.name!t]":
+                    style "main_menu_title"
+    
+                text "[config.version]":
+                    style "main_menu_version"
 
 
 style main_menu_frame is empty

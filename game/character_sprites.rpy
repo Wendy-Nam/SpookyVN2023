@@ -187,8 +187,11 @@ image parents_fear_overlay_mask:
 layeredimage Parents:
     at sprite_highlight('Parents')
     zoom 0.8
-    always:
-        "images/charactors/parents/base.png"
+    group base:
+        attribute base_default default:
+            'images/charactors/parents/base.png'
+        attribute base_hand:
+            'images/charactors/parents/base_hand.png'
     group eyes:
         attribute eye_default default:
             'parents_eyes_default'

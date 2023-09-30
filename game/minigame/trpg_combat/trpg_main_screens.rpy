@@ -34,24 +34,49 @@ init:
                         imagebutton idle [item_image]:
                             action Function(player.use_item, item['name'])
                             tooltip "{b}" + item['name'] + '(' + str(item['amount']) +')'+ "{/b}\n" + item_description
-                        # if item['amount'] > 1:
-                            # text str(item['amount']) color "#cacaca" size 20 xoffset -7 yoffset 10
-                text "{bt=3}{color=#ff0000}{size=40}{i}[player.hp] / [player.max_hp] HP{/i}{/size}{/color}{/bt}" xalign 0.18 yoffset -20
+                text "{bt=3}{color=#fff000}{size=40}{i}{b}[player.hp]{/b} / [player.max_hp] HP{/i}{/size}{/color}{/bt}" xalign 0.18 yoffset -20
                 textbutton "close" action [Function(toggle_inventory, player)] xalign 0.23 yoffset 35 text_size 40
         else:
             frame align (0.2, 0.87):
                 padding (100, 0)
                 background None
-                # vbox:
-                    # spacing 5
-                    # text "{glitch=1.1}{color=#ff0000}{size=40}{b}{i}[player.hp] HP{/i}{/b}{/size}{/color}{/glitch}"
                 text "{glitch=1.1}{color=#ffffff}{size=40}{i}What will you do next?{/i}{/size}{/color}{/glitch}"
         timer 1 repeat True action If (game_escape_flag == True, true=Return())
-
+    
+    # screen monster_sprite:
+    #     frame align(0.45, 0.25):
+    #         background None
+    #         image 'monster_minigame3'
+            
+    transform attacked_position:
+        align(0.45, 0.25)
+    
+    transform damaged_monster_animation:
+        alpha 1.0
+        align (0.45, 0.25)
+        parallel:
+            alpha 1.0
+            pause 0.05
+            alpha 0.0
+            pause 0.05
+            repeat
+        
+    screen monster_sprite:
+        frame align(0.45, 0.25):
+            background None
+            if monster_damaged:
+                image 'monster_minigame3' at damaged_monster_animation
+                image 'weapon_bat' at attacked_position
+                image 'swing' at attacked_position
+            else:
+                image 'monster_minigame3'
+    
     screen trpg_game_board(game, player, monster):
         zorder 2
         if game.attack_started:
             use attack_timer(game.current_turn)
+        if (game.attack_started == False):
+            use monster_sprite
         if (game.current_turn == "Player"):
             use trpg_hp_bar(monster, name="monster")
         elif (game.attack_started and game.current_turn == "Monster"):

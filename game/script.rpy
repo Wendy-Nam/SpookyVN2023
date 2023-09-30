@@ -22,9 +22,9 @@ define Swing_Now_Ask_Later = Achievement(name=_("Swing Now, Ask Later"), id="Swi
 define Practically_Jaws = Achievement(name=_("Practically Jaws"), id="Practically_Jaws", description=_("Fill your air meter all the way during the underwater minigame."), unlocked_image="gui/achievements/jaws.png", hide_description=True) 
 
 # screen game_rules_minigame1:
-    
+
 label start:
     # jump open_your_eyes_again # minigame2
     # jump act25a # minigame1
-    # jump attack_the_monster # minigame3
-    jump act11
+    jump attack_the_monster # minigame3
+    # jump act11
