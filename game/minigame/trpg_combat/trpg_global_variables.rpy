@@ -7,9 +7,9 @@ init -1:
     default BOX = BOX_START_POS # (xpos, width, ypos, height)
     default slide_wall = 0
     default slide_direction = None
-    default damaged_heart = False
-    default damaged_heart_blink = HEART_BLINK_NB
-    default damaged_monster = False
+    default heart_damaged = False
+    default heart_damaged_blink = HEART_BLINK_NB
+    default monster_damaged = False
 
     ## For the Monster Attack
     define BOX_START_POS = [500, 500, 500, 500]
@@ -33,6 +33,7 @@ init -1:
     
     # Moving weapon transform for weapon animation
     transform moving_timing_bar: 
+        xalign 0.5
         yalign 0.8
         xpos 100
         linear 0.1 xpos 500

@@ -72,7 +72,7 @@ label after_defeating_the_monster_adults_ending:
     """
     With a heavy sigh, you drop the bat and look around for Carla.
     """
-    
+    play music 'audio/Music/A_Trick_of_Mind_End_Game.ogg' volume 0.3 fadein 3.0
     show Parents eye_default
     
     $ lipsync(Parents, "act4", 'audio_11', "Carla?", 'mouth_fear')
@@ -111,7 +111,7 @@ label after_defeating_the_monster_childs_ending:
     The monster drops to the floor writhing in pain before succumbing to its injuries.
     """
     show Parents mouth_fear eye_default brow_surprised overlay_blood at courtyard_tint_parents
-    
+    play music 'audio/Music/A_Trick_of_Mind_End_Game.ogg' volume 0.3 fadein 3.0
     """
     It immediately fades from existence and Carla runs towards you.
     """
@@ -142,9 +142,10 @@ label after_defeating_the_monster_childs_ending:
     """
     Carla looks at you and smiles, but the smile begins to contort her face.
     """
-    play sound 'audio/Sound/Carla_giggling.mp3' volume 0.05
+    play sound 'audio/Sound/Carla_giggling.mp3' fadein 2.0 volume 2.0
     show Carla mouth_H at laugh
     hide Carla with fade
+    play sound 'audio/Sound/Carla_laugh.mp3' fadein 2.0 volume 2.0
     """
     She laughs as you back away, watching her being fade away as well.
     """
@@ -173,12 +174,12 @@ label after_defeating_the_monster_childs_ending:
 label attack_the_monster:
     $ Swing_Now_Ask_Later.grant()
     show Parents mouth_fear overlay_fear eye_default brow_angry at courtyard_tint_parents
-    play weapon 'audio/Sound/Prison Scene Sounds/Bat Impact.WAV' volume 0.7
+    play weapon 'audio/Sound/Prison Scene Sounds/Bat Impact.WAV' volume 2.0
     """
     You clench your bat and raise it above your head and swing at your attacker.
     """
-    play sound 'audio/Sound/Prison Scene Sounds/Monster Gets Hit.wav'
-    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.8
+    play sound 'audio/Sound/Prison Scene Sounds/Monster Gets Hit.wav' volume 3.5 fadein 0.5
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 1.5 fadein 0.5
     """
     It cries out in pain as Carla maintains her focus on you.
     """
@@ -208,22 +209,22 @@ label begin_unlocking_her_door:
     stop music fadeout 3.0
     show Parents mouth_sad eye_serious brow_default
     with sshake3
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 1.0
     """
     You reach up for the first latch and unhook it.
     """
     with sshake3
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.4
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 1.5
     """
     The second latch is then undone.
     """
     with sshake3
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.6
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 2.0
     """
     The third.
     """
     with sshake3
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 1.0
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 3.0
     """
     Finally, the fourth.
     """
@@ -237,7 +238,7 @@ label begin_unlocking_her_door:
     play music 'audio/Music/A_Trick_of_Mind_Prison.ogg' fadein 3.0 volume 0.05
     show Parents mouth_sad eye_default brow_surprised overlay_fear at corridor_tint
 
-    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.8
     """
     Once the door opens fully, to your horror, you find yourself peering into a dark hallway.
     
@@ -249,6 +250,7 @@ label begin_unlocking_her_door:
     "No response."
     
     $ lipsync(Parents, "act4", 'audio_22', "Carls? We made a deal!", 'mouth_fear')
+    
     hide parents_fear_overlay_mask with dissolve
     menu:
         "Shut the door and lock it.":
@@ -306,7 +308,7 @@ label check_the_bucket:
     with Pause(0.64)
     camera:
         offset (-63, -1809) zoom 2.88 
-    play sound 'audio/Sound/Prison Scene Sounds/Bucket Check.wav' volume 0.2
+    play sound 'audio/Sound/Prison Scene Sounds/Bucket Check.wav' volume 5.0
     """
     The source of the foul odor coming from the cell is obviously coming from the bucket.
     
@@ -318,7 +320,7 @@ label check_the_bucket:
     jump check_the_rest_of_the_cell
 
 label check_the_page:
-    play sound 'audio/Sound/Prison Scene Sounds/Page Pick Up.wav' volume 0.8
+    play sound 'audio/Sound/Prison Scene Sounds/Page Pick Up.wav' volume 5.0
     """
     You pick up the page and carefully make out the image in the dark.
     
@@ -377,11 +379,11 @@ label find_carla:
     
     You cease calling out to Carla and decide, the next best step is to traverse the darkness to find her.
     """
-    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
     show Parents mouth_sad eye_serious brow_angry
     """
     You grab the bat by the door and tightly grip it, ready to attack anything coming your way.
     """
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 2.0
     with vpunch
     """
     With a controlled breath, you step in and shut the door behind you.
@@ -416,9 +418,18 @@ label finish_checking_the_cell:
 
 label get_closer:
     scene bg courtyard_creature_carla at step_in
-    
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 4.0 fadein 0.2
+    pause 0.5
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 4.0 fadein 0.2
+    pause 0.5
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 4.0 fadein 0.2
+    pause 0.5
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 4.0 fadein 0.2
+    pause 0.5
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 4.0 fadein 0.2
+    pause 0.5
     "Both the monster and Carla sit still, nearly oblivious to your presence."
-    
+    stop sound fadeout 2.0
     show Parents mouth_fear overlay_fear brow_surprised eye_default at courtyard_tint_parents
     
     $ lipsync(Parents, "act4", 'audio_23', "C-Carla?", 'mouth_fear')
@@ -466,6 +477,7 @@ label grab_carlas_food:
     
     Your conflicting emotions swirl through you as you grab the knob on the foot of the door you use to pass Carla her food.
     """
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.6
     with vpunch
     """
     The knob is jammed.
@@ -484,8 +496,9 @@ label head_back_to_the_bedroom_door:
     """
     
     show Parents mouth_fear overlay_fear brow_surprised
+    
+    play sound "audio/Sound/Scraping Gong.wav" volume 1.0
     with vpunch
-
     """
     As you run back the way you came you realize that the door you entered through isn't there.
     """
@@ -495,19 +508,19 @@ label head_back_to_the_bedroom_door:
     """
     show Parents at corridor_tint
     $ lipsync(Parents, "act4", 'audio_29', "C-Carls?", 'mouth_fear')
-    play sound 'audio/Sound/Carla_giggling.mp3' volume 0.01
+    play sound 'audio/Sound/Carla_giggling.mp3' fadein 1.0 volume 0.8
     """
     Your cries for help are met with a quiet laughter.
     """
     pause 1.0
     show Parents mouth_fear overlay_fear eye_crying brow_surprised at running
-    play target 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.03 loop
+    play target 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.5 loop
     """
     Anxiety transforms into panic and you begin running.
     
     The direction is unclear, only until you can find //something//.
     """
-    play sound 'audio/Sound/Carla_giggling.mp3' volume 0.05
+    play sound 'audio/Sound/Carla_giggling.mp3' fadein 0.5 volume 2.0
     """
     The unsettling laughter rises until it finds a place in your ears and stays there.
     """
@@ -562,13 +575,13 @@ label ignore:
 
 label inside_the_hallway:
     scene black
-    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.03
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 1.0
     pause 0.6
-    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.03
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 1.0
     pause 0.6
-    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.03
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 1.0
     pause 0.6
-    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 0.03
+    play sound 'audio/Sound/Prison Scene Sounds/Stone Footstep.wav' volume 1.0
     """
     You blindly move through the blackness until you stop in front of a dimly lit cell.
     """
@@ -576,7 +589,7 @@ label inside_the_hallway:
     """
     No Carla.
     """
-    play sound 'audio/Sound/Prison Scene Sounds/Prison Metal Bar Cell Door Roll Close - QuickSounds.com.mp3' volume 0.2
+    play sound 'audio/Sound/Prison Scene Sounds/Prison Metal Bar Cell Door Roll Close - QuickSounds.com.mp3' volume 2.0
     scene bg cell_prison with fade
     show Parents mouth_fear brow_surprised overlay_fear at prison_tint
     """
@@ -599,7 +612,7 @@ label inside_the_hallway:
 label keep_fighting:
     """
     With the bat practically useless in this endeavor, you attempt to slip your fingers between the murderous hands and your neck.
-    
+
     You manage to get some space, but your arms are gripped by another force. Another set of hands.
     
     They pull your arms towards your side and you feel your consciousness slipping until you can no longer attempt to writhe yourself free.
@@ -620,20 +633,20 @@ label keep_fighting:
     show Carla brow_surprised
     $ lipsync(Carla, "act4", 'audio_35', "No more excuses.", 'mouth_D')
     
-    play sound 'audio/Sound/Evil_laugh.mp3' fadein 3.0
+    play sound 'audio/Sound/Evil_laugh.mp3' fadein 2.0 volume 5.0
     show Carla brow_default at laugh
     """
     A devilish laugh creeps into your ears.
     """
     stop sound fadeout 2.0
+    scene bg child_ending with dissolve
     """
     You feel your neck snapping in several places until your vision is swallowed by the blackness.
     """
-    scene black with dissolve
     $ child_ending.grant()
-    
     $ lipsync(Demon, 'act4', 'audio_36', "Whether dead or alive, all I need is a little imagination to play with you.", invisible=True)
-    
+    scene black
+    pause 2.0
     "GAME END."
     
     return
@@ -647,7 +660,7 @@ label knowing_youll_be_back_at_the_start_you_allow_the_cycle_to_continue_anew:
     $ lipsync(Carla, "act4", 'audio_37', "Hello??", 'mouth_angry2')
     $ lipsync(Carla, "act4", 'audio_38', "Wake up!", 'mouth_angry2')
     
-    play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 3.0 volume 0.15
+    play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 3.0 volume 0.3
     
     """
     Carla's cries bring you both back to reality.
@@ -737,7 +750,13 @@ label leave_the_room:
     
     $ lipsync(Mom, "act4", 'audio_55', "That's not what I said, I just remembered I need to take care of something.")
     show Mom at mom_walk
-    
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.2
+    pause 0.2
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.2
+    pause 0.2
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.2
+    pause 0.2
+    stop sound fadeout 0.5
     """
     Your mind is focused and Carla's voice fades out as you leave. 
 
@@ -746,6 +765,12 @@ label leave_the_room:
     You feel shame and guilt wash over you both but you press on.
     """
     show Dad eye_serious brow_sad at dad_walk
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.5
+    pause 0.5
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.5
+    pause 0.5
+    play sound 'audio/Sound/House Scene Sounds/Wood Footstep Shuffle.wav' volume 0.5
+    pause 0.5
     """
     You exit the room unable to cope with what you're about to do.
     """
@@ -754,8 +779,8 @@ label leave_the_room:
     jump you_exit_the_room_unable_to_cope_with_what_youre_about_to_do
 
 label open_the_doors:
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav'
-    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.1
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 2.5
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0
     with vpunch
     """
     The doors are an entrance to a courtyard of some sorts.
@@ -836,8 +861,8 @@ label pass_the_food_directly_to_carla:
         center
     hide Mom
     hide Dad
-    play sound 'audio/Sound/Dad_laugh.mp3' fadein 0.5 volume 0.01
-    play target 'audio/Sound/Mom_laugh.mp3' fadein 0.5 volume 0.03
+    play sound 'audio/Sound/Dad_laugh.mp3' fadein 0.5 volume 0.3
+    play target 'audio/Sound/Mom_laugh.mp3' fadein 0.5 volume 0.5
     $ lipsync(Parents, "act4", 'audio_67', "Ha. Ha.", 'mouth_C')
     $ lipsync(Parents, "act4", 'audio_68', "I know you love cherry pie.", 'mouth_B')
     stop sound fadeout 0.5
@@ -874,6 +899,7 @@ label pick_it_up:
         repeat
     show blink:
         pause 2.0
+    play sound 'audio/Sound/Prison Scene Sounds/Police Sirens.mp3' loop volume 1.0
     """
     As reality returns and something else you didn't expect happens.
     
@@ -884,7 +910,8 @@ label pick_it_up:
         center
     $ adults_ending.grant()
     $ lipsync(Parents, "act4", 'audio_74', "...Carls?", 'mouth_fear')
-    
+    scene bg adults_ending with dissolve
+    pause 2.0
     "GAME END."
 
     return
@@ -895,12 +922,14 @@ label pull_the_knob_harder:
 
     With a strong and quick tug you pull on the handle, hoping to make enough space to pass Carla her food.
     """
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0
     with sshake3
     """
     The door starts to give which signals you that you're almost there.
 
     One more pull and...
     """
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 2.0
     with sshake2
     """
     The knob snaps off of the door, causing you to fly backwards into the floor.
@@ -908,15 +937,15 @@ label pull_the_knob_harder:
     hide Parents with dissolve
     show Carla brow_angry2 eye_default mouth_C at left:
         matrixcolor TintMatrix("#380e0e")*SaturationMatrix(1.0000)*ContrastMatrix(1.6574)
+    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 2.0 loop
     """
     Carla belts out in laughter as you pick yourself up.
     """
     show Carla at laugh    
-    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 0.2
     show Parents mouth_sad  eye_serious brow_angry
     $ lipsync(Parents, "act4", 'audio_75', "Ugh, shut up.", 'mouth_sad')
     show Carla at laugh
-    play sound 'audio/Sound/Carla_giggling.mp3' fadein 0.5 volume 0.1
+    play sound 'audio/Sound/Carla_giggling.mp3' fadein 0.5 volume 2.0
     "Carla continues to laugh."
     hide Parents
     show Dad mouth_sad eye_serious brow_angry
@@ -954,7 +983,7 @@ label respond:
     $ lipsync(Dad, "act4", "audio_85", "Hell, I'm not even sure if you're //you// right now.", 'mouth_sad')
 
     show Carla brow_default eye_default mouth_C overlay_fear at laugh
-    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 0.3
+    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 1.0
     # matrixcolor TintMatrix("#211619")*Saturatio   nMatrix(1.0000)*ContrastMatrix(1.6574)
 
     "Carla laughs, making you uneasy as you start to put your papers down."
@@ -963,11 +992,12 @@ label respond:
     $ lipsync(Mom, "act4", "audio_87", "There was something wrong with them.")
     
     show Carla brow_angry2 eye_default mouth_stingy
-    stop sound fadeout 2.0
-    "Exasperated, Carla lets out a sigh."
-        
-    $ lipsync(Carla, "act4", "audio_88", "What's wrong with yo-", 'mouth_stingy')
+    play sound 'audio/Sound/House Scene Sounds/Sigh.wav' volume 3.0
     
+    "Exasperated, Carla lets out a sigh."
+    
+    $ lipsync(Carla, "act4", "audio_88", "What's wrong with yo-", 'mouth_stingy')
+    stop sound fadeout 2.0
     $ lipsync(Dad, "act4", "audio_89", "You'll get fed, and that'll be that.")
     
     hide Dad
@@ -978,6 +1008,7 @@ label respond:
     jump grab_carlas_food
 
 label shut_the_door_and_lock_it:
+    play weapon 'audio/Sound/Prison Scene Sounds/Monster Heavy Breathing.wav' fadein 2.5 volume 1.0
     show Parents mouth_C eye_serious brow_angry
     
     "After moments of waiting for any response, you decide to make one last effort to get Carla's attention."
@@ -992,13 +1023,12 @@ label shut_the_door_and_lock_it:
     pause 1.0
     scene bg corridor_creature with dissolve
 
-    play weapon 'audio/Sound/Prison Scene Sounds/Monster Heavy Breathing.wav' fadein 3.0 volume 0.01
-    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.02
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' fadein 0.5 volume 3.0
     pause 1.0
     """
     You decide that you waited long enough, but before you can act you see a monster reach out from the the blackness.
     """
-    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 2.5
     scene bg livingroom_night:
         matrixcolor TintMatrix("#993131")*SaturationMatrix(1.0000)*ContrastMatrix(0.8981)
     show Parents mouth_fear overlay_fear eye_default brow_surprised:
@@ -1008,28 +1038,34 @@ label shut_the_door_and_lock_it:
     The terrifying sight urges you to slam the door shut and begin latching it.
     """
     with sshake2
-    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
+    play sound 'audio/Sound/House Scene Sounds/Door Hitting1.wav' volume 3.0
     """
     As you begin locking the door, the hands slam into it, pushing you away.
-    
+    """
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 2.0
+    """
     You rush back to the door forcing all of your might into it, trying to keep the demon inside as you continue to lock it.
     """
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    play target 'audio/Sound/House Scene Sounds/Door Hitting1.wav' volume 10.0
     with sshake
     """
     The first lock. The hands continue to bang at the door.
     """
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 3.0
+    play target 'audio/Sound/House Scene Sounds/Door Hitting2.wav' volume 10.0
     with sshake
     """
     The second lock.
     """
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 4.0
+    play target 'audio/Sound/House Scene Sounds/Door Hitting2.wav' volume 10.0
     with sshake3
     """
     On the third lock you feel the door start to give and you press your feet to the ground, hoping you have enough strength to get the final lock.
     """
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.2
+    play target 'audio/Sound/House Scene Sounds/Door Hitting3.wav' volume 10.0
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 5.0
+    stop target fadeout 2.0
     """
     On the fourth lock, the slamming ceases.
     
@@ -1047,21 +1083,25 @@ label shut_the_door_and_lock_it:
     """
     with sshake
     show Parents mouth_fear eye_default brow_surprised
-    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.2
-    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 0.3
+    play weapon '<from 0 to 1>audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 5.0
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 3.0
+    pause 1.5
+    play sound 'audio/Sound/House Scene Sounds/Dad Scream.wav' volume 3.5
+    play target 'audio/Sound/House Scene Sounds/Mom Scream.wav' volume 3.5
     """
     The door bursts open and the hands successfully grab at you and pull you in. The door slams behind you as you get further and further away.
     """
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' volume 3.0
+    pause 1.5
     scene black with dissolve
     """
     You do your best to swing at the hands but become suffocated by the darkness.
     """
-    
     jump inside_the_hallway
 
 label sprint_for_the_doors:
     stop sound fadeout 2.0
-    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 0.1
+    play sound 'audio/Sound/Carla_laugh.mp3' fadein 0.5 volume 1.0
     """
     As you approach them the laughter subsides.
     
@@ -1121,7 +1161,7 @@ label the_monster_leaves_carlas_side_and_faces_you_its_grotesque_features_make_y
     The monster is close enough for you to strike. The aura of hatred seethes under your skin.
     """
     show Parents brow_surprised
-    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' fadein 2.0 volume 0.5
+    play target 'audio/Sound/Prison Scene Sounds/Monster Snarl.WAV' fadein 1.0 volume 3.5
     """
     It lifts its tree trunk arms as if they were to crush you in its embrace.
     """

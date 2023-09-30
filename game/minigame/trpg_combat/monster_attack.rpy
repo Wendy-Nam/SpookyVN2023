@@ -3,17 +3,17 @@
 init python:
     def move_player(trans, at, st):
         # blink heart when collided with obstacles
-        global damaged_heart_blink, damaged_heart
-        if (damaged_heart == True) and (damaged_heart_blink == 0):
-            damaged_heart = False
-            damaged_heart_blink = HEART_BLINK_NB
+        global heart_damaged_blink, heart_damaged
+        if (heart_damaged == True) and (heart_damaged_blink == 0):
+            heart_damaged = False
+            heart_damaged_blink = HEART_BLINK_NB
             trans.alpha = 1.0
-        elif (damaged_heart == True) and (damaged_heart_blink % 2 == 1):
+        elif (heart_damaged == True) and (heart_damaged_blink % 2 == 1):
             trans.alpha = 0.0
-            damaged_heart_blink -= 1
-        elif (damaged_heart == True) and (damaged_heart_blink % 2 == 0):
+            heart_damaged_blink -= 1
+        elif (heart_damaged == True) and (heart_damaged_blink % 2 == 0):
             trans.alpha = 0.8
-            damaged_heart_blink -= 1
+            heart_damaged_blink -= 1
 
         if (trans.xpos is None) or (trans.ypos is None):
             trans.xpos = player_initial_pos[0]
@@ -116,7 +116,7 @@ init python:
             self.round_end()
 
         def update(self):
-            global damaged_heart
+            global heart_damaged
             self.object_spawn_timer += 0.1  # Increase the timer
             if self.status.is_clear() or self.status.is_fail():
                 return
@@ -139,9 +139,7 @@ init python:
                     obj.hidden = True
                     obj.hide()
                 if self.is_hit(obj):
-                    damaged_heart = True
-                    # renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=0.5)
-                    # global player_hp
+                    heart_damaged = True
                     hp_change = obj.handle_collision()
                     self.status.player.hp += hp_change
 
@@ -178,11 +176,6 @@ init python:
 
 
         def spawn_object(self):
-            # Create a new object (either bubble or fish) with random properties
-            # object_type = renpy.random.choice(["bubble", "bubble", "bubble", "bubble", "fish"])
-            # if object_type == "bubble":
-            #     obj = self.Item(len(self.objects) + 1)
-            # else:
             obj = self.Bomb(len(self.objects) + 1)
             self.objects.append(obj)
             obj.display()
@@ -231,10 +224,6 @@ init python:
 
         class Status:
             def __init__(self):
-                # self.air_hp = 20  # Starting HP
-                # self.max_hp = 50  # Max HP
-                # self.time_max = 30  # Time Max
-                # self.time_left = 30  # Time left in seconds
                 self.is_game_over = False
                 self.survived = False
                 self.player = None

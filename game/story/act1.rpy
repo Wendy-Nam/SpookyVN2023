@@ -2,8 +2,8 @@ label act11:
     scene black
     scene bg livingroom_night
     
-    play sound "audio/Sound/House Scene Sounds/Lock and Unlock Door.wav" volume 0.2
-    play music "audio/Music/A_Trick_of_Mind_House.ogg" fadein 2.0 volume 0.3
+    play sound "audio/Sound/House Scene Sounds/Lock and Unlock Door.wav" volume 1.0
+    play music "audio/Music/A_Trick_of_Mind_House.ogg" fadein 2.0 volume 0.7
     
     """
     You all walk into your home on Halloween night after a successful Trick or Treat adventure.
@@ -21,7 +21,7 @@ label act11:
     $ lipsync(Carla, 'act1', "audio_0", "Why do people leave 'Take One Only' signs in front of their door?")
     $ lipsync(Carla, 'act1', "audio_1", "It makes me want to take more than that?")
     
-    play sound "<from 2 to 5>audio/Sound/House Scene Sounds/Plastic Wrapping.mp3" volume 0.2 
+    play sound "<from 2 to 5>audio/Sound/House Scene Sounds/Plastic Wrapping.mp3" volume 1.0 
     
     show Dad
     show Mom

@@ -132,3 +132,9 @@ image bg corridor_creature:
 image bg double_doors:
     'images/backgrounds/Corridor-Prison/double doors.png'
     matrixcolor TintMatrix("#55a6a8")*SaturationMatrix(0.6019)*ContrastMatrix(1.8981)
+    
+image bg child_ending:
+    'images/backgrounds/Ending/child_ending.png'
+    matrixcolor TintMatrix("#7f3636")*SaturationMatrix(1.0000)*ContrastMatrix(2.7500)
+
+image bg adults_ending = 'images/backgrounds/Ending/adult_ending.png'

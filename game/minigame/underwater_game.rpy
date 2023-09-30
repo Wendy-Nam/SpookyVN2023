@@ -136,7 +136,7 @@ init python:
                 renpy.scene()
                 renpy.show('blink')
                 renpy.show('bg underwater_game', at_list=[drowning])
-                renpy.music.play('<from 5>audio/Sound/Underwater Scene Sounds/Drowning.mp3', channel='music', relative_volume=0.5)
+                renpy.music.play('<from 5>audio/Sound/Underwater Scene Sounds/Drowning.mp3', channel='music', relative_volume=2.0)
                 narrator("You Drowned...")
             renpy.hide_screen('hp_bar')
 
@@ -159,7 +159,7 @@ init python:
                 if obj.hitted:
                     continue
                 if self.is_hit(obj):
-                    renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=0.5)
+                    renpy.music.play('audio/Sound/Underwater Scene Sounds/Breath of air.wav', channel='sound', relative_volume=2.5)
                     hp_change = obj.handle_collision()
                     if self.status.air_hp < self.status.max_hp:
                         self.status.air_hp += hp_change

@@ -83,7 +83,15 @@ init python:
 
         def monster_turn(self):
             global monster_damaged
-            renpy.pause(2.5)
+            if monster_damaged:
+                renpy.music.play('audio/Sound/Prison Scene Sounds/Bat Impact.WAV', channel='weapon', relative_volume=1.0, loop="True")
+                renpy.music.play('audio/Sound/Prison Scene Sounds/Monster Gets Hit.wav', channel='target', relative_volume=5.0, loop=True)
+                renpy.pause(2.0)
+                renpy.music.stop('weapon')
+                renpy.music.stop('target')
+            else:
+                renpy.music.play('audio/Sound/Prison Scene Sounds/Monster Snarl.WAV', channel='target', relative_volume=1.5)
+                renpy.pause(2.0)
             monster_damaged = False
             narrator("The monster is ready to attack you.")
             self.attack_started = True

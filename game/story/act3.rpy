@@ -26,7 +26,7 @@ label check_back:
 
 label enter_the_underwater_cave:
     stop music fadeout 2.0
-    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Cave Dripping Sound.WAV' volume 0.2
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Cave Dripping Sound.WAV' volume 8.0 loop
     scene bg hand_drowning with fade
     show bg hand_drowning at hand_drowning
     """
@@ -71,7 +71,7 @@ label enter_the_underwater_cave:
     with hpunch
     hide Carla with dissolve
     stop sound fadeout 2.0
-    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 7.0
     """
     Your anxiety stops you when you feel a tugging on your leg again.
 
@@ -80,7 +80,7 @@ label enter_the_underwater_cave:
     scene black
     scene bg underwater with dissolve
     stop sound fadeout 2.0
-    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.05 fadein 1.0
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.4 fadein 1.0
 
     menu:
         "{wave=nunderwater_text}Kick at whatever is grabbing your leg.":
@@ -99,14 +99,14 @@ label ignore_it_and_keep_going:
     jump bash_the_door
 
 label its_too_late_the_monster_swallows_you_whole:
-    play sound '<from 1 to 3>audio/Sound/Underwater Scene Sounds/Slimy Slither.wav' volume 3.0
+    play sound '<from 1 to 3>audio/Sound/Underwater Scene Sounds/Slimy Slither.wav' volume 10.0
     """
     But It's too late. The monster swallows you whole.
     
     Enveloped in darkness, you stop trying to hold your breath.
     """
     stop music fadeout 2.0
-    play sound '<from 5 to 8>audio/Sound/Underwater Scene Sounds/Drowning.mp3' volume 0.5
+    play sound '<from 5 to 8>audio/Sound/Underwater Scene Sounds/Drowning.mp3' volume 4.0
     """
     The dread sets in while you choke on the water entering your lungs.
     """
@@ -128,7 +128,7 @@ label keep_swimming:
 
 label kick_at_whatever_is_grabbing_your_leg:
     with vpunch
-    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Growling.WAV' volume 0.5
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Growling.WAV' volume 5.5
     scene bg underwater_creature with dissolve
     
     """    
@@ -170,7 +170,10 @@ label kick_it:
             jump check_back
 
 label knock_on_her_door:
+    play sound 'audio/Sound/House Scene Sounds/Door knocking sound effect.mp3' volume 1.0
+    pause 0.5
     "No response."
+    stop sound fadeout 2.0
     menu:
         "Knock again.":
             jump you_knock_again
@@ -186,18 +189,20 @@ label look_back:
             jump kick_it
 
 label open_the_door:
-    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 1.0 fadein 1.0
-    play weapon 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 0.2
+    play target 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 2.0 fadein 1.0
+    play weapon 'audio/Sound/Underwater Scene Sounds/Underwater Sound 2.WAV' volume 8.0
     pause 1.0
-    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Female Scream.mp3' volume 0.1 fadein 1.0
-    play target 'audio/Sound/Underwater Scene Sounds/Underwater Male Scream.mp3' volume 0.1 fadein 2.0
-    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.05 fadein 3.0
+    play sound 'audio/Sound/Underwater Scene Sounds/Underwater Female Scream.mp3' volume 1.0 fadein 1.0
+    play target 'audio/Sound/Underwater Scene Sounds/Underwater Male Scream.mp3' volume 1.0 fadein 2.0
+    play music 'audio/Music/A_Trick_of_Mind_Underwater.ogg' volume 0.3 fadein 3.0
     
     scene bg underwater with pixellate
     # show Parents mouth_fear overlay_fear eye_default brow_surprised
     """
     {wave=nunderwater_text}Water rushes out of her room completely filling the living room.{/wave}
-    
+    """
+    stop weapon fadeout 2.0
+    """
     {wave=nunderwater_text}You hold your breath as the current spins you around, disorienting you until you both eventually stop.{/wave}
     
     {wave=nunderwater_text}Once again, your fears about Carla have manifested as you find yourself at the bottom of a sea floor.{/wave}
@@ -221,7 +226,7 @@ label open_your_eyes_again:
     Game Start
     """
     window hide
-    play AirTank 'audio/Sound/Underwater Scene Sounds/Air Tank Hiss.WAV' fadein 1.0 volume 0.05
+    play AirTank 'audio/Sound/Underwater Scene Sounds/Air Tank Hiss.WAV' fadein 1.0 volume 1.0
     $ minigame2 = UnderwaterGame()
     $ minigame2.run()
     scene black
@@ -266,8 +271,8 @@ label swim_to_the_surface:
 label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
     "The urge to act on this conclusion is stopped when Carla enters the room."
     
-    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
-
+    play sound "audio/Sound/House Scene Sounds/Lock and Unlock Door.wav" volume 2.5 fadein 0.8
+    
     show Carla at left
     $ lipsync(Carla, "act3", 'audio_28', "I'm home!")
     
@@ -303,8 +308,10 @@ label the_urge_to_act_on_this_conclusion_is_stopped_when_carla_enters_the_room:
             jump im_sorry_carls_keep_going
 
 label you_knock_again:
+    play sound 'audio/Sound/House Scene Sounds/Door knocking sound effect.mp3' volume 1.0
+    pause 0.5
     $ lipsync(Parents, "act3", 'audio_36', "Carls?", 'mouth_sad')
-    
+    stop sound fadeout 2.0
     """
     You both press your ears to the door, bothered by the lack of acknowledgement.
 
@@ -419,7 +426,7 @@ label act31:
     When you take a step to your own room to remove the costume, a sharp pain shoots up dad's leg.
     """
     show Parents mouth_fear overlay_fear eye_default brow_surprised with vpunch
-    play sound 'audio/Sound/Scraping Gong.wav' fadein 1.0 volume 0.1
+    play sound 'audio/Sound/Scraping Gong.wav' fadein 1.0 volume 0.8
     """
     Shocked eyes widen when they discover a bite mark on his leg.
     """
@@ -437,7 +444,7 @@ label act31:
     """
     
     scene bg livingroom_sunset with dissolve
-    play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 2.0 volume 0.15
+    play music 'audio/Music/A_Trick_of_Mind_House.ogg' fadein 2.0 volume 0.3
     
     """
     The summer heat beats into the apartment while some chores are finished up.
@@ -453,8 +460,9 @@ label act31:
             jump act32b
 
 label act32a:
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.5
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.8
     scene bg office_sunset with pushleft
+    $ searched['office'] = True
     
     window auto hide
     camera:
@@ -477,8 +485,11 @@ label act32a:
         "Family Mourns Child's Death at the Hands of the Father":
             jump act32d
             
+init:
+    default searched = {'bed':False, 'bookshelves':False, 'nightstand':False, 'office':False}
+
 label act32b:
-    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.5
+    play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.8
     scene bg bedroom_day with pushright
     """
     Carla's room always terrifies you, her sweet personality never made sense with her favorite movie genre to you, but you love her regardless.
@@ -492,12 +503,12 @@ label act32b:
             jump check_her_bookshelves
         "Check the nightstand.":
             jump check_the_nightstand
-        "Go to the office":
+        "Go to the office" if searched['office'] == False:
             jump act32a
 
 label act32c:
     camera
-    play sound 'audio/Sound/House Scene Sounds/Paper Rustling.wav' volume 0.5 fadein 2.0
+    play sound 'audio/Sound/House Scene Sounds/Paper Rustling.wav' volume 4.0 fadein 2.0
     "HELP WANTED: Paranormal Investigator Required"
     
     "Family in need of experienced investigators to look into changing surroundings in the house. Protection needed."
@@ -534,8 +545,6 @@ label act32d:
     
     jump act32b
 
-default searched = {'bed':False, 'bookshelves':False, 'nightstand':False}
-
 label continue_your_search_through_carlas_room:
     camera
     $ all_searched = all(searched.values())
@@ -547,6 +556,8 @@ label continue_your_search_through_carlas_room:
                 jump check_her_bookshelves
             "Check the nightstand." if searched['nightstand'] == False:
                 jump check_the_nightstand
+            "Go to the office" if searched['office'] == False:
+                jump act32a
     else:
         scene bg bedroom_night with dissolve
         # Once the player selects all of the options once (They don't have to look at the notebook), they can move on.
@@ -620,7 +631,7 @@ label check_under_her_bed:
 
 
 label read_the_notebook:
-    play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 0.7 fadein 1.0
+    play sound 'audio/Sound/House Scene Sounds/Notebook Page Pick Up.wav' volume 10.0 fadein 1.0
     
     """
     The notebook doesn't have any notes, but drawings.
@@ -695,7 +706,7 @@ label huh:
     $ lipsync(Carla, "act3", "audio_001", "Ok...", 'mouth_sad')
     
     "With her head down, Carla quickly retreats to her room."
-    
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.3
     hide Parents
     show Parents eye_default brow_surprised
     
@@ -757,7 +768,7 @@ label im_sorry_carls_keep_going:
     $ lipsync(Carla, "act3", 'audio_24', "I'll get everything ready.")
      
     hide Carla with moveoutleft
-    play sound 'audio/Sound/House Scene Sounds/Door Open and Close Intro.WAV' fadein 1.0
+    play sound 'audio/Sound/House Scene Sounds/Door Slam Close.WAV' volume 0.3
     
     "Carla runs for her room and closes the door."
     

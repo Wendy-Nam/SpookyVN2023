@@ -58,14 +58,12 @@ init python:
     
         def attack(self):
             # Perform player attack and hit detection
-            # tmbar_position = At(ImageReference('stick'), moving_timing_bar)
             self.position = At(ImageReference('stick'), moving_timing_bar)
             renpy.show(name='stick', what=self.position)
             self.striked = renpy.call_screen('attack_timing_bar', self)
-            # self.striked = True
             self.hit_pos = self.position.xpos
             renpy.hide('stick')
-            print("Stricked Position : ", self.hit_pos)
+            # print("Stricked Position : ", self.hit_pos)
             renpy.with_statement(vpunch)
             if self.check_hit():
                 renpy.say(who=None, what="HIT", interact=True)
