@@ -176,35 +176,31 @@ init python:
     ## **.ogg" matches ogg files in the game directory or any of its
     ## subdirectories, and "**.psd" matches psd files anywhere in the project.
 
-    ## Classify files as None to exclude them from the built distributions.
-
-    build.classify('**~', None)
-    build.classify('**.bak', None)
-    build.classify('**/.**', None)
-    build.classify('**/#**', None)
-    build.classify('**/thumbs.db', None)
-
-    ## To archive files, classify them as 'archive'.
-
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    # Declare two archives.
+    # Declare three archives.
     build.archive("scripts", "all")
     build.archive("images", "all")
-    
+    build.archive("media", "all") # 비디오, 오디오 대상
+     
     # Put script files into the scripts archive.
+    build.classify("game/**.py", "scripts")
     build.classify("game/**.rpy", "scripts")
     build.classify("game/**.rpyc", "scripts")
-    
+    build.classify("game/**.rpym", "scripts")
+    build.classify("game/**.rpymc", "scripts")
+
     # Put images into the images archive.
-    build.classify("game/**.jpg", "images")
     build.classify("game/**.png", "images")
+     
+    # 비디오, 오디오 대상
+    build.classify("game/**.mp3", "media")
+    build.classify("game/**.wav", "media")
+    build.classify("game/**.WAV", "media")
+    build.classify("game/**.ogg", "media")
+    build.classify("game/**.txt", "media")
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.
-
-    build.documentation('*.html')
-    build.documentation('*.txt')
-
+    # build.documentation('*.html')
+    # build.documentation('*.txt')
 
 ## A Google Play license key is required to perform in-app purchases. It can be
 ## found in the Google Play developer console, under "Monetize" > "Monetization
@@ -216,4 +212,4 @@ init python:
 ## The username and project name associated with an itch.io project, separated
 ## by a slash.
 
-# define build.itch_project = "renpytom/test-project"
+#define build.itch_project = "renpytom/test-project"
