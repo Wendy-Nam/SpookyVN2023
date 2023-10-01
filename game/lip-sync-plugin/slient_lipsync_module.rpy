@@ -43,7 +43,7 @@ init python:
                 renpy.say(who=character, what=dialogue+"{fast}", interact=False)   # show the dialogue
             start_time, mouth_shape = lipsync_data[i]
             if d_mouth != 'X' or d_mouth != 'A':
-                renpy.music.play(track_name, channel="lipsync", relative_volume=0.3)
+                renpy.music.play(track_name, channel="lipsync", relative_volume=0.16)
             if invisible == False:
                 renpy.show(str(character.name) + ' mouth_' + mouth_shape)                    # Show the mouth shape image
             if i < len(lipsync_data) - 1:   

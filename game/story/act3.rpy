@@ -123,7 +123,7 @@ label keep_swimming:
     menu:
         "{wave=nunderwater_text}Check back.{/wave}":
             jump check_back
-        "{wave=nunderwater_text}gnore it and keep going.{/wave}":
+        "{wave=nunderwater_text}Ignore it and keep going.{/wave}":
             jump ignore_it_and_keep_going
 
 label kick_at_whatever_is_grabbing_your_leg:
@@ -462,7 +462,6 @@ label act31:
 label act32a:
     play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.8
     scene bg office_sunset with pushleft
-    $ searched['office'] = True
     
     window auto hide
     camera:
@@ -486,7 +485,7 @@ label act32a:
             jump act32d
             
 init:
-    default searched = {'bed':False, 'bookshelves':False, 'nightstand':False, 'office':False}
+    default searched = {'bed':False, 'bookshelves':False, 'nightstand':False}
 
 label act32b:
     play sound 'audio/Sound/House Scene Sounds/Lock and Unlock Door.wav' volume 0.8
@@ -503,8 +502,6 @@ label act32b:
             jump check_her_bookshelves
         "Check the nightstand.":
             jump check_the_nightstand
-        "Go to the office" if searched['office'] == False:
-            jump act32a
 
 label act32c:
     camera
@@ -536,14 +533,15 @@ label act32d:
     
     When pressed for questions, he denied malicious intent and spouted nonsense about his child having powers out of his control.
     """
-    
+    scene bg office_night with dissolve
     """
     You wish that there were more specifics.
     
     but with the mountain of papers on your desk, you feel a sense of comfort knowing you're not the only one experiencing this.
     """
-    
-    jump act32b
+    menu:
+        "Go back to the living room.":
+            jump go_back_to_the_living_room
 
 label continue_your_search_through_carlas_room:
     camera
@@ -556,8 +554,6 @@ label continue_your_search_through_carlas_room:
                 jump check_her_bookshelves
             "Check the nightstand." if searched['nightstand'] == False:
                 jump check_the_nightstand
-            "Go to the office" if searched['office'] == False:
-                jump act32a
     else:
         scene bg bedroom_night with dissolve
         # Once the player selects all of the options once (They don't have to look at the notebook), they can move on.

@@ -103,7 +103,7 @@ init:
                     range=character.max_hp, 
                     range_delay=3.5,
                     warper="easein_bounce")
-        textbutton "{bt=3}{size=30}{color=#FF0000}{i}{b}Exit{/b}{/i}{/color}{/size}{/bt}" action [SetVariable('game_escape_flag', True), Return()] xpos 1300 ypos 150
+        textbutton "{bt=3}{size=30}{color=#7A1712}{i}{b}Exit{/b}{/i}{/color}{/size}{/bt}" action [SetVariable('game_escape_flag', True), Return()] xpos 1250 ypos 100
         fixed:
             area (1150, 50, 800, 120)
             bar:
